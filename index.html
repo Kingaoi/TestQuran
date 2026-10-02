@@ -1,0 +1,3264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#B3261E">
+<title>اختبار ومراجعة القرآن الكريم</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+
+<style>
+
+@font-face{font-family:'QPC Uthmanic Hafs';src:url('https://static-cdn.tarteel.ai/qul/fonts/UthmanicHafs_V22.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Awsat Digital';src:url('https://aawsat.com/themes/custom/aawsatv3/assets/fonts/AwsatDigital-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Awsat Digital';src:url('https://aawsat.com/themes/custom/aawsatv3/assets/fonts/AwsatDigital-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+
+:root{
+  
+  --md-typescale-display-large-size: 57px;  --md-typescale-display-large-line: 64px;
+  --md-typescale-display-medium-size: 45px; --md-typescale-display-medium-line: 52px;
+  --md-typescale-display-small-size: 36px;  --md-typescale-display-small-line: 44px;
+  --md-typescale-headline-large-size: 32px; --md-typescale-headline-large-line: 40px;
+  --md-typescale-headline-medium-size: 28px;--md-typescale-headline-medium-line: 36px;
+  --md-typescale-headline-small-size: 24px; --md-typescale-headline-small-line: 32px;
+  --md-typescale-title-large-size: 22px;    --md-typescale-title-large-line: 28px;
+  --md-typescale-title-medium-size: 16px;   --md-typescale-title-medium-line: 24px;
+  --md-typescale-title-small-size: 14px;    --md-typescale-title-small-line: 20px;
+  --md-typescale-body-large-size: 16px;     --md-typescale-body-large-line: 24px;
+  --md-typescale-body-medium-size: 14px;    --md-typescale-body-medium-line: 20px;
+  --md-typescale-body-small-size: 12px;     --md-typescale-body-small-line: 16px;
+  --md-typescale-label-large-size: 14px;    --md-typescale-label-large-line: 20px;
+  --md-typescale-label-medium-size: 12px;   --md-typescale-label-medium-line: 16px;
+  --md-typescale-label-small-size: 11px;    --md-typescale-label-small-line: 16px;
+
+  
+  --md-shape-xs: 4px;
+  --md-shape-sm: 8px;
+  --md-shape-md: 12px;
+  --md-shape-lg: 16px;
+  --md-shape-xl: 28px;
+  --md-shape-xxl: 32px;
+  --md-shape-full: 9999px;
+
+  
+  --md-motion-standard: cubic-bezier(.2, 0, 0, 1);
+  --md-motion-emphasized: cubic-bezier(.2, 0, 0, 1);
+  --md-duration-short: 150ms;
+  --md-duration-medium: 250ms;
+  --md-duration-long: 400ms;
+
+  
+  --md-elev-0: none;
+  --md-elev-1: 0 1px 2px rgba(0,0,0,.3), 0 1px 3px 1px rgba(0,0,0,.15);
+  --md-elev-2: 0 1px 2px rgba(0,0,0,.3), 0 2px 6px 2px rgba(0,0,0,.15);
+  --md-elev-3: 0 4px 8px 3px rgba(0,0,0,.15), 0 1px 3px rgba(0,0,0,.3);
+  --md-elev-4: 0 6px 10px 4px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.3);
+  --md-elev-5: 0 8px 12px 6px rgba(0,0,0,.15), 0 4px 4px rgba(0,0,0,.3);
+}
+
+body{
+  
+  --md-primary: var(--md-seed);
+  --md-on-primary: #ffffff;
+  --md-primary-container: color-mix(in srgb, var(--md-seed) 18%, #ffffff);
+  --md-on-primary-container: color-mix(in srgb, var(--md-seed) 70%, #000000);
+  --md-primary-fixed: color-mix(in srgb, var(--md-seed) 88%, #ffffff);
+  --md-primary-fixed-dim: color-mix(in srgb, var(--md-seed) 78%, #ffffff);
+
+  --md-secondary: color-mix(in srgb, var(--md-seed) 55%, #5d5d6d);
+  --md-on-secondary: #ffffff;
+  --md-secondary-container: color-mix(in srgb, var(--md-seed) 12%, #e6e0ec);
+  --md-on-secondary-container: color-mix(in srgb, var(--md-seed) 60%, #1d192b);
+
+  --md-tertiary: color-mix(in srgb, var(--md-seed) 30%, #7d5260);
+  --md-on-tertiary: #ffffff;
+  --md-tertiary-container: color-mix(in srgb, var(--md-seed) 14%, #ffd8e4);
+  --md-on-tertiary-container: color-mix(in srgb, var(--md-seed) 55%, #31111d);
+
+  --md-error: #b3261e;
+  --md-on-error: #ffffff;
+  --md-error-container: #f9dedc;
+  --md-on-error-container: #410e0b;
+
+  --md-success: #146c2e;
+  --md-on-success: #ffffff;
+  --md-success-container: #a6f4b8;
+  --md-on-success-container: #00210b;
+
+  --md-warning: #7a5900;
+  --md-on-warning: #ffffff;
+  --md-warning-container: #ffdf9e;
+  --md-on-warning-container: #261a00;
+
+  --md-surface: color-mix(in srgb, var(--md-seed) 2%, #fffbfe);
+  --md-on-surface: color-mix(in srgb, var(--md-seed) 8%, #1c1b1f);
+  --md-surface-variant: color-mix(in srgb, var(--md-seed) 8%, #e7e0ec);
+  --md-on-surface-variant: color-mix(in srgb, var(--md-seed) 12%, #49454f);
+  --md-surface-container-lowest: color-mix(in srgb, var(--md-seed) 1%, #ffffff);
+  --md-surface-container-low: color-mix(in srgb, var(--md-seed) 4%, #f7f2fa);
+  --md-surface-container: color-mix(in srgb, var(--md-seed) 6%, #f3edf7);
+  --md-surface-container-high: color-mix(in srgb, var(--md-seed) 9%, #ece6f0);
+  --md-surface-container-highest: color-mix(in srgb, var(--md-seed) 12%, #e6e0e9);
+  --md-surface-tint: var(--md-seed);
+
+  --md-outline: color-mix(in srgb, var(--md-seed) 10%, #79747e);
+  --md-outline-variant: color-mix(in srgb, var(--md-seed) 6%, #cac4d0);
+
+  --md-inverse-surface: #313033;
+  --md-inverse-on-surface: #f4eff4;
+  --md-inverse-primary: color-mix(in srgb, var(--md-seed) 55%, #ffffff);
+  --md-scrim: rgba(0,0,0,.4);
+  --md-shadow: rgba(0,0,0,.15);
+}
+
+body.dark{
+  --md-primary: color-mix(in srgb, var(--md-seed) 55%, #ffffff);
+  --md-on-primary: color-mix(in srgb, var(--md-seed) 75%, #000000);
+  --md-primary-container: color-mix(in srgb, var(--md-seed) 55%, #000000);
+  --md-on-primary-container: color-mix(in srgb, var(--md-seed) 25%, #ffffff);
+  --md-primary-fixed: color-mix(in srgb, var(--md-seed) 88%, #ffffff);
+  --md-primary-fixed-dim: color-mix(in srgb, var(--md-seed) 75%, #ffffff);
+
+  --md-secondary: color-mix(in srgb, var(--md-seed) 40%, #ccc2dc);
+  --md-on-secondary: color-mix(in srgb, var(--md-seed) 45%, #332d41);
+  --md-secondary-container: color-mix(in srgb, var(--md-seed) 35%, #4a4458);
+  --md-on-secondary-container: color-mix(in srgb, var(--md-seed) 15%, #e8def8);
+
+  --md-tertiary: color-mix(in srgb, var(--md-seed) 35%, #efb8c8);
+  --md-on-tertiary: color-mix(in srgb, var(--md-seed) 45%, #492532);
+  --md-tertiary-container: color-mix(in srgb, var(--md-seed) 35%, #633b48);
+  --md-on-tertiary-container: color-mix(in srgb, var(--md-seed) 15%, #ffd8e4);
+
+  --md-error: #f2b8b5;
+  --md-on-error: #601410;
+  --md-error-container: #8c1d18;
+  --md-on-error-container: #f9dedc;
+
+  --md-success: #8edc9d;
+  --md-on-success: #003919;
+  --md-success-container: #00522a;
+  --md-on-success-container: #a6f4b8;
+
+  --md-warning: #f0c14b;
+  --md-on-warning: #3f2e00;
+  --md-warning-container: #5a4200;
+  --md-on-warning-container: #ffdf9e;
+
+  --md-surface: color-mix(in srgb, var(--md-seed) 4%, #141218);
+  --md-on-surface: color-mix(in srgb, var(--md-seed) 6%, #e6e1e5);
+  --md-surface-variant: color-mix(in srgb, var(--md-seed) 10%, #49454f);
+  --md-on-surface-variant: color-mix(in srgb, var(--md-seed) 10%, #cac4d0);
+  --md-surface-container-lowest: color-mix(in srgb, var(--md-seed) 3%, #0f0d13);
+  --md-surface-container-low: color-mix(in srgb, var(--md-seed) 5%, #1d1b20);
+  --md-surface-container: color-mix(in srgb, var(--md-seed) 7%, #211f26);
+  --md-surface-container-high: color-mix(in srgb, var(--md-seed) 9%, #2b2930);
+  --md-surface-container-highest: color-mix(in srgb, var(--md-seed) 11%, #36343b);
+  --md-surface-tint: var(--md-primary);
+
+  --md-outline: color-mix(in srgb, var(--md-seed) 10%, #938f99);
+  --md-outline-variant: color-mix(in srgb, var(--md-seed) 8%, #49454f);
+
+  --md-inverse-surface: #e6e1e5;
+  --md-inverse-on-surface: #313033;
+  --md-inverse-primary: color-mix(in srgb, var(--md-seed) 75%, #000000);
+  --md-scrim: rgba(0,0,0,.6);
+  --md-shadow: rgba(0,0,0,.5);
+}
+
+.theme-red     { --md-seed: #B3261E; }
+.theme-blue    { --md-seed: #1565C0; }
+.theme-emerald { --md-seed: #146C2E; }
+.theme-purple  { --md-seed: #6750A4; }
+.theme-gold    { --md-seed: #B26A00; }
+.theme-slate   { --md-seed: #4A5560; }
+.theme-pink    { --md-seed: #B3456E; }
+
+body.telegram-app{
+  --tg-bg: var(--tg-theme-bg-color, var(--md-surface));
+  --tg-text: var(--tg-theme-text-color, var(--md-on-surface));
+  --tg-hint: var(--tg-theme-hint-color, var(--md-on-surface-variant));
+  --tg-button: var(--tg-theme-button-color, var(--md-primary));
+  --tg-button-text: var(--tg-theme-button-text-color, var(--md-on-primary));
+  background:var(--tg-bg); color:var(--tg-text);
+}
+body.telegram-app .md-top-app-bar{
+  padding-top:env(safe-area-inset-top, 0px);
+  height:calc(64px + env(safe-area-inset-top, 0px));
+  background:var(--tg-bg);
+}
+body.telegram-app .md-top-app-bar.scrolled{
+  background:color-mix(in srgb, var(--tg-bg) 92%, var(--tg-button));
+}
+body.telegram-app .telegram-share-btn{ color:var(--tg-button); }
+body.telegram-app .md-btn-filled, body.telegram-app .md-fab{
+  background:var(--tg-button); color:var(--tg-button-text);
+}
+body.telegram-app .md-bottom-sheet{ padding-bottom:max(12px, env(safe-area-inset-bottom, 0px)); }
+body.telegram-app .md-snackbar{ bottom:max(24px, calc(24px + env(safe-area-inset-bottom, 0px))); }
+@media (max-width:600px){
+  body.telegram-app .md-top-app-bar{height:calc(56px + env(safe-area-inset-top, 0px));}
+}
+
+*,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;height:100%}
+body{
+  font-family:'Roboto','Awsat Digital','Tajawal',system-ui,sans-serif;
+  font-size:var(--md-typescale-body-large-size);
+  line-height:var(--md-typescale-body-large-line);
+  color:var(--md-on-surface);
+  background:var(--md-surface);
+  -webkit-font-smoothing:antialiased;
+  transition:background-color var(--md-duration-medium) var(--md-motion-standard),
+             color var(--md-duration-medium) var(--md-motion-standard);
+  min-height:100dvh;
+  display:flex;
+  flex-direction:column;
+  overscroll-behavior-y:none;
+}
+
+.md-display-large  { font-size:var(--md-typescale-display-large-size);  line-height:var(--md-typescale-display-large-line);  font-weight:400; letter-spacing:-0.25px }
+.md-headline-small { font-size:var(--md-typescale-headline-small-size); line-height:var(--md-typescale-headline-small-line); font-weight:400 }
+.md-title-large    { font-size:var(--md-typescale-title-large-size);    line-height:var(--md-typescale-title-large-line);    font-weight:500 }
+.md-title-medium   { font-size:var(--md-typescale-title-medium-size);   line-height:var(--md-typescale-title-medium-line);   font-weight:500 }
+.md-title-small    { font-size:var(--md-typescale-title-small-size);    line-height:var(--md-typescale-title-small-line);    font-weight:500 }
+.md-body-large     { font-size:var(--md-typescale-body-large-size);     line-height:var(--md-typescale-body-large-line) }
+.md-body-medium    { font-size:var(--md-typescale-body-medium-size);    line-height:var(--md-typescale-body-medium-line) }
+.md-body-small     { font-size:var(--md-typescale-body-small-size);     line-height:var(--md-typescale-body-small-line) }
+.md-label-large    { font-size:var(--md-typescale-label-large-size);    line-height:var(--md-typescale-label-large-line);    font-weight:500 }
+.md-label-medium   { font-size:var(--md-typescale-label-medium-size);   line-height:var(--md-typescale-label-medium-line);   font-weight:500 }
+
+.quran-text{ font-family:'QPC Uthmanic Hafs',serif; font-weight:400; }
+
+.hidden{ display:none !important }
+.hidden-screen{ display:none !important }
+.grow{ flex-grow:1 }
+.row{ display:flex; align-items:center }
+.col{ display:flex; flex-direction:column }
+.gap-1{gap:4px}.gap-2{gap:8px}.gap-3{gap:12px}.gap-4{gap:16px}
+.mt-1{margin-top:4px}.mt-2{margin-top:8px}.mt-3{margin-top:12px}.mt-4{margin-top:16px}.mt-6{margin-top:24px}
+.mb-2{margin-bottom:8px}.mb-3{margin-bottom:12px}.mb-4{margin-bottom:16px}.mb-5{margin-bottom:20px}.mb-6{margin-bottom:24px}
+.w-full{width:100%}
+.text-center{text-align:center}
+.text-muted{color:var(--md-on-surface-variant)}
+
+.material-symbols-rounded{
+  font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+  font-size:24px;
+  user-select:none;
+  line-height:1;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:font-variation-settings var(--md-duration-short) var(--md-motion-standard);
+}
+.material-symbols-rounded.filled{ font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24 }
+
+.md-state{ position:relative; overflow:hidden; isolation:isolate; }
+.md-state::after{
+  content:'';position:absolute;inset:0;background:currentColor;opacity:0;
+  transition:opacity var(--md-duration-short) var(--md-motion-standard);
+  pointer-events:none;border-radius:inherit;z-index:0;
+}
+@media (hover:hover) and (pointer:fine){ .md-state:hover::after{opacity:.08} }
+.md-state:focus-visible::after{opacity:.10}
+.md-state:active::after{opacity:.12}
+.md-state>*{position:relative;z-index:1}
+
+.md-state[data-pressing="true"]::after{opacity:.12}
+.md-ripple-ink{
+  position:absolute;border-radius:50%;transform:scale(0);pointer-events:none;
+  background:currentColor;opacity:.25;animation:mdRipple 550ms var(--md-motion-standard);
+  z-index:0;
+}
+@keyframes mdRipple{ to{ transform:scale(2.5); opacity:0 } }
+
+.md-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  height:40px;padding:0 24px;border:none;border-radius:var(--md-shape-full);
+  font-family:inherit;font-size:var(--md-typescale-label-large-size);
+  line-height:var(--md-typescale-label-large-line);font-weight:500;letter-spacing:.1px;
+  cursor:pointer;user-select:none;position:relative;overflow:hidden;
+  transition:box-shadow var(--md-duration-short) var(--md-motion-standard),
+             background-color var(--md-duration-short) var(--md-motion-standard),
+             color var(--md-duration-short) var(--md-motion-standard);
+}
+.md-btn .material-symbols-rounded{ font-size:18px }
+.md-btn-filled{ background:var(--md-primary); color:var(--md-on-primary) }
+.md-btn-filled:hover{ box-shadow:var(--md-elev-1) }
+.md-btn-filled:disabled{ background:color-mix(in srgb,var(--md-on-surface) 12%,transparent); color:color-mix(in srgb,var(--md-on-surface) 38%,transparent); cursor:not-allowed; box-shadow:none }
+
+.md-btn-tonal{ background:var(--md-secondary-container); color:var(--md-on-secondary-container) }
+.md-btn-tonal:hover{ box-shadow:var(--md-elev-1) }
+
+.md-btn-outlined{ background:transparent; color:var(--md-primary); border:1px solid var(--md-outline) }
+.md-btn-outlined:hover{ background:color-mix(in srgb,var(--md-primary) 8%,transparent) }
+
+.md-btn-text{ background:transparent; color:var(--md-primary); padding:0 12px }
+.md-btn-text:hover{ background:color-mix(in srgb,var(--md-primary) 8%,transparent) }
+
+.md-btn-elevated{ background:var(--md-surface-container-low); color:var(--md-primary); box-shadow:var(--md-elev-1) }
+.md-btn-elevated:hover{ box-shadow:var(--md-elev-2) }
+
+.md-btn-lg{ height:56px; padding:0 32px; font-size:16px; border-radius:var(--md-shape-lg) }
+.md-btn-block{ width:100% }
+
+.md-icon-btn{
+  width:40px;height:40px;border-radius:var(--md-shape-full);
+  display:inline-flex;align-items:center;justify-content:center;
+  border:none;background:transparent;color:var(--md-on-surface-variant);
+  cursor:pointer;position:relative;overflow:hidden;flex-shrink:0;
+  transition:background-color var(--md-duration-short) var(--md-motion-standard);
+}
+.md-icon-btn:hover{ background:color-mix(in srgb,currentColor 8%,transparent) }
+.md-icon-btn:focus-visible{ background:color-mix(in srgb,currentColor 10%,transparent); outline:none }
+.md-icon-btn.filled{ background:var(--md-primary); color:var(--md-on-primary) }
+.md-icon-btn.tonal{ background:var(--md-secondary-container); color:var(--md-on-secondary-container) }
+
+.md-fab{
+  height:56px;min-width:56px;padding:0 20px;border-radius:var(--md-shape-lg);
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  background:var(--md-primary-container); color:var(--md-on-primary-container);
+  border:none;box-shadow:var(--md-elev-3);cursor:pointer;position:relative;overflow:hidden;
+  font-family:inherit;font-size:var(--md-typescale-label-large-size);font-weight:500;
+  transition:box-shadow var(--md-duration-short) var(--md-motion-standard),
+             background-color var(--md-duration-short) var(--md-motion-standard);
+}
+.md-fab:hover{ box-shadow:var(--md-elev-4) }
+.md-fab .material-symbols-rounded{ font-size:24px }
+
+.md-top-app-bar{
+  display:flex;align-items:center;gap:4px;
+  height:64px;padding:0 4px;
+  background:var(--md-surface);
+  color:var(--md-on-surface);
+  position:sticky;top:0;z-index:40;
+  transition:background-color var(--md-duration-medium) var(--md-motion-standard);
+}
+.md-top-app-bar.scrolled{ background:var(--md-surface-container) }
+.md-top-app-bar .title{
+  flex:1;padding:0 4px;
+  font-size:var(--md-typescale-title-large-size);
+  line-height:var(--md-typescale-title-large-line);
+  font-weight:400;
+}
+.md-top-app-bar .leading, .md-top-app-bar .trailing{
+  display:flex;align-items:center;gap:0;
+}
+.md-top-app-bar .md-icon-btn{ color:var(--md-on-surface-variant) }
+
+.md-card{
+  background:var(--md-surface-container-low);
+  color:var(--md-on-surface);
+  border-radius:var(--md-shape-md);
+  transition:background-color var(--md-duration-short) var(--md-motion-standard);
+}
+.md-card-elevated{ box-shadow:var(--md-elev-1); background:var(--md-surface-container-low) }
+.md-card-filled{ background:var(--md-surface-container-highest); box-shadow:none }
+.md-card-outlined{ background:var(--md-surface); border:1px solid var(--md-outline-variant); box-shadow:none }
+.md-card-pad{ padding:16px }
+.md-card-pad-lg{ padding:24px }
+
+.md-textfield{
+  position:relative;
+  width:100%;
+}
+.md-textfield input{
+  width:100%;height:56px;padding:16px;
+  background:transparent;color:var(--md-on-surface);
+  border:1px solid var(--md-outline);border-radius:var(--md-shape-xs);
+  font-family:inherit;font-size:var(--md-typescale-body-large-size);
+  outline:none;transition:border-color var(--md-duration-short) var(--md-motion-standard),
+             border-width var(--md-duration-short) var(--md-motion-standard);
+}
+.md-textfield input:focus{
+  border-color:var(--md-primary);border-width:2px;padding:15px;
+}
+.md-textfield label{
+  position:absolute;top:50%;right:12px;transform:translateY(-50%);
+  background:var(--md-surface);padding:0 4px;
+  color:var(--md-on-surface-variant);
+  font-size:var(--md-typescale-body-large-size);
+  pointer-events:none;
+  transition:top var(--md-duration-short) var(--md-motion-standard),
+             font-size var(--md-duration-short) var(--md-motion-standard),
+             color var(--md-duration-short) var(--md-motion-standard);
+}
+.md-textfield input:focus + label,
+.md-textfield input:not(:placeholder-shown) + label{
+  top:0;font-size:var(--md-typescale-body-small-size);color:var(--md-primary);
+}
+
+.activity-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;
+}
+.activity-grid button{
+  min-height:62px;padding:9px 10px;border:1px solid var(--md-outline-variant);
+  border-radius:var(--md-shape-md);background:var(--md-surface-container-low);
+  color:var(--md-on-surface);font-family:inherit;text-align:right;cursor:pointer;
+  transition:background-color var(--md-duration-short),border-color var(--md-duration-short),transform var(--md-duration-short);
+}
+.activity-grid button span,.activity-grid button small{display:block}
+.activity-grid button span{font-size:13px;font-weight:600}
+.activity-grid button small{margin-top:3px;color:var(--md-on-surface-variant);font-size:10px;line-height:14px}
+.activity-grid button.active{border-color:var(--md-primary);background:var(--md-primary-container);color:var(--md-on-primary-container)}
+.activity-grid button.active small{color:inherit;opacity:.78}
+.activity-grid button:active{transform:scale(.98)}
+.md-segmented{
+  display:flex;
+  border:1px solid var(--md-outline);
+  border-radius:var(--md-shape-full);
+  overflow:hidden;
+  background:transparent;
+  height:40px;
+}
+.md-segmented button{
+  flex:1;border:none;background:transparent;
+  color:var(--md-on-surface);
+  font-family:inherit;font-size:var(--md-typescale-label-large-size);font-weight:500;
+  cursor:pointer;padding:0 12px;
+  border-left:1px solid var(--md-outline);
+  position:relative;overflow:hidden;
+  transition:background-color var(--md-duration-short) var(--md-motion-standard),
+             color var(--md-duration-short) var(--md-motion-standard);
+}
+.md-segmented button:first-child{ border-left:none }
+.md-segmented button:last-child{ border-top-left-radius:var(--md-shape-full);border-bottom-left-radius:var(--md-shape-full) }
+.md-segmented button:first-child{ border-top-right-radius:var(--md-shape-full);border-bottom-right-radius:var(--md-shape-full) }
+.md-segmented button.active{ background:var(--md-secondary-container); color:var(--md-on-secondary-container) }
+.md-segmented button.active::before{
+  content:'';position:absolute;right:10px;top:50%;transform:translateY(-50%);
+  width:18px;height:18px;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'><path d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
+  background-size:contain;background-repeat:no-repeat;
+}
+.md-segmented button.active{ padding-right:32px }
+.md-segmented .scope-ready-dot{
+  position:absolute;top:6px;left:6px;width:6px;height:6px;border-radius:50%;
+  background:var(--md-success);
+}
+
+.md-list-item{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 16px;
+  border-radius:var(--md-shape-md);
+  cursor:pointer;background:transparent;border:none;
+  color:var(--md-on-surface);
+  font-family:inherit;text-align:right;width:100%;
+  position:relative;overflow:hidden;
+  transition:background-color var(--md-duration-short) var(--md-motion-standard);
+}
+.md-list-item:hover{ background:var(--md-surface-container-high) }
+.md-list-item.selected{ background:var(--md-secondary-container); color:var(--md-on-secondary-container) }
+.md-list-item .lead{
+  width:44px;height:44px;border-radius:var(--md-shape-full);
+  display:flex;align-items:center;justify-content:center;
+  background:var(--md-surface-container-high);
+  color:var(--md-on-surface-variant);
+  font-weight:700;flex-shrink:0;
+  border:1px solid var(--md-outline-variant);
+}
+.md-list-item.selected .lead{ background:var(--md-primary); color:var(--md-on-primary); border-color:var(--md-primary) }
+.md-list-item .body{ flex:1;min-width:0 }
+.md-list-item .primary{ font-size:var(--md-typescale-body-large-size); font-weight:500 }
+.md-list-item .secondary{ font-size:var(--md-typescale-body-small-size); color:var(--md-on-surface-variant); margin-top:2px }
+.md-list-item.selected .secondary{ color:color-mix(in srgb,var(--md-on-secondary-container) 75%,transparent) }
+.md-list-item .trail{ flex-shrink:0;color:var(--md-primary) }
+
+.md-number-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(58px,1fr));
+  gap:8px;padding:8px 0 16px;
+}
+.md-number-chip{
+  aspect-ratio:1;border-radius:var(--md-shape-md);
+  border:1px solid var(--md-outline-variant);
+  background:transparent;color:var(--md-on-surface);
+  font-weight:500;font-size:var(--md-typescale-body-medium-size);
+  cursor:pointer;position:relative;overflow:hidden;
+  font-family:inherit;
+  display:flex;align-items:center;justify-content:center;
+  transition:background-color var(--md-duration-short) var(--md-motion-standard),
+             color var(--md-duration-short) var(--md-motion-standard),
+             border-color var(--md-duration-short) var(--md-motion-standard),
+             transform var(--md-duration-short) var(--md-motion-standard);
+}
+.md-number-chip:hover{ border-color:var(--md-primary); background:color-mix(in srgb,var(--md-primary) 6%,transparent) }
+.md-number-chip.selected{
+  background:var(--md-primary); color:var(--md-on-primary);
+  border-color:var(--md-primary); transform:scale(1.04);
+}
+.md-number-chip.cached::after{
+  content:'';position:absolute;top:4px;left:4px;width:6px;height:6px;
+  border-radius:50%;background:var(--md-success);
+}
+
+.md-scrim{
+  position:fixed;inset:0;background:var(--md-scrim);
+  opacity:0;pointer-events:none;visibility:hidden;
+  transition:opacity var(--md-duration-medium) var(--md-motion-standard),
+             visibility 0s var(--md-duration-medium);
+  z-index:90;
+}
+.md-scrim.active{
+  opacity:1;pointer-events:auto;visibility:visible;
+  transition:opacity var(--md-duration-medium) var(--md-motion-standard), visibility 0s 0s;
+}
+.md-bottom-sheet{
+  position:fixed;left:0;right:0;bottom:0;
+  background:var(--md-surface-container-low);
+  color:var(--md-on-surface);
+  border-radius:var(--md-shape-xl) var(--md-shape-xl) 0 0;
+  box-shadow:var(--md-elev-1);
+  transform:translateY(100%);
+  transition:transform var(--md-duration-long) var(--md-motion-emphasized);
+  z-index:100;
+  max-height:90dvh;
+  display:flex;flex-direction:column;
+  padding-bottom:env(safe-area-inset-bottom,0);
+}
+.md-bottom-sheet.active{ transform:translateY(0) }
+.md-bottom-sheet .handle{
+  width:32px;height:4px;border-radius:var(--md-shape-full);
+  background:var(--md-on-surface-variant);
+  opacity:.4;margin:12px auto 0;
+}
+.md-bottom-sheet .sheet-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:8px 16px 12px;
+}
+.md-bottom-sheet .sheet-head h3{
+  margin:0;font-size:var(--md-typescale-title-large-size);
+  font-weight:400;color:var(--md-on-surface);
+}
+.md-bottom-sheet .sheet-body{
+  flex:1;overflow-y:auto;padding:0 16px 16px;
+  overscroll-behavior:contain;
+}
+.md-bottom-sheet .sheet-search{
+  padding:0 16px 8px;
+}
+
+.md-dialog-scrim{
+  position:fixed;inset:0;background:var(--md-scrim);
+  display:flex;align-items:center;justify-content:center;
+  padding:24px;z-index:110;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity var(--md-duration-medium) var(--md-motion-standard),
+             visibility 0s var(--md-duration-medium);
+}
+.md-dialog-scrim.active{
+  opacity:1;visibility:visible;pointer-events:auto;
+  transition:opacity var(--md-duration-medium) var(--md-motion-standard), visibility 0s 0s;
+}
+.md-dialog{
+  background:var(--md-surface-container-high);
+  color:var(--md-on-surface);
+  border-radius:var(--md-shape-xl);
+  width:100%;max-width:420px;max-height:88dvh;
+  padding:24px;overflow-y:auto;
+  box-shadow:var(--md-elev-3);
+  transform:scale(.9);opacity:0;
+  transition:transform var(--md-duration-medium) var(--md-motion-emphasized),
+             opacity var(--md-duration-medium) var(--md-motion-standard);
+}
+.md-dialog-scrim.active .md-dialog{ transform:scale(1); opacity:1 }
+.md-dialog h3{
+  margin:0 0 16px;font-size:var(--md-typescale-headline-small-size);
+  line-height:var(--md-typescale-headline-small-line);font-weight:400;
+}
+.md-dialog .actions{
+  display:flex;justify-content:flex-end;gap:8px;margin-top:24px;
+}
+
+.md-snackbar{
+  position:fixed;left:16px;right:16px;bottom:24px;
+  background:var(--md-inverse-surface);
+  color:var(--md-inverse-on-surface);
+  padding:14px 16px;border-radius:var(--md-shape-xs);
+  box-shadow:var(--md-elev-3);
+  display:flex;align-items:center;gap:12px;
+  font-size:var(--md-typescale-body-medium-size);
+  z-index:200;
+  transform:translateY(120%);opacity:0;
+  transition:transform var(--md-duration-medium) var(--md-motion-emphasized),
+             opacity var(--md-duration-medium) var(--md-motion-standard);
+  max-width:min(560px,calc(100% - 32px));
+  margin:0 auto;
+}
+.md-snackbar.show{ transform:translateY(0); opacity:1 }
+.md-snackbar .text{ flex:1 }
+.md-snackbar .action{
+  background:transparent;border:none;color:var(--md-inverse-primary);
+  font-weight:500;font-size:var(--md-typescale-label-large-size);
+  padding:6px 8px;border-radius:var(--md-shape-full);
+  cursor:pointer;font-family:inherit;
+}
+
+.md-linear-progress{
+  height:4px;background:var(--md-surface-variant);
+  border-radius:var(--md-shape-full);overflow:hidden;
+}
+.md-linear-progress .fill{
+  height:100%;background:var(--md-primary);
+  border-radius:inherit;
+  transition:width var(--md-duration-medium) var(--md-motion-emphasized);
+}
+.md-circular-progress{
+  width:28px;height:28px;border:3px solid var(--md-surface-variant);
+  border-top-color:var(--md-primary);border-radius:50%;
+  animation:mdSpin .9s linear infinite;
+}
+.md-circular-progress.sm{ width:16px;height:16px;border-width:2px }
+@keyframes mdSpin{ to{ transform:rotate(360deg) } }
+
+.app-shell{
+  flex:1;display:flex;flex-direction:column;
+  max-width:720px;margin:0 auto;width:100%;
+  padding:0 16px env(safe-area-inset-bottom,0);
+}
+.screen{ animation:screenEnter var(--md-duration-medium) var(--md-motion-emphasized) }
+@keyframes screenEnter{
+  from{ opacity:0; transform:translateY(8px) }
+  to  { opacity:1; transform:translateY(0) }
+}
+
+.welcome-banner{
+  background:var(--md-primary-container);color:var(--md-on-primary-container);
+  padding:14px 16px;border-radius:var(--md-shape-lg);
+  font-size:var(--md-typescale-body-medium-size);
+  display:flex;align-items:center;gap:10px;
+}
+.welcome-banner .emoji{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--md-primary);color:var(--md-on-primary);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0;
+}
+
+.section-label{
+  display:block;color:var(--md-on-surface-variant);
+  font-size:var(--md-typescale-label-large-size);font-weight:500;
+  margin-bottom:8px;
+}
+
+.scope-panel{ display:flex;flex-direction:column;gap:12px }
+
+.picker-trigger{
+  width:100%;display:flex;align-items:center;gap:14px;
+  padding:14px 16px;background:transparent;
+  border:1px solid var(--md-outline);border-radius:var(--md-shape-md);
+  color:var(--md-on-surface);cursor:pointer;text-align:right;
+  font-family:inherit;position:relative;overflow:hidden;
+  transition:border-color var(--md-duration-short) var(--md-motion-standard),
+             background-color var(--md-duration-short) var(--md-motion-standard);
+}
+.picker-trigger:hover{ border-color:var(--md-primary); background:color-mix(in srgb,var(--md-primary) 4%,transparent) }
+.picker-trigger .badge{
+  width:44px;height:44px;border-radius:var(--md-shape-md);
+  background:var(--md-primary);color:var(--md-on-primary);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-weight:700;font-size:18px;
+}
+.picker-trigger .content{ flex:1;min-width:0 }
+.picker-trigger .label{
+  font-size:var(--md-typescale-label-medium-size);
+  color:var(--md-on-surface-variant);margin-bottom:2px;
+}
+.picker-trigger .value{
+  font-size:var(--md-typescale-title-medium-size);font-weight:500;
+  color:var(--md-on-surface);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.picker-trigger .chev{ color:var(--md-on-surface-variant);flex-shrink:0 }
+
+.range-row{ display:grid;grid-template-columns:1fr 1fr;gap:12px }
+.range-row .picker-trigger{ padding:12px 14px }
+.range-row .picker-trigger .value{ font-size:var(--md-typescale-title-large-size);text-align:center }
+
+.info-box{
+  background:color-mix(in srgb,var(--md-primary) 6%,var(--md-surface-container-low));
+  border-right:3px solid var(--md-primary);
+  padding:10px 14px;border-radius:var(--md-shape-sm);
+  font-size:var(--md-typescale-body-small-size);
+  color:var(--md-on-surface-variant);
+}
+
+.prefetch-bar{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:12px;margin-top:12px;border-radius:var(--md-shape-md);
+  font-size:var(--md-typescale-body-small-size);font-weight:500;
+  transition:background-color var(--md-duration-medium) var(--md-motion-standard),
+             color var(--md-duration-medium) var(--md-motion-standard);
+}
+.prefetch-bar.loading{ background:var(--md-surface-container-high); color:var(--md-on-surface-variant) }
+.prefetch-bar.ready{ background:var(--md-success-container); color:var(--md-on-success-container) }
+.prefetch-bar.error{ background:var(--md-error-container); color:var(--md-on-error-container) }
+
+.quiz-topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;background:var(--md-surface-container-low);
+  border-radius:var(--md-shape-lg);margin-bottom:16px;
+}
+.quiz-topbar .pill{
+  font-size:var(--md-typescale-label-large-size);font-weight:500;
+}
+.quiz-topbar .score{ color:var(--md-primary); font-weight:700 }
+.quiz-topbar .timer-pill{color:var(--md-error);font-variant-numeric:tabular-nums}
+.quiz-topbar .timer-pill.hidden{display:none}
+
+.quran-card{
+  background:var(--md-surface-container-low);
+  border-radius:var(--md-shape-xl);
+  padding:32px 20px;
+  min-height:220px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;
+  box-shadow:var(--md-elev-1);
+}
+.quran-card .quran-text{
+  font-size:1.75rem;line-height:2.75rem;text-align:center;
+  color:var(--md-on-surface);
+}
+.blank-space{
+  display:inline-block;min-width:100px;
+  border-bottom:2px solid var(--md-primary);
+  margin:0 8px;vertical-align:middle;
+}
+
+.options{ display:grid;grid-template-columns:1fr;gap:12px }
+@media(min-width:520px){ .options{ grid-template-columns:1fr 1fr } }
+
+.option-btn{
+  padding:18px 16px;border-radius:var(--md-shape-lg);
+  background:var(--md-surface-container-low);
+  color:var(--md-on-surface);
+  border:1px solid var(--md-outline-variant);
+  font-family:'QPC Uthmanic Hafs',serif;
+  font-size:1.25rem;line-height:1.9rem;
+  text-align:center;cursor:pointer;position:relative;overflow:hidden;
+  transition:background-color var(--md-duration-short) var(--md-motion-standard),
+             border-color var(--md-duration-short) var(--md-motion-standard),
+             transform var(--md-duration-short) var(--md-motion-standard);
+}
+.option-btn:hover:not(:disabled){ border-color:var(--md-primary); background:color-mix(in srgb,var(--md-primary) 5%,var(--md-surface-container-low)) }
+.option-btn:active:not(:disabled){ transform:scale(.98) }
+.option-btn:disabled{ cursor:default; opacity:.95 }
+.option-btn.correct{
+  background:var(--md-success-container); color:var(--md-on-success-container);
+  border-color:var(--md-success);
+}
+.option-btn.wrong{
+  background:var(--md-error-container); color:var(--md-on-error-container);
+  border-color:var(--md-error);
+}
+
+.review-head{
+  background:var(--md-surface-container-low);
+  padding:16px;border-radius:var(--md-shape-lg);margin-bottom:16px;
+}
+.review-head .row-top{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:12px;font-size:var(--md-typescale-title-medium-size);font-weight:500;
+}
+.review-head .ayah-counter{ color:var(--md-primary);font-weight:700 }
+.review-card{
+  position:relative;overflow:hidden;
+  background:var(--md-surface-container-low);
+  border-radius:var(--md-shape-xl);
+  padding:40px 24px;
+  min-height:280px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;
+  box-shadow:var(--md-elev-1);
+  touch-action:pan-y;
+}
+.review-card .review-text{
+  font-family:'QPC Uthmanic Hafs',serif;
+  font-size:2.25rem;line-height:3.75rem;
+  text-align:center;color:var(--md-on-surface);
+}
+.swipe-hint{
+  position:absolute;top:50%;transform:translateY(-50%);
+  color:var(--md-primary);opacity:0;transition:opacity var(--md-duration-short);
+  pointer-events:none;
+}
+.swipe-hint.left{ left:16px } .swipe-hint.right{ right:16px }
+.review-card.swiping-left .swipe-hint.left{ opacity:.5 }
+.review-card.swiping-right .swipe-hint.right{ opacity:.5 }
+
+.review-actions{
+  display:grid;grid-template-columns:1fr auto 1fr;gap:8px;margin-bottom:12px;
+}
+
+.tafsir-panel{
+  background:var(--md-surface-container-low);
+  border-radius:var(--md-shape-lg);
+  padding:20px;margin-top:12px;
+  border-right:4px solid var(--md-primary);
+  max-height:320px;overflow-y:auto;
+  font-size:var(--md-typescale-body-medium-size);
+  line-height:1.9;color:var(--md-on-surface);
+}
+.tafsir-panel h4{
+  margin:0 0 12px;color:var(--md-primary);
+  font-size:var(--md-typescale-title-medium-size);font-weight:500;
+}
+
+.mutashabihat-warning{
+  background:var(--md-warning-container);color:var(--md-on-warning-container);
+  border-right:3px solid var(--md-warning);
+  padding:12px 16px;border-radius:var(--md-shape-md);
+  font-size:var(--md-typescale-body-small-size);
+  margin-bottom:16px;
+}
+
+.result-wrap{
+  flex:1;display:flex;flex-direction:column;
+  padding:32px 16px;gap:24px;
+}
+.result-stats{
+  display:flex;flex-direction:column;gap:14px;
+}
+.result-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 20px;border-radius:var(--md-shape-lg);
+  background:var(--md-surface-container-low);
+  font-size:var(--md-typescale-title-medium-size);
+}
+.result-row .val{ font-weight:700;font-size:var(--md-typescale-headline-small-size) }
+.result-row.correct .val{ color:var(--md-success) }
+.result-row.wrong .val{ color:var(--md-error) }
+
+.big-score{
+  text-align:center;padding:32px 16px;
+  border-radius:var(--md-shape-xl);
+  background:var(--md-primary-container);color:var(--md-on-primary-container);
+}
+.big-score .label{
+  font-size:var(--md-typescale-title-medium-size);font-weight:500;
+  opacity:.85;margin-bottom:8px;
+}
+.big-score .value{
+  font-size:56px;font-weight:700;line-height:1;
+}
+
+.stat-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;
+}
+.stat-card{
+  background:var(--md-surface-container-low);
+  border-radius:var(--md-shape-lg);
+  padding:16px 8px;text-align:center;
+}
+.stat-card .v{
+  font-size:28px;font-weight:700;color:var(--md-primary);line-height:1;
+}
+.stat-card .l{
+  font-size:var(--md-typescale-body-small-size);
+  color:var(--md-on-surface-variant);margin-top:6px;
+}
+
+.heatmap-grid{
+  display:grid;grid-template-columns:repeat(7,1fr);gap:4px;
+  margin-bottom:24px;
+}
+.heatmap-cell{
+  aspect-ratio:1;border-radius:3px;
+  background:var(--md-surface-container-high);
+  transition:background-color var(--md-duration-short);
+}
+.heatmap-cell[data-level="1"]{ background:color-mix(in srgb,var(--md-primary) 30%,var(--md-surface-container-high)) }
+.heatmap-cell[data-level="2"]{ background:color-mix(in srgb,var(--md-primary) 55%,var(--md-surface-container-high)) }
+.heatmap-cell[data-level="3"]{ background:color-mix(in srgb,var(--md-primary) 80%,var(--md-surface-container-high)) }
+.heatmap-cell[data-level="4"]{ background:var(--md-primary) }
+.activity-legend{
+  display:flex;align-items:center;justify-content:flex-end;gap:5px;
+  margin:-14px 0 24px;color:var(--md-on-surface-variant);font-size:11px;
+}
+.activity-legend i{width:12px;height:12px;border-radius:3px;background:var(--md-surface-container-high)}
+.activity-legend i[data-level="1"]{background:color-mix(in srgb,var(--md-primary) 30%,var(--md-surface-container-high))}
+.activity-legend i[data-level="2"]{background:color-mix(in srgb,var(--md-primary) 55%,var(--md-surface-container-high))}
+.activity-legend i[data-level="3"]{background:color-mix(in srgb,var(--md-primary) 80%,var(--md-surface-container-high))}
+.activity-legend i[data-level="4"]{background:var(--md-primary)}
+
+.bar-chart{
+  display:flex;align-items:flex-end;gap:6px;height:150px;
+  padding:16px 0 24px;
+}
+.bar-chart .bar{
+  flex:1;background:var(--md-primary);
+  border-radius:var(--md-shape-sm) var(--md-shape-sm) 0 0;
+  min-height:4px;position:relative;
+  transition:height var(--md-duration-long) var(--md-motion-emphasized);
+}
+.bar-chart .bar-label{
+  position:absolute;bottom:-20px;left:0;right:0;text-align:center;
+  font-size:11px;color:var(--md-on-surface-variant);
+}
+
+.analysis-item{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:12px 14px;border-radius:var(--md-shape-md);
+  background:var(--md-surface-container-low);
+  margin-bottom:8px;
+  font-size:var(--md-typescale-body-medium-size);
+}
+.analysis-item .dot{
+  width:8px;height:8px;border-radius:50%;background:var(--md-primary);
+  flex-shrink:0;margin-top:8px;
+}
+.error-bank-card{
+  margin-top:24px;padding:16px;border-radius:var(--md-shape-lg);
+  background:var(--md-surface-container-low);border:1px solid var(--md-outline-variant);
+}
+.error-bank-icon{color:var(--md-primary);font-size:25px}
+.error-bank-count{
+  min-width:32px;height:32px;padding:0 8px;border-radius:var(--md-shape-full);
+  display:flex;align-items:center;justify-content:center;
+  background:var(--md-error-container);color:var(--md-on-error-container);
+}
+.error-bank-preview{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.error-bank-empty{color:var(--md-on-surface-variant);font-size:13px;text-align:center;padding:8px}
+.error-item{padding:10px 12px;border-radius:var(--md-shape-md);background:var(--md-surface-container);border-right:3px solid var(--md-error)}
+.error-item .ref{font-weight:600;color:var(--md-on-surface);font-size:13px}
+.error-item .meta{display:block;margin-top:4px;color:var(--md-on-surface-variant);font-size:11px}
+
+.profiles-list{
+  display:flex;flex-wrap:wrap;gap:16px;justify-content:center;
+  margin-bottom:16px;
+}
+.profile-item{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  width:84px;
+}
+.profile-avatar{
+  width:64px;height:64px;border-radius:var(--md-shape-full);
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;color:#fff;cursor:pointer;
+  border:3px solid transparent;
+  position:relative;
+  transition:transform var(--md-duration-short) var(--md-motion-standard),
+             border-color var(--md-duration-short) var(--md-motion-standard);
+}
+.profile-avatar:hover{ transform:scale(1.05) }
+.profile-avatar.active{ border-color:var(--md-primary); box-shadow:0 0 0 4px color-mix(in srgb,var(--md-primary) 25%,transparent) }
+.profile-avatar .streak-badge{
+  position:absolute;bottom:-2px;left:-2px;
+  background:var(--md-warning);color:var(--md-on-warning);
+  font-size:10px;font-weight:700;
+  padding:2px 6px;border-radius:var(--md-shape-full);
+  border:2px solid var(--md-surface-container-high);
+}
+.profile-item .name{
+  font-size:var(--md-typescale-label-medium-size);font-weight:500;
+  color:var(--md-on-surface);
+}
+.profile-item .del{
+  font-size:var(--md-typescale-label-small-size);
+  color:var(--md-error);
+  background:none;border:none;cursor:pointer;padding:2px 6px;
+  border-radius:var(--md-shape-sm);font-family:inherit;
+}
+.profile-item .del:hover{ background:color-mix(in srgb,var(--md-error) 10%,transparent) }
+
+.theme-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  justify-items:center;margin-bottom:20px;
+}
+.theme-swatch{
+  width:52px;height:52px;border-radius:var(--md-shape-full);
+  border:3px solid transparent;cursor:pointer;
+  transition:transform var(--md-duration-short) var(--md-motion-standard),
+             border-color var(--md-duration-short) var(--md-motion-standard);
+  position:relative;overflow:hidden;
+}
+.theme-swatch:hover{ transform:scale(1.08) }
+.theme-swatch.active{ border-color:var(--md-on-surface); transform:scale(1.08) }
+.theme-swatch.active::after{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
+  background-size:24px;background-position:center;background-repeat:no-repeat;
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,.5));
+}
+
+.md-switch{
+  display:flex;align-items:center;gap:12px;cursor:pointer;
+  padding:12px 0;user-select:none;
+}
+.md-switch input{ display:none }
+.md-switch .track{
+  width:52px;height:32px;border-radius:var(--md-shape-full);
+  background:var(--md-surface-variant);
+  border:2px solid var(--md-outline);
+  position:relative;flex-shrink:0;
+  transition:background-color var(--md-duration-short) var(--md-motion-standard),
+             border-color var(--md-duration-short) var(--md-motion-standard);
+}
+.md-switch .track::after{
+  content:'';position:absolute;top:50%;right:calc(100% - 6px);
+  width:16px;height:16px;border-radius:50%;
+  background:var(--md-outline);
+  transform:translate(50%,-50%);
+  transition:width var(--md-duration-short),height var(--md-duration-short),
+             right var(--md-duration-medium) var(--md-motion-emphasized),
+             background-color var(--md-duration-short);
+}
+.md-switch input:checked + .track{
+  background:var(--md-primary);border-color:var(--md-primary);
+}
+.md-switch input:checked + .track::after{
+  right:6px;width:24px;height:24px;background:var(--md-on-primary);
+}
+.md-switch .label{
+  font-size:var(--md-typescale-body-large-size);
+  color:var(--md-on-surface);
+}
+
+.empty-state{
+  text-align:center;padding:40px 20px;
+  color:var(--md-on-surface-variant);
+  font-size:var(--md-typescale-body-medium-size);
+}
+.empty-state .material-symbols-rounded{
+  font-size:48px;opacity:.4;margin-bottom:12px;display:block;
+}
+
+@media (max-width: 600px){
+  :root{
+    --md-typescale-title-large-size:20px;
+    --md-typescale-title-large-line:26px;
+    --md-typescale-title-medium-size:15px;
+    --md-typescale-body-large-size:15px;
+    --md-typescale-body-large-line:22px;
+    --md-typescale-label-large-size:13px;
+  }
+
+  html, body{ width:100%; overflow-x:hidden; }
+  body{ min-width:320px; }
+
+  .md-top-app-bar{
+    height:56px;
+    padding:0 max(8px, env(safe-area-inset-left)) 0 max(8px, env(safe-area-inset-right));
+  }
+  .md-top-app-bar .title{
+    padding:0 2px;
+    font-size:19px;
+    line-height:24px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .md-top-app-bar .trailing{ gap:0; }
+  .md-icon-btn{ width:44px; height:44px; }
+  .material-symbols-rounded{ font-size:22px; }
+
+  .app-shell{
+    max-width:none;
+    width:100%;
+    padding-left:12px;
+    padding-right:12px;
+    padding-bottom:max(16px, env(safe-area-inset-bottom)) !important;
+  }
+  .screen[style*="padding-top"]{ padding-top:12px !important; }
+  .screen[style*="padding-bottom"]{ padding-bottom:max(20px, env(safe-area-inset-bottom)) !important; }
+
+  .welcome-banner{ padding:12px; gap:8px; border-radius:14px; }
+  .welcome-banner .emoji{ width:36px; height:36px; font-size:19px; }
+  .md-headline-small{ font-size:24px; line-height:30px; }
+  .section-label{ margin-bottom:6px; font-size:13px; }
+
+  .mb-5{ margin-bottom:16px; }
+  .mb-6{ margin-bottom:20px; }
+  .mt-6{ margin-top:20px; }
+
+  .activity-grid{gap:7px}
+  .activity-grid button{min-height:58px;padding:8px 9px}
+  .activity-grid button span{font-size:12px}
+  .activity-grid button small{font-size:9px}
+
+  .md-segmented{ min-height:44px; height:44px; }
+  .md-segmented button{
+    min-width:0;
+    padding:0 5px;
+    font-size:12px;
+    line-height:16px;
+    white-space:nowrap;
+  }
+  #scope-tabs{ min-height:44px; }
+  #scope-tabs button{ flex:1 1 20%; padding:0 3px; }
+  #scope-tabs button.active{ padding-right:19px; }
+  #scope-tabs button.active::before{ right:3px; width:13px; height:13px; }
+
+  .picker-trigger{ min-height:64px; padding:10px 12px; gap:10px; }
+  .picker-trigger .badge{ width:40px; height:40px; font-size:17px; }
+  .picker-trigger .value{ font-size:15px; }
+  .range-row{ gap:8px; }
+  .range-row .picker-trigger{ padding:10px 8px; }
+  .range-row .picker-trigger .value{ font-size:18px; }
+  .info-box{ padding:9px 11px; font-size:12px; }
+  .prefetch-bar{ padding:10px; margin-top:10px; }
+
+  .md-fab{ height:52px; min-height:52px; border-radius:16px; }
+  #start-btn{ height:52px !important; }
+
+  .quiz-topbar{ padding:10px 12px; margin-bottom:12px; border-radius:14px; }
+  .quiz-topbar .pill{ font-size:12px; }
+  .quran-card{
+    min-height:190px;
+    padding:24px 12px;
+    margin-bottom:12px;
+    border-radius:22px;
+  }
+  .quran-card .quran-text{
+    max-width:100%;
+    font-size:1.45rem;
+    line-height:2.25rem;
+    overflow-wrap:anywhere;
+  }
+  .blank-space{ min-width:72px; margin:0 4px; }
+  .options{ gap:9px; }
+  .option-btn{
+    min-height:52px;
+    padding:13px 11px;
+    border-radius:14px;
+    font-size:1.08rem;
+    line-height:1.65rem;
+  }
+
+  .review-head{ padding:12px; margin-bottom:12px; border-radius:14px; }
+  .review-head .row-top{ margin-bottom:9px; font-size:14px; }
+  .review-card{
+    min-height:230px;
+    padding:28px 14px;
+    margin-bottom:12px;
+    border-radius:22px;
+  }
+  .review-card .review-text{
+    max-width:100%;
+    font-size:1.78rem;
+    line-height:2.95rem;
+    overflow-wrap:anywhere;
+  }
+  .review-actions{ grid-template-columns:1fr auto 1fr; gap:6px; }
+  .review-actions .md-btn{ min-width:0; height:52px !important; padding:0 9px; }
+  .review-actions .md-btn .material-symbols-rounded{ font-size:21px; }
+  .review-actions .md-btn span:not(.material-symbols-rounded){ font-size:12px; }
+  .tafsir-panel{ padding:15px; max-height:38dvh; line-height:1.8; }
+
+  .result-wrap{ padding:20px 12px max(20px, env(safe-area-inset-bottom)); gap:16px; }
+  .result-row{ padding:13px 14px; font-size:14px; }
+  .result-row .val{ font-size:22px; }
+  .big-score{ padding:25px 14px; border-radius:22px; }
+  .big-score .value{ font-size:48px; }
+  .md-btn-lg{ height:52px; padding:0 20px; }
+
+  .stat-cards{ gap:8px; margin-bottom:16px; }
+  .stat-card{ padding:13px 4px; border-radius:14px; }
+  .stat-card .v{ font-size:24px; }
+  .stat-card .l{ font-size:11px; white-space:nowrap; }
+  .heatmap-grid{ gap:3px; margin-bottom:18px; }
+  .bar-chart{ height:128px; gap:4px; padding:12px 0 22px; }
+
+  .md-dialog-scrim{ padding:12px; }
+  .md-dialog{ max-height:92dvh; padding:18px; border-radius:22px; }
+  .md-dialog .actions{ margin-top:18px; flex-wrap:wrap; }
+  .md-dialog .actions .md-btn{ flex:1 1 auto; min-height:48px; }
+  .md-bottom-sheet{ max-height:92dvh; border-radius:24px 24px 0 0; }
+  .md-bottom-sheet .sheet-head{ padding:8px 12px 10px; }
+  .md-bottom-sheet .sheet-body{ padding:0 12px max(12px, env(safe-area-inset-bottom)); }
+  .md-bottom-sheet .sheet-search{ padding:0 12px 8px; }
+  .md-list-item{ min-height:56px; padding:9px 10px; }
+  .md-number-grid{ grid-template-columns:repeat(5,1fr); gap:7px; }
+  .md-number-chip{ min-height:48px; }
+  .theme-grid{ gap:13px; }
+}
+
+@media (max-width: 380px){
+  .md-top-app-bar .title{ font-size:17px; }
+  .md-top-app-bar .trailing .md-icon-btn{ width:40px; height:40px; }
+  .md-top-app-bar .trailing .material-symbols-rounded{ font-size:20px; }
+  .md-segmented button{ font-size:11px; }
+  #scope-tabs button.active{ padding-right:16px; }
+  #scope-tabs button.active::before{ width:11px; height:11px; }
+  .quran-card .quran-text{ font-size:1.3rem; line-height:2.05rem; }
+  .review-card .review-text{ font-size:1.6rem; line-height:2.65rem; }
+  .review-actions .md-btn{ padding:0 6px; }
+}
+
+.option-btn{min-height:56px;line-height:1.9;text-align:center}
+#question-text{line-height:2.1}
+@media (prefers-reduced-motion:no-preference){.option-btn.correct{animation:qpop .28s ease}.option-btn.wrong{animation:qshake .3s ease}}
+@keyframes qpop{50%{transform:scale(1.03)}}
+@keyframes qshake{25%{transform:translateX(6px)}75%{transform:translateX(-6px)}}
+.theme-teal{--md-seed:#00796B}.theme-terracotta{--md-seed:#B5532B}.theme-olive{--md-seed:#6B7A1F}.theme-indigo{--md-seed:#3949AB}.theme-sepia{--md-seed:#7A5230}
+body.theme-sepia:not(.dark){--md-surface:#F6EEDC;--md-surface-container-low:#EFE5CE;--md-surface-container:#EADFC6;--md-surface-container-high:#E7DABD}
+body.dark.oled{--md-surface:#000;--md-surface-container-lowest:#000;--md-surface-container-low:#0a0a0a;--md-surface-container:#101010;--md-surface-container-high:#161616;--md-surface-container-highest:#1c1c1c}
+#question-text,#review-ayah-text{zoom:var(--q-scale,1);line-height:var(--q-lh,2.1)}
+#theme-modal .md-dialog{max-height:90dvh;overflow-y:auto}
+/* ===== تحسين عرض الآيات والتفسير ===== */
+.review-card{ background:linear-gradient(180deg,var(--md-surface-container-low),var(--md-surface-container)); border:1px solid var(--md-outline-variant); }
+.review-card .review-text{
+  direction:rtl; text-align:center; text-wrap:balance;
+  font-size:clamp(1.65rem,6.4vw,2.35rem); line-height:2.15; word-spacing:.12em;
+  font-kerning:normal; text-rendering:optimizeLegibility;
+  font-feature-settings:"kern","liga","calt","mark","mkmk";
+  -webkit-font-smoothing:antialiased; user-select:text; -webkit-user-select:text;
+}
+.review-card .review-text.ayah-anim{ animation:ayahIn .35s ease both; }
+@keyframes ayahIn{ from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
+.review-text .ayah-end{ display:inline; margin-inline-start:.3em; color:var(--md-primary); font:700 .5em 'Tajawal','Roboto',sans-serif; word-spacing:0; vertical-align:middle; }
+.review-text .sajda-tag{ display:inline-block; margin-inline-start:.4em; padding:.2em .7em; border-radius:999px; background:var(--md-primary-container,rgba(128,128,128,.18)); color:var(--md-on-primary-container,inherit); font:500 .42em 'Tajawal','Roboto',sans-serif; word-spacing:0; vertical-align:middle; }
+.tafsir-panel{
+  direction:rtl; text-align:right; background:var(--md-surface-container);
+  font-family:'Tajawal','Awsat Digital',system-ui,sans-serif; font-size:1.02rem; line-height:2.05;
+  max-height:min(42dvh,360px); overscroll-behavior:contain;
+}
+.tafsir-panel p{ white-space:pre-line; }
+@media (prefers-reduced-motion:reduce){ .review-card .review-text.ayah-anim{ animation:none } }
+</style>
+</head>
+
+<body class="theme-red">
+
+<header class="md-top-app-bar" id="app-bar">
+  <div class="leading">
+    <span class="title">اختبار القرآن الكريم</span>
+  </div>
+  <div class="trailing">
+    <button class="md-icon-btn md-state" data-action="show-stats" title="الإحصائيات" aria-label="الإحصائيات">
+      <span class="material-symbols-rounded">bar_chart</span>
+    </button>
+    <button class="md-icon-btn md-state" data-action="open-profiles" title="الملفات الشخصية" aria-label="الملفات الشخصية">
+      <span class="material-symbols-rounded">account_circle</span>
+    </button>
+    <button class="md-icon-btn md-state" data-action="open-themes" title="المظهر" aria-label="المظهر">
+      <span class="material-symbols-rounded">palette</span>
+    </button>
+    <button class="md-icon-btn md-state telegram-share-btn" data-action="share-progress" title="مشاركة" aria-label="مشاركة التقدم">
+      <span class="material-symbols-rounded">share</span>
+    </button>
+    <button class="md-icon-btn md-state" id="btn-darkmode" title="الوضع الليلي" aria-label="الوضع الليلي">
+      <span class="material-symbols-rounded">dark_mode</span>
+    </button>
+  </div>
+</header>
+
+<main id="setup-screen" class="screen app-shell grow" style="padding-bottom:32px">
+
+  <div id="welcome-banner" class="welcome-banner hidden mb-4">
+    <div class="emoji" id="welcome-emoji">📖</div>
+    <div id="welcome-text" class="grow"></div>
+  </div>
+<h1 class="md-headline-small mb-6" style="font-weight:500">إعداد الجلسة</h1>
+
+  
+  <div class="mb-5">
+    <label class="section-label">نوع النشاط</label>
+    <div class="activity-grid" id="activity-segmented">
+      <button type="button" class="active" data-value="fill-blank"><span>ملء الفراغ</span><small>اختر الكلمة الناقصة</small></button>
+      <button type="button" data-value="complete-ayah"><span>أكمل الآية</span><small>اختر التتمة</small></button>
+      <button type="button" data-value="continue-ayah"><span>تتمة الآية</span><small>ما الذي يأتي بعدها؟</small></button>
+      <button type="button" data-value="identify-surah"><span>تحديد السورة</span><small>أين وردت الآية؟</small></button>
+      <button type="button" data-value="ayah-number"><span>رقم الآية</span><small>حدد موضعها</small></button>
+      <button type="button" data-value="true-false"><span>صح أم خطأ</span><small>تحقق من النص</small></button>
+      <button type="button" data-value="mutashabihat"><span>المتشابهات</span><small>ميز الكلمة الصحيحة</small></button>
+      <button type="button" data-value="word-difference"><span>الكلمة المختلفة</span><small>اكتشف الفرق</small></button>
+      <button type="button" data-value="match-edges"><span>وصل البداية بالنهاية</span><small>اختر المطابقة</small></button>
+      <button type="button" data-value="before-after"><span>قبل وبعد</span><small>حدد الآية المجاورة</small></button>
+      <button type="button" data-value="location"><span>موضع الآية</span><small>جزء أو حزب أو صفحة</small></button>
+      <button type="button" data-value="word-order"><span>ترتيب الكلمات</span><small>اختر الترتيب الصحيح</small></button>
+      <button type="button" data-value="timed"><span>تحدي الوقت</span><small>60 ثانية</small></button>
+      <button type="button" data-value="streak"><span>السلسلة</span><small>استمر بلا خطأ</small></button>
+      <button type="button" data-value="daily"><span>التحدي اليومي</span><small>يتجدد كل يوم</small></button>
+      <button type="button" data-value="comprehensive"><span>اختبار شامل</span><small>أنواع متنوعة</small></button>
+      <button type="button" data-value="review"><span>مراجعة الآيات</span><small>تنقل باللمس</small></button>
+    </div>
+    <select id="activity-mode" class="hidden">
+      <option value="fill-blank" selected>اختبار ملء الفراغ</option>
+      <option value="complete-ayah">أكمل الآية</option>
+      <option value="continue-ayah">اختر تتمة الآية</option>
+      <option value="identify-surah">تحديد السورة</option>
+      <option value="ayah-number">تحديد رقم الآية</option>
+      <option value="true-false">صح أم خطأ</option>
+      <option value="mutashabihat">الآيات المتشابهة</option>
+      <option value="word-difference">الكلمة المختلفة</option>
+      <option value="match-edges">وصل البداية بالنهاية</option>
+      <option value="before-after">ما قبل الآية وما بعدها</option>
+      <option value="location">موضع الآية</option>
+      <option value="word-order">ترتيب كلمات الآية</option>
+      <option value="timed">تحدي الوقت</option>
+      <option value="streak">سلسلة الإجابات الصحيحة</option>
+      <option value="daily">التحدي اليومي</option>
+      <option value="comprehensive">اختبار شامل</option>
+      <option value="review">مراجعة الآيات</option>
+    </select>
+  </div>
+
+  
+  <div class="mb-5">
+    <label class="section-label">نطاق التحديد</label>
+    <div class="md-segmented" id="scope-tabs" style="flex-wrap:wrap;height:auto;border-radius:var(--md-shape-full)">
+      <button type="button" class="active" data-scope="surah">سورة</button>
+      <button type="button" data-scope="page">صفحات</button>
+      <button type="button" data-scope="juz">أجزاء</button>
+      <button type="button" data-scope="hizb">أحزاب</button>
+      <button type="button" data-scope="rub">أرباع</button>
+    </div>
+  </div>
+
+  
+  <div id="surah-scope" class="scope-panel mb-5">
+    <button class="picker-trigger md-state" data-action="open-surah">
+      <div class="badge" id="surah-trigger-badge">2</div>
+      <div class="content">
+        <div class="label">السورة المختارة</div>
+        <div class="value" id="surah-trigger-value">سُورَةُ البَقَرَةِ</div>
+      </div>
+      <span class="material-symbols-rounded chev">chevron_left</span>
+    </button>
+    <div class="range-row">
+      <button class="picker-trigger md-state" data-action="open-number" data-field="from" data-type="ayah">
+        <div class="content"><div class="label">من الآية</div><div class="value" id="display-from-ayah">1</div></div>
+      </button>
+      <button class="picker-trigger md-state" data-action="open-number" data-field="to" data-type="ayah">
+        <div class="content"><div class="label">إلى الآية</div><div class="value" id="display-to-ayah">النهاية</div></div>
+      </button>
+    </div>
+    <div class="info-box" id="ayah-hint">اختر سورة</div>
+  </div>
+
+  
+  <div id="page-scope" class="scope-panel hidden mb-5">
+    <div class="range-row">
+      <button class="picker-trigger md-state" data-action="open-number" data-field="from" data-type="page">
+        <div class="content"><div class="label">من الصفحة</div><div class="value" id="display-from-page">1</div></div>
+      </button>
+      <button class="picker-trigger md-state" data-action="open-number" data-field="to" data-type="page">
+        <div class="content"><div class="label">إلى الصفحة</div><div class="value" id="display-to-page">1</div></div>
+      </button>
+    </div>
+    <div class="info-box">المصحف يحتوي على 604 صفحات</div>
+  </div>
+
+  
+  <div id="juz-scope" class="scope-panel hidden mb-5">
+    <div class="range-row">
+      <button class="picker-trigger md-state" data-action="open-number" data-field="from" data-type="juz">
+        <div class="content"><div class="label">من الجزء</div><div class="value" id="display-from-juz">1</div></div>
+      </button>
+      <button class="picker-trigger md-state" data-action="open-number" data-field="to" data-type="juz">
+        <div class="content"><div class="label">إلى الجزء</div><div class="value" id="display-to-juz">1</div></div>
+      </button>
+    </div>
+    <div class="info-box">القرآن يحتوي على 30 جزءاً</div>
+  </div>
+
+  
+  <div id="hizb-scope" class="scope-panel hidden mb-5">
+    <div class="range-row">
+      <button class="picker-trigger md-state" data-action="open-number" data-field="from" data-type="hizb">
+        <div class="content"><div class="label">من الحزب</div><div class="value" id="display-from-hizb">1</div></div>
+      </button>
+      <button class="picker-trigger md-state" data-action="open-number" data-field="to" data-type="hizb">
+        <div class="content"><div class="label">إلى الحزب</div><div class="value" id="display-to-hizb">1</div></div>
+      </button>
+    </div>
+    <div class="info-box">القرآن يحتوي على 60 حزباً</div>
+  </div>
+
+  
+  <div id="rub-scope" class="scope-panel hidden mb-5">
+    <div class="range-row">
+      <button class="picker-trigger md-state" data-action="open-number" data-field="from" data-type="rub">
+        <div class="content"><div class="label">من الربع</div><div class="value" id="display-from-rub">1</div></div>
+      </button>
+      <button class="picker-trigger md-state" data-action="open-number" data-field="to" data-type="rub">
+        <div class="content"><div class="label">إلى الربع</div><div class="value" id="display-to-rub">1</div></div>
+      </button>
+    </div>
+    <div class="info-box">القرآن يحتوي على 240 ربعاً</div>
+  </div>
+
+  
+  <div id="difficulty-container" class="mb-5">
+    <label class="section-label">مستوى الصعوبة</label>
+    <div class="md-segmented" id="difficulty-segmented">
+      <button type="button" class="active" data-value="easy">مبتدئ</button>
+      <button type="button" data-value="medium">متوسط</button>
+      <button type="button" data-value="hard">متقدم</button>
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <label class="md-switch"><input type="checkbox" id="setting-challenge"><span class="track"></span><span class="label">وضع التحدي: يتناوب اللاعبون على نفس الأسئلة</span></label>
+    <div id="challenge-players" class="hidden" style="margin-top:8px"></div>
+  </div>
+
+  <div id="questions-count-container" class="mb-5">
+    <label class="section-label">عدد الأسئلة</label>
+    <div class="md-segmented" id="count-segmented">
+      <button type="button" data-value="5">5</button>
+      <button type="button" class="active" data-value="10">10</button>
+      <button type="button" data-value="20">20</button>
+      <button type="button" data-value="30">30</button>
+    </div>
+    <select id="questions-count" class="hidden">
+      <option value="5">5</option><option value="10" selected>10</option>
+      <option value="20">20</option><option value="30">30</option>
+    </select>
+  </div>
+
+  
+  <button id="start-btn" class="md-fab w-full md-state" style="width:100%;justify-content:center;height:56px">
+    <span class="material-symbols-rounded filled">play_arrow</span>
+    <span>بدء</span>
+  </button>
+
+  <div id="prefetch-status" class="prefetch-bar loading">
+    <div class="md-circular-progress sm"></div>
+    <span>جاري تحضير البيانات...</span>
+  </div>
+</main>
+
+<main id="quiz-screen" class="screen hidden-screen app-shell grow" style="padding-top:16px;padding-bottom:32px">
+  <div class="quiz-topbar">
+    <span class="pill" id="question-counter">السؤال 1 من 10</span>
+    <span class="pill timer-pill hidden" id="timer-display">01:00</span>
+    <span class="pill score" id="score-display">النقاط: 0</span>
+  </div>
+  <div class="md-linear-progress" style="margin:-2px 0 14px"><div id="quiz-progress" class="fill" style="width:0%"></div></div>
+
+  <div class="quran-card">
+    <p id="question-text" class="quran-text"></p>
+  </div>
+
+  <div id="options-container" class="options"></div>
+
+  <button data-action="end-test" class="md-btn md-btn-outlined md-btn-block md-state mt-6">
+    <span class="material-symbols-rounded">stop_circle</span>
+    إنهاء الاختبار
+  </button>
+</main>
+
+<main id="review-screen" class="screen hidden-screen app-shell grow" style="padding-top:16px;padding-bottom:32px">
+  <div class="review-head">
+    <div class="row-top">
+      <span id="review-surah-name"></span>
+      <span id="review-ayah-counter" class="ayah-counter"></span>
+    </div>
+    <div class="md-linear-progress"><div id="review-progress" class="fill" style="width:0%"></div></div>
+  </div>
+
+  <div id="swipe-container" class="review-card">
+    <span class="material-symbols-rounded swipe-hint left">arrow_back</span>
+    <span class="material-symbols-rounded swipe-hint right">arrow_forward</span>
+    <p id="review-ayah-text" class="review-text"></p>
+  </div>
+
+  <div class="review-actions">
+    <button id="prev-ayah-btn" class="md-btn md-btn-tonal md-state" style="height:56px">
+      <span class="material-symbols-rounded">chevron_right</span>
+      <span class="hidden-xs">السابق</span>
+    </button>
+    <button data-action="toggle-tafsir" class="md-btn md-btn-outlined md-state" style="height:56px">
+      <span class="material-symbols-rounded">menu_book</span>
+      <span>التفسير</span>
+    </button>
+    <button id="next-ayah-btn" class="md-btn md-btn-tonal md-state" style="height:56px">
+      <span class="hidden-xs">التالي</span>
+      <span class="material-symbols-rounded">chevron_left</span>
+    </button>
+  </div>
+
+  <div id="tafsir-panel" class="tafsir-panel hidden"></div>
+
+  <div id="mutashabihat-warning" class="mutashabihat-warning hidden">
+    <strong>⚠️ تنبيه:</strong> <span id="mutashabihat-text"></span>
+  </div>
+
+  <button data-action="reset" class="md-btn md-btn-text md-btn-block md-state mt-4">
+    <span class="material-symbols-rounded">arrow_forward</span>
+    إنهاء المراجعة والعودة
+  </button>
+</main>
+
+<main id="result-screen" class="screen hidden-screen grow" style="display:flex;flex-direction:column">
+  <div class="md-top-app-bar" style="background:var(--md-primary);color:var(--md-on-primary)">
+    <div class="leading">
+      <button data-action="reset" class="md-icon-btn" style="color:var(--md-on-primary)">
+        <span class="material-symbols-rounded">arrow_forward</span>
+      </button>
+    </div>
+    <div class="title">نتيجة الاختبار</div>
+    <div class="trailing"></div>
+  </div>
+
+  <div class="result-wrap">
+    <div class="result-stats">
+      <div class="result-row">
+        <span>عدد الأسئلة</span>
+        <span class="val" id="res-total">0</span>
+      </div>
+      <div class="result-row correct">
+        <span>الإجابات الصحيحة</span>
+        <span class="val" id="res-correct">0</span>
+      </div>
+      <div class="result-row wrong">
+        <span>الإجابات الخاطئة</span>
+        <span class="val" id="res-wrong">0</span>
+      </div>
+    </div>
+
+    <div class="big-score">
+      <div class="label">العلامة النهائية</div>
+      <div class="value" id="res-score">0/100</div>
+    </div>
+    <p id="res-msg" style="white-space:pre-line;text-align:center;margin:16px 0;line-height:1.8;color:var(--md-on-surface-variant)"></p>
+
+    <div style="margin-top:auto;display:flex;flex-direction:column;gap:12px">
+      <button id="next-player-btn" data-action="next-player" class="md-btn md-btn-filled md-btn-lg md-btn-block md-state" style="display:none"></button>
+      <button id="share-challenge-btn" data-action="share-challenge" class="md-btn md-btn-tonal md-btn-lg md-btn-block md-state" style="display:none"><span class="material-symbols-rounded">share</span>مشاركة نتيجة التحدي</button>
+      <button id="retry-btn" data-action="retry-missed" class="md-btn md-btn-tonal md-btn-lg md-btn-block md-state" style="display:none">
+        <span class="material-symbols-rounded">replay</span>
+        أعد الأسئلة التي أخطأت فيها
+      </button>
+      <button data-action="reset" class="md-btn md-btn-filled md-btn-lg md-btn-block md-state">
+        <span class="material-symbols-rounded">restart_alt</span>
+        اختبار جديد
+      </button>
+    </div>
+  </div>
+</main>
+
+<main id="stats-screen" class="screen hidden-screen app-shell grow" style="padding-top:16px;padding-bottom:32px">
+  <div class="row gap-2 mb-5">
+    <button data-action="back-to-setup" class="md-icon-btn md-state">
+      <span class="material-symbols-rounded">arrow_forward</span>
+    </button>
+    <h2 class="md-title-large grow">📊 إحصائياتي</h2>
+  </div>
+
+  <div class="stat-cards">
+    <div class="stat-card"><div class="v" id="stat-total-tests">0</div><div class="l">اختبار</div></div>
+    <div class="stat-card"><div class="v" id="stat-answered">0</div><div class="l">إجابة</div></div>
+    <div class="stat-card"><div class="v" id="stat-accuracy">0%</div><div class="l">الدقة</div></div>
+    <div class="stat-card"><div class="v" id="stat-avg-score">0</div><div class="l">متوسط العلامة</div></div>
+    <div class="stat-card"><div class="v" id="stat-best-score">0</div><div class="l">أفضل علامة</div></div>
+    <div class="stat-card"><div class="v" id="stat-streak">0</div><div class="l">أيام متواصلة</div></div>
+  </div>
+
+  <h3 class="md-title-medium mb-3">نشاط آخر 12 أسبوعاً</h3>
+  <div id="heatmap-container"></div>
+  <div class="activity-legend" aria-label="مفتاح كثافة النشاط">
+    <span>أقل نشاطاً</span><i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><span>أكثر نشاطاً</span>
+  </div>
+
+  <h3 class="md-title-medium mb-3">آخر 10 اختبارات</h3>
+  <div id="bar-chart-container" class="bar-chart"></div>
+
+  <h3 class="md-title-medium mb-3 mt-6">🔍 تحليل الأداء</h3>
+  <div id="weakness-analysis"></div>
+
+  <section class="error-bank-card" aria-labelledby="error-bank-title">
+    <div class="row gap-2">
+      <span class="material-symbols-rounded error-bank-icon">auto_stories</span>
+      <div class="grow">
+        <h3 id="error-bank-title" class="md-title-medium" style="margin:0">بنك الأخطاء</h3>
+        <p class="text-muted md-body-small" style="margin:4px 0 0">الآيات التي تحتاج إلى مراجعة إضافية</p>
+      </div>
+      <strong id="error-bank-count" class="error-bank-count">0</strong>
+    </div>
+    <div id="error-bank-preview" class="error-bank-preview"></div>
+    <button data-action="start-errors" class="md-btn md-btn-tonal md-btn-block md-state" style="margin-top:12px">
+      <span class="material-symbols-rounded">replay</span>ابدأ اختبار الأخطاء
+    </button>
+  </section>
+</main>
+
+<div id="scrim" class="md-scrim" data-close-self></div>
+
+<section id="surah-picker" class="md-bottom-sheet" role="dialog" aria-modal="true">
+  <div class="handle"></div>
+  <div class="sheet-head">
+    <h3>اختر السورة</h3>
+    <button data-action="close-surah" class="md-icon-btn md-state">
+      <span class="material-symbols-rounded">close</span>
+    </button>
+  </div>
+  <div class="sheet-search">
+    <div class="md-textfield">
+      <input type="text" id="surah-search" placeholder=" " autocomplete="off">
+      <label for="surah-search">ابحث عن سورة…</label>
+    </div>
+  </div>
+  <div class="sheet-body" id="surah-list-content"></div>
+</section>
+
+<section id="number-picker" class="md-bottom-sheet" role="dialog" aria-modal="true">
+  <div class="handle"></div>
+  <div class="sheet-head">
+    <h3 id="number-picker-title">اختر الرقم</h3>
+    <button data-action="close-number" class="md-icon-btn md-state">
+      <span class="material-symbols-rounded">close</span>
+    </button>
+  </div>
+  <div class="sheet-search">
+    <div class="md-textfield">
+      <input type="number" id="number-jump" placeholder=" " min="1">
+      <label for="number-jump">اذهب إلى رقم…</label>
+    </div>
+  </div>
+  <div class="sheet-body" id="number-grid-content"></div>
+</section>
+
+<div id="profiles-modal" class="md-dialog-scrim" data-close-self>
+  <div class="md-dialog" role="dialog" aria-modal="true">
+    <h3>الملفات الشخصية</h3>
+    <div id="profiles-list" class="profiles-list"></div>
+
+    <div id="new-profile-form" class="hidden">
+      <div class="md-textfield mb-3">
+        <input type="text" id="new-profile-name" placeholder=" " maxlength="20" autocomplete="off">
+        <label for="new-profile-name">اسم الملف الشخصي</label>
+      </div>
+      <div class="row gap-2">
+        <button data-action="confirm-profile" class="md-btn md-btn-filled grow md-state">حفظ</button>
+        <button data-action="cancel-profile" class="md-btn md-btn-text grow md-state">إلغاء</button>
+      </div>
+    </div>
+
+    <button id="btn-show-new-profile" data-action="show-new-profile"
+            class="md-btn md-btn-tonal md-btn-block md-state mt-4">
+      <span class="material-symbols-rounded">add</span>
+      إنشاء ملف شخصي جديد
+    </button>
+
+    <div class="actions">
+      <button data-action="close-profiles" class="md-btn md-btn-text md-state">إغلاق</button>
+    </div>
+  </div>
+</div>
+
+<div id="theme-modal" class="md-dialog-scrim" data-close-self>
+  <div class="md-dialog" role="dialog" aria-modal="true">
+    <h3>المظهر والإعدادات</h3>
+    <div id="theme-grid" class="theme-grid"></div>
+    <div style="display:flex;align-items:center;gap:12px;margin:12px 0"><label for="custom-color" style="flex:1">لون مخصص</label><input type="color" id="custom-color" style="width:56px;height:36px;border:0;background:none"></div>
+    <div style="border-top:1px solid var(--md-outline-variant);padding-top:12px">
+      <p id="font-preview" class="quran-text" style="text-align:center;margin:0 0 8px;font-size:1.4rem;zoom:var(--q-scale,1);line-height:var(--q-lh,2.1)">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+      <label style="display:block">حجم الخط</label><input type="range" id="set-size" min="80" max="160" step="10" style="width:100%">
+      <label style="display:block">تباعد الأسطر</label><input type="range" id="set-lh" min="1.6" max="3" step="0.2" style="width:100%">
+    </div>
+    <div style="border-top:1px solid var(--md-outline-variant);margin-top:12px;padding-top:8px">
+      <label class="md-switch"><input type="checkbox" id="setting-oled"><span class="track"></span><span class="label">وضع ليلي أسود خالص (OLED)</span></label>
+      <label class="md-switch"><input type="checkbox" id="setting-auto-dark"><span class="track"></span><span class="label">الوضع الليلي تلقائي حسب الجوال</span></label>
+    </div>
+    <div style="display:flex;gap:8px;margin:12px 0">
+      <button id="btn-backup" class="md-btn md-btn-tonal md-state" style="flex:1">نسخ احتياطي</button>
+      <button id="btn-restore" class="md-btn md-btn-outlined md-state" style="flex:1">استعادة</button>
+      <input type="file" id="restore-file" accept="application/json,.json" hidden>
+    </div>
+
+    <div style="border-top:1px solid var(--md-outline-variant);padding-top:16px">
+      <label class="md-switch">
+        <input type="checkbox" id="setting-tajweed">
+        <span class="track"></span>
+        <span class="label">ألوان التجويد</span>
+      </label>
+      <label class="md-switch">
+        <input type="checkbox" id="setting-mutashabihat">
+        <span class="track"></span>
+        <span class="label">تنبيه الآيات المتشابهة</span>
+      </label>
+    </div>
+
+    <div class="actions">
+      <button data-action="close-themes" class="md-btn md-btn-text md-state">إغلاق</button>
+    </div>
+  </div>
+</div>
+
+<div id="snackbar" class="md-snackbar" role="status" aria-live="polite">
+  <span class="text" id="snackbar-text"></span>
+  <button class="action hidden" id="snackbar-action"></button>
+</div>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+
+<script>
+'use strict';
+
+const $  = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
+const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
+const uid = () => `id_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,7)}`;
+const dateKey = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const todayStr = () => dateKey(new Date());
+const daysAgoStr = n => { const d = new Date(); d.setDate(d.getDate()-n); return dateKey(d); };
+const clamp = (v,mi,ma) => Math.min(Math.max(v,mi),ma);
+const vibrate = p => { try{ navigator.vibrate && navigator.vibrate(p); }catch(_){} };
+const prefersReducedMotion = () =>
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const escapeHTML = value => String(value ?? '').replace(/[&<>\"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch]));
+
+const Snackbar = {
+  _t:null,
+  show(msg, { action, onAction, duration = 4000 } = {}) {
+    const el = $('#snackbar');
+    const txt = $('#snackbar-text');
+    const act = $('#snackbar-action');
+    txt.textContent = msg;
+
+    if (action && typeof onAction === 'function') {
+      act.classList.remove('hidden');
+      act.textContent = action;
+      act.onclick = () => { onAction(); this.hide(); };
+    } else {
+      act.classList.add('hidden');
+      act.onclick = null;
+    }
+
+    el.classList.add('show');
+    clearTimeout(this._t);
+    if (duration > 0) this._t = setTimeout(() => this.hide(), duration);
+  },
+  hide() {
+    $('#snackbar').classList.remove('show');
+  }
+};
+
+function attachRipple(el) {
+  el.addEventListener('pointerdown', e => {
+    if (el.disabled || prefersReducedMotion()) return;
+    const rect = el.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const ink = document.createElement('span');
+    ink.className = 'md-ripple-ink';
+    ink.style.width = ink.style.height = size + 'px';
+    ink.style.left = (e.clientX - rect.left - size/2) + 'px';
+    ink.style.top  = (e.clientY - rect.top  - size/2) + 'px';
+    el.appendChild(ink);
+    setTimeout(() => { if(ink.isConnected) ink.remove(); }, 600);
+  });
+}
+function attachRippleAll(root = document) {
+  $$('.md-state', root).forEach(el => {
+    if (!el.dataset.rippleBound) {
+      el.dataset.rippleBound = '1';
+      attachRipple(el);
+    }
+  });
+}
+
+const PRESS_DELAY = 160;
+function afterPress(el, callback, delay = PRESS_DELAY){
+  if(el?.dataset.pressing === 'true') return;
+  if(el) el.dataset.pressing = 'true';
+  setTimeout(() => {
+    try{
+      if(el && typeof el.blur === 'function') el.blur();
+      Promise.resolve(callback()).finally(() => { if(el) el.removeAttribute('data-pressing'); });
+    }catch(error){
+      if(el) el.removeAttribute('data-pressing');
+      throw error;
+    }
+  }, delay);
+}
+
+const Storage = {
+  get(k, fb = null) { try { const v = localStorage.getItem(k); return v == null ? fb : JSON.parse(v); } catch { return fb; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch(_) {} }
+};
+
+const TelegramBridge = {
+  tg: null,
+  init(){
+    this.tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
+    if(!this.tg) return false;
+    try{
+      document.body.classList.add('telegram-app');
+      this.tg.ready();
+      this.tg.expand();
+      if(this.tg.setHeaderColor) this.tg.setHeaderColor(this.tg.themeParams?.bg_color || 'bg_color');
+      if(this.tg.setBackgroundColor) this.tg.setBackgroundColor(this.tg.themeParams?.bg_color || 'bg_color');
+      this.tg.BackButton?.onClick(() => this.handleBack());
+      bus.on('screen:changed', screen => this.syncBackButton(screen));
+      return true;
+    }catch(err){ console.warn('[Telegram]', err); return false; }
+  },
+  syncBackButton(screen){
+    if(!this.tg?.BackButton) return;
+    const hasOverlay = ['.md-dialog-scrim.active','.md-bottom-sheet.active','.md-scrim.active'].some(sel => $(sel));
+    if(screen !== 'setup' || hasOverlay) this.tg.BackButton.show(); else this.tg.BackButton.hide();
+  },
+  handleBack(){
+    if($('.md-dialog-scrim.active')){ $('.md-dialog-scrim.active').classList.remove('active'); return; }
+    if($('.md-bottom-sheet.active') || $('#scrim.active')){ Overlay.close(); return; }
+    if(ScreenManager.current !== 'setup'){ ScreenManager.show('setup'); updateWelcomeBanner(); return; }
+    this.tg?.close();
+  },
+  share(text){
+    const url = window.location.href;
+    const payload = { title:'اختبار القرآن الكريم', text, url };
+    if(navigator.share){ navigator.share(payload).catch(() => {}); return; }
+    if(this.tg?.switchInlineQuery){ this.tg.switchInlineQuery(text, ['users','groups','channels']); return; }
+    if(navigator.clipboard){ navigator.clipboard.writeText(`${text}\n${url}`).then(() => Snackbar.show('تم نسخ نتيجة التقدم للمشاركة.')); return; }
+    Snackbar.show('انسخ رابط التطبيق لمشاركة تقدمك.');
+  }
+};
+
+const CONFIG = Object.freeze({
+  API: {
+    quran:'https://api.alquran.cloud/v1',
+    tafsirEdition:'ar-tafsir-muyassar',
+    tafsirCloud:'ar.muyassar',
+    tafsirCdn:['https://cdn.jsdelivr.net/gh/spa5k/tafsir_api@main/tafsir','https://raw.githubusercontent.com/spa5k/tafsir_api/main/tafsir']
+  },
+  KEYS: {
+    theme:'quran.theme', dark:'quran.dark',
+    profiles:'quran.profiles', activeProfile:'quran.activeProfile', settings:'quran.settings'
+  },
+  LIMITS: {
+    surahs:114, pages:604, juz:30, hizb:60, rub:240,
+    maxPrefetch:60, maxProfiles:8,
+    sessionTTL: 7*24*60*60*1000,
+    swipeThreshold:60, prefetchDelay:350, answerDelay:1200, maxScore:100
+  },
+  AVATAR: {
+    colors:['#B3261E','#1565C0','#146C2E','#6750A4','#B26A00','#B3456E','#00838F','#558B2F'],
+    emojis:['📖','🕌','⭐','🌙','🕋','🌟','📚','🤲']
+  },
+  THEMES: ['theme-red','theme-blue','theme-emerald','theme-purple','theme-gold','theme-slate','theme-pink','theme-teal','theme-terracotta','theme-olive','theme-indigo','theme-sepia'],
+  THEME_COLORS: {
+    'theme-red':'#B3261E', 'theme-blue':'#1565C0', 'theme-emerald':'#146C2E',
+    'theme-purple':'#6750A4', 'theme-gold':'#B26A00', 'theme-slate':'#4A5560', 'theme-pink':'#B3456E', 'theme-teal':'#00796B', 'theme-terracotta':'#B5532B', 'theme-olive':'#6B7A1F', 'theme-indigo':'#3949AB', 'theme-sepia':'#7A5230'
+  }
+});
+
+class EventBus {
+  constructor(){ this._l = new Map(); }
+  on(e, cb){ if(!this._l.has(e)) this._l.set(e, []); this._l.get(e).push(cb); return () => this.off(e, cb); }
+  off(e, cb){ const a = this._l.get(e); if(a) this._l.set(e, a.filter(f => f !== cb)); }
+  emit(e, p){ (this._l.get(e) || []).forEach(cb => { try { cb(p); } catch(err) { console.error(`[Bus] ${e}:`, err); } }); }
+}
+const bus = new EventBus();
+
+class QuranAPI {
+  constructor(){ this._cache = new Map(); this._pending = new Map(); }
+  async _fetch(url, tf, o = {}){
+    if(this._cache.has(url)) return this._cache.get(url);
+    if(this._pending.has(url)) return this._pending.get(url);
+    const p = (async () => {
+      let lastError;
+      for(let attempt = 0; attempt < (o.tries ?? 3); attempt++){
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), o.timeout ?? 20000);
+        try{
+          const response = await fetch(url, { signal: controller.signal, cache: 'no-store' });
+          if(!response.ok) throw new Error(`HTTP ${response.status}`);
+          const data = await response.json();
+          const result = tf(data);
+          this._cache.set(url, result);
+          return result;
+        }catch(error){
+          lastError = error;
+          if(attempt < (o.tries ?? 3) - 1) await new Promise(resolve => setTimeout(resolve, 350 * (attempt + 1)));
+        }finally{
+          clearTimeout(timer);
+        }
+      }
+      throw lastError || new Error('تعذر تحميل البيانات');
+    })()
+      .finally(() => this._pending.delete(url));
+    this._pending.set(url, p);
+    return p;
+  }
+  _strip(a){
+    if(typeof a.text !== 'string') return a;
+    const sajda = !!a.sajda || /\u06E9/.test(a.text);
+    let text = a.text.replace(/[\u06DD\u06DE\u06E9\u25CC]/g, '').replace(/\s{2,}/g, ' ').trim();
+    const sn = a.surah && a.surah.number;
+    if(a.numberInSurah === 1 && sn && sn !== 1 && sn !== 9){
+      const plain = text.replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, '');
+      const w = text.split(/\s+/);
+      if(plain.startsWith('بسم') && w.length > 4) text = w.slice(4).join(' ');
+    }
+    return { ...a, text, sajda };
+  }
+  _n(a, fb = { number: 0, name: 'سورة' }){ return a.map(x => this._strip({ ...x, surah: x.surah || fb })); }
+  listSurahs(){ return this._fetch(`${CONFIG.API.quran}/surah`, d => { if(d.code !== 200) throw new Error('surahs'); return d.data; }); }
+  getSurah(n){ return this._fetch(`${CONFIG.API.quran}/surah/${n}/quran-uthmani`, d => {
+    if(d.code !== 200) throw new Error('surah');
+    return d.data.ayahs.map(a => this._strip({ ...a, surah: { number: n, name: d.data.name } }));
+  }); }
+  getPage(n){ return this._fetch(`${CONFIG.API.quran}/page/${n}/quran-uthmani`, d => { if(d.code !== 200) throw new Error('page'); return this._n(d.data.ayahs); }); }
+  getJuz(n){ return this._fetch(`${CONFIG.API.quran}/juz/${n}/quran-uthmani`, d => { if(d.code !== 200) throw new Error('juz'); return this._n(d.data.ayahs); }); }
+  getRub(n){ return this._fetch(`${CONFIG.API.quran}/hizbQuarter/${n}/quran-uthmani`, d => { if(d.code !== 200) throw new Error('rub'); return this._n(d.data.ayahs); }); }
+  async getTafsir(s, a){
+    const A = CONFIG.API, key = `quran.tafsir.v2.${A.tafsirEdition}.${s}.${a}`;
+    try{ const hit = localStorage.getItem(key); if(hit) return hit; }catch(e){}
+    const sources = [
+      ...A.tafsirCdn.map(base => ({ url: `${base}/${A.tafsirEdition}/${s}/${a}.json`, pick: d => d && d.text })),
+      { url: `${A.quran}/ayah/${s}:${a}/${A.tafsirCloud}`, pick: d => d && d.code === 200 && d.data && d.data.text }
+    ];
+    for(const src of sources){
+      try{
+        const text = await this._fetch(src.url, d => {
+          const clean = String(src.pick(d) || '').replace(/<[^>]+>/g, ' ').replace(/[ \t]+/g, ' ').replace(/\s*\n\s*/g, '\n').trim();
+          if(!clean) throw new Error('empty tafsir');
+          return clean;
+        }, { tries: 2, timeout: 8000 });
+        try{ localStorage.setItem(key, text); }catch(e){}
+        return text;
+      }catch(err){ console.warn('[tafsir] source failed:', src.url, err); }
+    }
+    return null;
+  }
+  searchVerse(t){
+    return this._fetch(`${CONFIG.API.quran}/search/${encodeURIComponent(t)}/all/ar`,
+      d => d.code === 200 ? d.data : { count: 0, matches: [] }).catch(() => ({ count: 0, matches: [] }));
+  }
+  async similarVerses(a){
+    const words = String(a.text || '').trim().split(/\s+/).filter(Boolean);
+    if(!words.length || !a.surah) return [];
+    const phrase = words.slice(0, 3).join(' ');
+    try{
+      const list = await this._fetch(`${CONFIG.API.quran}/search/${encodeURIComponent(phrase)}/all/quran-uthmani`,
+        d => { if(d.code !== 200 || !d.data) throw new Error('search'); return d.data.matches || []; },
+        { tries: 2, timeout: 7000 });
+      const seen = new Set();
+      return list.filter(m => {
+        if(!m.surah || (m.surah.number === a.surah.number && m.numberInSurah === a.numberInSurah)) return false;
+        if(seen.has(m.number) || !this._strip({ ...m }).text.startsWith(phrase)) return false;
+        seen.add(m.number); return true;
+      });
+    }catch(e){ return []; }
+  }
+  isCached(t, n){
+    const m = { surah:'surah', page:'page', juz:'juz', rub:'hizbQuarter' };
+    return this._cache.has(`${CONFIG.API.quran}/${m[t]}/${n}/quran-uthmani`);
+  }
+}
+const api = new QuranAPI();
+
+const ProfileService = {
+  _create(n, i){
+    return {
+      id: uid(), name: n,
+      emoji: CONFIG.AVATAR.emojis[i % CONFIG.AVATAR.emojis.length],
+      color: CONFIG.AVATAR.colors[i % CONFIG.AVATAR.colors.length],
+      createdAt: new Date().toISOString(),
+      stats: { totalTests:0, totalCorrect:0, totalWrong:0, scores:[], activeDays:[], errors:[], lastSession:null }
+    };
+  },
+  _norm(p){
+    p.stats = p.stats || {};
+    p.stats.scores = p.stats.scores || [];
+    p.stats.activeDays = p.stats.activeDays || [];
+    p.stats.errors = Array.isArray(p.stats.errors) ? p.stats.errors : [];
+    p.stats.totalTests = p.stats.totalTests || 0;
+    p.stats.totalCorrect = p.stats.totalCorrect || 0;
+    p.stats.totalWrong = p.stats.totalWrong || 0;
+    return p;
+  },
+  getAll(){ return (Storage.get(CONFIG.KEYS.profiles, []) || []).map(p => this._norm(p)); },
+  saveAll(l){ Storage.set(CONFIG.KEYS.profiles, l); },
+  getActive(){ const id = Storage.get(CONFIG.KEYS.activeProfile); return this.getAll().find(p => p.id === id) || null; },
+  setActive(id){ Storage.set(CONFIG.KEYS.activeProfile, id); },
+  update(id, mu){
+    const l = this.getAll(); const i = l.findIndex(p => p.id === id);
+    if(i === -1) return null;
+    mu(l[i]); this.saveAll(l); return l[i];
+  },
+  create(n){
+    const l = this.getAll();
+    if(l.length >= CONFIG.LIMITS.maxProfiles) throw new Error(`الحد الأقصى ${CONFIG.LIMITS.maxProfiles} ملفات.`);
+    const p = this._create(n, l.length);
+    l.push(p); this.saveAll(l); this.setActive(p.id);
+    return p;
+  },
+  remove(id){
+    const l = this.getAll().filter(p => p.id !== id);
+    this.saveAll(l);
+    if(Storage.get(CONFIG.KEYS.activeProfile) === id) this.setActive(l.length ? l[0].id : null);
+    return l;
+  },
+  ensureDefault(){ if(this.getAll().length === 0){ const l = [this._create('أنا', 0)]; this.saveAll(l); this.setActive(l[0].id); } },
+  recordTest(s, c, w){
+    const p = this.getActive(); if(!p) return;
+    this.update(p.id, x => {
+      const t = todayStr();
+      if(!x.stats.activeDays.includes(t)) x.stats.activeDays.push(t);
+      x.stats.totalTests++;
+      x.stats.totalCorrect += c;
+      x.stats.totalWrong += w;
+      x.stats.scores.push({ score: Math.round(s), date: t });
+      if(x.stats.scores.length > 50) x.stats.scores = x.stats.scores.slice(-50);
+    });
+  },
+  errorKey(q){
+    const r = q && q.ref;
+    return r && r.sn && r.n ? `${r.sn}:${r.n}` : `text:${String(q && q.sourceText || q && q.questionText || '').slice(0,160)}`;
+  },
+  recordError(q, selected, correct, mode){
+    const p = this.getActive(); if(!p || !q) return;
+    const key = this.errorKey(q), now = Date.now();
+    this.update(p.id, x => {
+      x.stats.errors = x.stats.errors || [];
+      const old = x.stats.errors.find(e => e.key === key);
+      const item = {
+        key, sourceText: q.sourceText || '',
+        surahNumber: q.ref?.sn || null, surahName: q.ref?.s || 'آية', ayahNumber: q.ref?.n || null,
+        selected: String(selected ?? ''), correct: String(correct ?? ''), mode: mode || 'quiz',
+        count: (old?.count || 0) + 1, lastSeen: now
+      };
+      if(old) Object.assign(old, item); else x.stats.errors.push(item);
+      x.stats.errors.sort((a,b) => (b.count - a.count) || (b.lastSeen - a.lastSeen));
+      if(x.stats.errors.length > 100) x.stats.errors = x.stats.errors.slice(0,100);
+    });
+  },
+  getErrors(){
+    const p = this.getActive();
+    return p ? [...(p.stats.errors || [])].sort((a,b) => (b.count - a.count) || (b.lastSeen - a.lastSeen)) : [];
+  },
+  saveSession(s){
+    const p = this.getActive(); if(!p) return;
+    this.update(p.id, x => { x.stats.lastSession = { ...s, timestamp: Date.now() }; });
+  },
+  calculateStreak(days){
+    if(!days || !days.length) return 0;
+    const set = new Set(days);
+    const t = todayStr();
+    const st = set.has(t) ? t : (set.has(daysAgoStr(1)) ? daysAgoStr(1) : null);
+    if(!st) return 0;
+    let n = 0;
+    const c = new Date(st);
+    while(set.has(dateKey(c))){ n++; c.setDate(c.getDate() - 1); if(n > 365) break; }
+    return n;
+  }
+};
+
+const Settings = {
+  _all: null,
+  _load(){ if(!this._all) this._all = Storage.get(CONFIG.KEYS.settings, { tajweed:false, mutashabihat:false }); return this._all; },
+  get(k){ return !!this._load()[k]; },
+  set(k, v){ const a = this._load(); a[k] = !!v; Storage.set(CONFIG.KEYS.settings, a); }
+};
+
+const ThemeService = {
+  apply(n){
+    const cc = Storage.get('quran.customColor') || '#00796B';
+    if(!CONFIG.THEMES.includes(n) && n !== 'theme-custom') n = 'theme-red';
+    document.body.className = document.body.className.replace(/theme-\w+/g, '').trim();
+    document.body.classList.add(n);
+    if(n === 'theme-custom') document.body.style.setProperty('--md-seed', cc); else document.body.style.removeProperty('--md-seed');
+    Storage.set(CONFIG.KEYS.theme, n);
+    $$('.theme-swatch').forEach(b => b.classList.toggle('active', b.dataset.theme === n));
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if(meta) meta.setAttribute('content', n === 'theme-custom' ? cc : CONFIG.THEME_COLORS[n]);
+  },
+  applyDark(on, manual){
+    if(manual){ Settings.set('autoDark', false); const c = $('#setting-auto-dark'); if(c) c.checked = false; }
+    document.body.classList.toggle('dark', on);
+    Storage.set(CONFIG.KEYS.dark, on);
+    const icon = $('#btn-darkmode .material-symbols-rounded');
+    if(icon) icon.textContent = on ? 'light_mode' : 'dark_mode';
+  },
+  current(){ return Storage.get(CONFIG.KEYS.theme) || 'theme-red'; },
+  isDark(){ return Settings.get('autoDark') ? matchMedia('(prefers-color-scheme: dark)').matches : !!Storage.get(CONFIG.KEYS.dark, false); },
+  render(){
+    $('#theme-grid').innerHTML = CONFIG.THEMES.map(t => `
+      <button class="theme-swatch" data-theme="${t}"
+              style="background-color:${CONFIG.THEME_COLORS[t]}"
+              aria-label="${t}"></button>`).join('');
+  }
+};
+
+const createInitialState = () => ({
+  mode: 'fill-blank', scope: 'surah', surahNumber: 2,
+  ranges: {
+    ayah: { from: 1, to: null },
+    page: { from: 1, to: 1 },
+    juz:  { from: 1, to: 1 },
+    hizb: { from: 1, to: 1 },
+    rub:  { from: 1, to: 1 }
+  },
+  surahList: [], difficulty: 'easy', totalQuestions: 10,
+  questions: [], currentQuestionIndex: 0,
+  score: 0, correctCount: 0, wrongCount: 0,
+  currentAyahs: [], currentAyahIndex: 0,
+  reviewTitle: '', tafsirOpen: false
+});
+const state = createInitialState();
+
+const dom = {
+  screens: {
+    setup:  $('#setup-screen'),
+    quiz:   $('#quiz-screen'),
+    review: $('#review-screen'),
+    result: $('#result-screen'),
+    stats:  $('#stats-screen')
+  },
+  activityMode: $('#activity-mode'),
+  scopeTabs: $$('.scope-tab, #scope-tabs button'),
+  scopePanels: {
+    surah: $('#surah-scope'), page: $('#page-scope'),
+    juz:   $('#juz-scope'),   hizb: $('#hizb-scope'), rub: $('#rub-scope')
+  },
+  questionsCount: $('#questions-count'),
+  questionsCountContainer: $('#questions-count-container'),
+  startBtn: $('#start-btn'),
+  prefetchStatus: $('#prefetch-status'),
+  welcomeBanner: $('#welcome-banner'),
+  welcomeEmoji:  $('#welcome-emoji'),
+  welcomeText:   $('#welcome-text'),
+  surahTriggerBadge: $('#surah-trigger-badge'),
+  surahTriggerValue: $('#surah-trigger-value'),
+  ayahHint: $('#ayah-hint'),
+  surahPicker: $('#surah-picker'),
+  surahListContent: $('#surah-list-content'),
+  surahSearch: $('#surah-search'),
+  numberPicker: $('#number-picker'),
+  numberPickerTitle: $('#number-picker-title'),
+  numberGridContent: $('#number-grid-content'),
+  numberJump: $('#number-jump'),
+  questionCounter: $('#question-counter'),
+  scoreDisplay: $('#score-display'),
+  timerDisplay: $('#timer-display'),
+  questionText: $('#question-text'),
+  optionsContainer: $('#options-container'),
+  reviewSurahName: $('#review-surah-name'),
+  reviewAyahCounter: $('#review-ayah-counter'),
+  reviewAyahText: $('#review-ayah-text'),
+  reviewProgress: $('#review-progress'),
+  prevAyahBtn: $('#prev-ayah-btn'),
+  nextAyahBtn: $('#next-ayah-btn'),
+  tafsirPanel: $('#tafsir-panel'),
+  mutashabihatWarning: $('#mutashabihat-warning'),
+  mutashabihatText: $('#mutashabihat-text'),
+  swipeContainer: $('#swipe-container'),
+  resTotal: $('#res-total'), resCorrect: $('#res-correct'),
+  resWrong: $('#res-wrong'), resScore: $('#res-score'),
+  statTotalTests: $('#stat-total-tests'),
+  statAnswered: $('#stat-answered'),
+  statAccuracy: $('#stat-accuracy'),
+  statAvgScore: $('#stat-avg-score'),
+  statBestScore: $('#stat-best-score'),
+  statStreak: $('#stat-streak'),
+  heatmapContainer: $('#heatmap-container'),
+  barChartContainer: $('#bar-chart-container'),
+  weaknessAnalysis: $('#weakness-analysis'),
+  errorBankCount: $('#error-bank-count'),
+  errorBankPreview: $('#error-bank-preview'),
+  profilesModal: $('#profiles-modal'),
+  profilesList: $('#profiles-list'),
+  newProfileForm: $('#new-profile-form'),
+  newProfileName: $('#new-profile-name'),
+  btnShowNewProfile: $('#btn-show-new-profile'),
+  themeModal: $('#theme-modal'),
+  scrim: $('#scrim')
+};
+
+const ScreenManager = {
+  current: 'setup',
+  show(n){
+    if(!dom.screens[n]) return;
+    Object.values(dom.screens).forEach(s => s && s.classList.add('hidden-screen'));
+    dom.screens[n].classList.remove('hidden-screen');
+    this.current = n;
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+    bus.emit('screen:changed', n);
+  }
+};
+
+const RANGE_CONFIG = {
+  page: { max: CONFIG.LIMITS.pages, label: 'الصفحة',   getter: n => api.getPage(n) },
+  juz:  { max: CONFIG.LIMITS.juz,   label: 'الجزء',    getter: n => api.getJuz(n) },
+  hizb: { max: CONFIG.LIMITS.hizb,  label: 'الحزب',    getter: n => api.getRub(n), multiplier: 4 },
+  rub:  { max: CONFIG.LIMITS.rub,   label: 'الربع',    getter: n => api.getRub(n) }
+};
+
+const RangeService = {
+  updateValue(type, field, value){
+    if(type === 'ayah'){
+      const s = state.surahList.find(x => x.number === state.surahNumber);
+      const max = s ? s.numberOfAyahs : 7;
+      value = clamp(value, 1, max);
+      const r = state.ranges.ayah;
+      if(field === 'from'){ r.from = value; if(r.to != null && r.to < value) r.to = value; }
+      else                { r.to = value;   if(r.from > value) r.from = value; }
+    } else {
+      const cfg = RANGE_CONFIG[type];
+      value = clamp(value, 1, cfg.max);
+      const r = state.ranges[type];
+      if(field === 'from'){ r.from = value; if(r.to < value) r.to = value; }
+      else                { r.to = value;   if(r.from > value) r.from = value; }
+    }
+  },
+  syncDisplays(){
+    const r = state.ranges;
+    $('#display-from-ayah').textContent = r.ayah.from;
+    $('#display-to-ayah').textContent   = r.ayah.to == null ? 'النهاية' : r.ayah.to;
+    for(const k of ['page','juz','hizb','rub']){
+      $(`#display-from-${k}`).textContent = r[k].from;
+      $(`#display-to-${k}`).textContent   = r[k].to;
+    }
+  },
+  async fetchAyahs(){
+    const { scope } = state;
+    let ayahs = [], title = '';
+    if(scope === 'surah'){
+      const all = await api.getSurah(state.surahNumber);
+      const r = state.ranges.ayah;
+      const to = r.to == null ? all.length : r.to;
+      ayahs = all.filter(a => a.numberInSurah >= r.from && a.numberInSurah <= to);
+      const s = state.surahList.find(x => x.number === state.surahNumber);
+      title = `${s ? s.name : 'سورة'} (${r.from}-${to})`;
+    } else if(scope === 'hizb'){
+      const cfg = RANGE_CONFIG.hizb;
+      const fr = (state.ranges.hizb.from - 1) * cfg.multiplier + 1;
+      const tr = state.ranges.hizb.to * cfg.multiplier;
+      const res = await Promise.allSettled(Array.from({ length: tr - fr + 1 }, (_, i) => api.getRub(fr + i)));
+      ayahs = res.filter(x => x.status === 'fulfilled').flatMap(x => x.value);
+      title = state.ranges.hizb.from === state.ranges.hizb.to
+        ? `الحزب ${state.ranges.hizb.from}`
+        : `الأحزاب ${state.ranges.hizb.from}-${state.ranges.hizb.to}`;
+    } else {
+      const cfg = RANGE_CONFIG[scope];
+      const r = state.ranges[scope];
+      const res = await Promise.allSettled(Array.from({ length: r.to - r.from + 1 }, (_, i) => cfg.getter(r.from + i)));
+      ayahs = res.filter(x => x.status === 'fulfilled').flatMap(x => x.value);
+      const pl = { page:'الصفحات', juz:'الأجزاء', rub:'الأرباع' }[scope];
+      title = r.from === r.to ? `${cfg.label} ${r.from}` : `${pl} ${r.from}-${r.to}`;
+    }
+    if(!ayahs.length) throw new Error('تعذر تحميل النطاق المحدد');
+    return { ayahs, title };
+  },
+  validate(){
+    if(state.scope === 'surah'){
+      const s = state.surahList.find(x => x.number === state.surahNumber);
+      if(!s){ Snackbar.show('الرجاء اختيار سورة.'); return false; }
+      const r = state.ranges.ayah;
+      if(r.from < 1 || r.from > s.numberOfAyahs){
+        Snackbar.show(`رقم "من" يجب أن يكون بين 1 و ${s.numberOfAyahs}.`); return false;
+      }
+      if(r.to != null && (r.to < r.from || r.to > s.numberOfAyahs)){
+        Snackbar.show('رقم "إلى" غير صحيح.'); return false;
+      }
+    } else {
+      const r = state.ranges[state.scope];
+      if(r.from > r.to){ Snackbar.show('"إلى" يجب أن تكون >= "من".'); return false; }
+    }
+    return true;
+  }
+};
+
+const PrefetchService = {
+  _timer: null, _status: 'idle',
+  schedule(){ clearTimeout(this._timer); this._timer = setTimeout(() => this.run(), CONFIG.LIMITS.prefetchDelay); },
+  async run(){
+    this._setStatus('loading');
+    try{
+      if(state.scope === 'surah') await api.getSurah(state.surahNumber);
+      else if(state.scope === 'hizb'){
+        const cfg = RANGE_CONFIG.hizb;
+        const fr = (state.ranges.hizb.from - 1) * cfg.multiplier + 1;
+        const tr = state.ranges.hizb.to * cfg.multiplier;
+        await this._range(fr, tr, n => api.getRub(n));
+      } else {
+        const cfg = RANGE_CONFIG[state.scope];
+        const r = state.ranges[state.scope];
+        await this._range(r.from, r.to, cfg.getter);
+      }
+      this._setStatus('ready'); this._markReady();
+    } catch(e){ console.error('[Prefetch]', e); this._setStatus('error'); }
+  },
+  async _range(fr, to, getter){
+    const total = to - fr + 1;
+    const lim = total > CONFIG.LIMITS.maxPrefetch ? fr + CONFIG.LIMITS.maxPrefetch - 1 : to;
+    await Promise.all(Array.from({ length: lim - fr + 1 }, (_, i) => getter(fr + i).catch(() => null)));
+  },
+  _setStatus(s){
+    if(this._status === s && s !== 'loading') return;
+    this._status = s;
+    const el = dom.prefetchStatus;
+    el.className = 'prefetch-bar ' + s;
+    el.innerHTML = {
+      loading: '<div class="md-circular-progress sm"></div><span>جاري تحضير البيانات...</span>',
+      ready:   '<span class="material-symbols-rounded" style="font-size:18px">check_circle</span><span>البيانات جاهزة</span>',
+      error:   '<span class="material-symbols-rounded" style="font-size:18px">error</span><span>تعذر التحضير</span>'
+    }[s] || '';
+  },
+  _markReady(){
+    $$('.scope-ready-dot').forEach(d => d.remove());
+    const t = $(`#scope-tabs button[data-scope="${state.scope}"]`);
+    if(t){ const d = document.createElement('span'); d.className = 'scope-ready-dot'; t.appendChild(d); }
+  },
+  clearReady(){ $$('.scope-ready-dot').forEach(d => d.remove()); }
+};
+
+const SessionService = {
+  save: debounce(() => {
+    ProfileService.saveSession({
+      scope: state.scope,
+      surahNumber: state.surahNumber,
+      ranges: JSON.parse(JSON.stringify(state.ranges)),
+      mode: dom.activityMode.value, difficulty: (document.querySelector('#difficulty-segmented .active')||{dataset:{}}).dataset.value
+    });
+  }, 300),
+  restore(){
+    const p = ProfileService.getActive();
+    if(!p || !p.stats.lastSession) return false;
+    const s = p.stats.lastSession;
+    if(Date.now() - s.timestamp > CONFIG.LIMITS.sessionTTL) return false;
+    if(s.scope) state.scope = s.scope;
+    if(s.surahNumber) state.surahNumber = s.surahNumber;
+    if(s.ranges) Object.assign(state.ranges, s.ranges);
+    if(s.mode){
+      dom.activityMode.value = s.mode;
+      $$('#activity-segmented button').forEach(b => b.classList.toggle('active', b.dataset.value === s.mode));
+      dom.questionsCountContainer.classList.toggle('hidden', s.mode === 'review');
+      $('#difficulty-container').classList.toggle('hidden', s.mode === 'review');
+    }
+    if(s.difficulty) $$('#difficulty-segmented button').forEach(b => b.classList.toggle('active', b.dataset.value === s.difficulty));
+    dom.scopeTabs.forEach(t => t.classList.toggle('active', t.dataset.scope === state.scope));
+    this.updateScopeUI();
+    RangeService.syncDisplays();
+    return true;
+  },
+  updateScopeUI(){
+    Object.entries(dom.scopePanels).forEach(([k, el]) => el.classList.toggle('hidden', k !== state.scope));
+  }
+};
+
+const Overlay = {
+  active: null,
+  open(el, { scrim = true } = {}){
+    this.close();
+    this.active = el;
+    el.classList.add('active');
+    el.inert = false;
+    if(scrim) dom.scrim.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  },
+  close(){
+    if(this.active){ this.active.classList.remove('active'); this.active.inert = true; this.active = null; }
+    dom.scrim.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+};
+
+const SurahView = {
+  open(){
+    dom.surahSearch.value = '';
+    this.render('');
+    Overlay.open(dom.surahPicker);
+    requestAnimationFrame(() => {
+      const s = $('.md-list-item.selected', dom.surahListContent);
+      if(s) s.scrollIntoView({ block: 'center', behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+    });
+    setTimeout(() => dom.surahSearch.focus(), 250);
+  },
+  close(){ Overlay.close(); },
+  filter(q){ this.render(q); },
+  render(q = ''){
+    const f = q.trim().toLowerCase();
+    const list = state.surahList.filter(s =>
+      !f || s.name.toLowerCase().includes(f) ||
+      s.englishName.toLowerCase().includes(f) ||
+      s.number.toString() === f
+    );
+    if(!list.length){
+      dom.surahListContent.innerHTML = `
+        <div class="empty-state">
+          <span class="material-symbols-rounded">search_off</span>
+          لا توجد نتائج مطابقة
+        </div>`;
+      return;
+    }
+    dom.surahListContent.innerHTML = list.map(s => {
+      const sel = s.number === state.surahNumber;
+      const ch = api.isCached('surah', s.number);
+      return `
+        <button class="md-list-item md-state ${sel ? 'selected' : ''}" data-surah="${s.number}">
+          <div class="lead">${s.number}</div>
+          <div class="body">
+            <div class="primary" style="font-family:'QPC Uthmanic Hafs',serif;font-size:1.15rem">${s.name}</div>
+            <div class="secondary">
+              ${s.revelationType === 'Meccan' ? 'مكية' : 'مدنية'} • ${s.numberOfAyahs} آية
+              ${ch ? ' • <span style="color:var(--md-success)">متاحة</span>' : ''}
+            </div>
+          </div>
+          ${sel ? '<span class="material-symbols-rounded trail filled">check_circle</span>' : ''}
+        </button>`;
+    }).join('');
+    attachRippleAll(dom.surahListContent);
+  },
+  select(n){
+    const s = state.surahList.find(x => x.number === n);
+    if(!s) return;
+    state.surahNumber = n;
+    state.ranges.ayah = { from: 1, to: null };
+    dom.surahTriggerBadge.textContent = s.number;
+    dom.surahTriggerValue.textContent = s.name;
+    dom.ayahHint.textContent = `عدد آيات ${s.name}: ${s.numberOfAyahs}`;
+    RangeService.syncDisplays();
+    this.close();
+    PrefetchService.schedule();
+    SessionService.save();
+  }
+};
+
+const NumberPicker = {
+  field: null, type: null, max: 1,
+  open(field, type){
+    let max = 1, title = '', cv = 1;
+    if(type === 'ayah'){
+      const s = state.surahList.find(x => x.number === state.surahNumber);
+      max = s ? s.numberOfAyahs : 7;
+      title = field === 'from' ? 'اختر الآية الابتدائية' : 'اختر الآية النهائية';
+      const r = state.ranges.ayah;
+      cv = field === 'from' ? r.from : (r.to || max);
+    } else if(RANGE_CONFIG[type]){
+      const cfg = RANGE_CONFIG[type];
+      max = cfg.max;
+      title = field === 'from' ? `اختر ${cfg.label} الابتدائي` : `اختر ${cfg.label} النهائي`;
+      const r = state.ranges[type];
+      cv = field === 'from' ? r.from : r.to;
+    }
+    Object.assign(this, { field, type, max });
+    dom.numberPickerTitle.textContent = title;
+    dom.numberJump.value = '';
+    this.render(cv);
+    Overlay.open(dom.numberPicker);
+    requestAnimationFrame(() => {
+      const s = $('.md-number-chip.selected', dom.numberGridContent);
+      if(s) s.scrollIntoView({ block: 'center', behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+    });
+  },
+  close(){ Overlay.close(); },
+  isCached(n){
+    if(['page','juz','rub'].includes(this.type)) return api.isCached(this.type, n);
+    if(this.type === 'hizb'){
+      const fr = (n - 1) * RANGE_CONFIG.hizb.multiplier + 1;
+      for(let i = fr; i <= n * RANGE_CONFIG.hizb.multiplier; i++) if(!api.isCached('rub', i)) return false;
+      return true;
+    }
+    return false;
+  },
+  render(cv){
+    let h = '<div class="md-number-grid">';
+    for(let i = 1; i <= this.max; i++){
+      h += `<button class="md-number-chip ${i === cv ? 'selected' : ''} ${this.isCached(i) ? 'cached' : ''}" data-value="${i}">${i}</button>`;
+    }
+    h += '</div>';
+    dom.numberGridContent.innerHTML = h;
+    attachRippleAll(dom.numberGridContent);
+  },
+  jump(v){
+    const n = parseInt(v, 10);
+    if(!n || n < 1 || n > this.max) return;
+    const c = $(`.md-number-chip[data-value="${n}"]`, dom.numberGridContent);
+    if(!c) return;
+    c.scrollIntoView({ block: 'center', behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+    c.style.transform = 'scale(1.15)';
+    setTimeout(() => { c.style.transform = ''; }, 400);
+  }
+};
+
+const QuizMode = {
+  _timer: null,
+  _deadline: 0,
+  _seed: 0,
+  _random(){
+    if(!this._seed) return Math.random();
+    this._seed = (this._seed * 1664525 + 1013904223) >>> 0;
+    return this._seed / 4294967296;
+  },
+  _pick(a){ return a[Math.floor(this._random() * a.length)]; },
+  _shuffle(a){ return [...a].sort(() => this._random() - .5); },
+  _short(text, words = 7){ return text.split(' ').slice(0, words).join(' '); },
+  _tail(text, words = 7){ const a=text.split(' '); return a.slice(Math.max(0, a.length-words)).join(' '); },
+  _valid(ayahs){ return ayahs.filter(a => a.text && a.text.split(' ').length >= 4); },
+  _choice(questionText, correct, distractors){
+    const values=[...new Set([String(correct),...distractors.filter(Boolean).map(String)])].slice(0,4);
+    const a=this._cur;
+    return { questionText, correctAnswer:String(correct), options:this._shuffle(values), ref:a&&a.surah?{s:a.surah.name,n:a.numberInSurah,sn:a.surah.number}:null, sourceText:a&&a.text?a.text:'' };
+  },
+  _w(a,from,len){ return a.text.split(' ').slice(from,from+len).join(' '); },
+  _sim(a,pool,n){
+    const o=pool.filter(x=>x.text!==a.text);
+    if(state.difficulty==='easy') return this._shuffle(o).slice(0,n);
+    const ws=new Set(a.text.split(' '));
+    const sc=x=>{const w=x.text.split(' ');return w.filter(t=>ws.has(t)).length/w.length-Math.abs(w.length-ws.size)/40;};
+    return this._shuffle(o.map(x=>[sc(x),x]).sort((p,q)=>q[0]-p[0]).slice(0,n*4).map(p=>p[1])).slice(0,n);
+  },
+  _fillBlank(ayahs, count){
+    const valid=this._valid(ayahs); if(!valid.length) return [];
+    return this._shuffle(valid).slice(0, Math.min(count,valid.length)).map(ayah => {this._cur=ayah;
+      const words=ayah.text.split(' '), candidates=words.map((w,i)=>w.length>3?i:-1).filter(i=>i>=0);
+      const index=candidates.length?this._pick(candidates):Math.floor(this._random()*words.length);
+      const wrong=[];
+      for(const other of this._shuffle(ayahs)){
+        const w=other.text.split(' ')[Math.floor(this._random()*other.text.split(' ').length)];
+        if(w && w!==words[index] && w.length>2 && !wrong.includes(w)) wrong.push(w);
+        if(wrong.length===3) break;
+      }
+      const q=[...words]; q[index]='<span class="blank-space"></span>';
+      return this._choice(q.join(' '),words[index],wrong);
+    });
+  },
+  _complete(ayahs,count){
+    const v=this._valid(ayahs),len={easy:1,medium:2,hard:3}[state.difficulty]||1;
+    return this._shuffle(v).slice(0,count).map(a=>{this._cur=a;
+      const w=a.text.split(' '),cut=Math.max(2,Math.min(w.length-len,Math.floor(w.length*.5))),ans=w.slice(cut,cut+len).join(' ');
+      const wrong=this._sim(a,v,12).map(x=>this._w(x,cut,len)).filter(t=>t&&t!==ans);
+      return this._choice(`أكمل الآية:<br><br><span class="quran-text">${w.slice(0,cut).join(' ')} <span class="blank-space"></span></span>`,ans,wrong);
+    });
+  },
+  _continue(ayahs,count){
+    const v=this._valid(ayahs);
+    return this._shuffle(v).slice(0,count).map(a=>{this._cur=a;
+      const w=a.text.split(' '),cut=Math.max(2,Math.floor(w.length*.5)),n=state.difficulty==='easy'?5:7,ans=this._w(a,cut,n);
+      const wrong=this._sim(a,v,12).map(x=>this._w(x,cut,n)).filter(t=>t&&t!==ans);
+      return this._choice(`اختر تتمة الآية:<br><br><span class="quran-text">${w.slice(0,cut).join(' ')} …</span>`,ans,wrong);
+    });
+  },
+  _identifySurah(ayahs,count){
+    const v=this._valid(ayahs).filter(a=>a.surah?.name),all=(state.surahList||[]).map(s=>s.name);
+    return this._shuffle(v).slice(0,count).map(a=>{this._cur=a;
+      const near=state.difficulty==='easy'?[]:this._sim(a,v,12).map(x=>x.surah.name);
+      const wrong=[...near,...this._shuffle(all)].filter(n=>n!==a.surah.name);
+      return this._choice(`في أي سورة وردت الآية؟<br><br><span class="quran-text">${a.text}</span>`,a.surah.name,wrong);
+    });
+  },
+  _ayahNumber(ayahs,count){
+    const valid=this._valid(ayahs); if(!valid.length)return [];
+    return this._shuffle(valid).slice(0,Math.min(count,valid.length)).map(a=>{this._cur=a;
+      const n=Number(a.numberInSurah||1), wrong=[n-2,n-1,n+1,n+2].filter(x=>x>0&&x!==n);
+      return this._choice(`ما رقم هذه الآية في السورة؟<br><br><span class="quran-text">${a.text}</span>`,n,this._shuffle(wrong).slice(0,3));
+    });
+  },
+  _trueFalse(ayahs,count){
+    const v=this._valid(ayahs);
+    return this._shuffle(v).slice(0,count).map((a,i)=>{this._cur=a;
+      const w=a.text.split(' ');let ok=i%2===0;
+      if(!ok){const o=this._sim(a,v,1)[0],k=Math.min(w.length-1,Math.max(1,Math.floor(w.length/2))),r=o&&o.text.split(' ')[k];if(r&&r!==w[k])w[k]=r;else ok=true;}
+      return this._choice(`هل هذه الآية مكتوبة كما وردت في المصحف؟<br><br><span class="quran-text">${w.join(' ')}</span>`,ok?'صحيح':'خطأ',['صحيح','خطأ']);
+    });
+  },
+  _mutashabihat(ayahs,count){
+    const v=this._valid(ayahs),g=new Map();
+    v.forEach(a=>{const k=a.text.split(' ').slice(0,2).join(' ');(g.get(k)||g.set(k,[]).get(k)).push(a);});
+    const groups=[...g.values()].filter(l=>new Set(l.map(x=>x.text)).size>1),out=[];
+    this._shuffle(groups).slice(0,count).forEach(l=>{
+      const a=this._pick(l),b=this._pick(l.filter(x=>x.text!==a.text)),A=a.text.split(' '),B=b.text.split(' ');this._cur=a;
+      let p=0;while(p<A.length&&p<B.length&&A[p]===B[p])p++;
+      if(p>=A.length)return;
+      const ans=A.slice(p,p+3).join(' ');
+      const wrong=[B.slice(p,p+3).join(' '),...l.filter(x=>x!==a).map(x=>this._w(x,p,3)),...this._sim(a,v,8).map(x=>this._w(x,p,3))].filter(t=>t&&t!==ans);
+      out.push(this._choice(`آيات متشابهة — أكمل بالصواب:<br><br><span class="quran-text">${A.slice(0,p).join(' ')} <span class="blank-space"></span></span>`,ans,wrong));
+    });
+    return out.length?out:this._complete(ayahs,count);
+  },
+  _wordDifference(ayahs,count){
+    const valid=this._valid(ayahs); if(!valid.length)return [];
+    return this._shuffle(valid).slice(0,Math.min(count,valid.length)).map(a=>{this._cur=a;
+      const w=a.text.split(' '), index=Math.min(2,w.length-1), alternative=this._pick(valid.filter(x=>x!==a)) || a, replacement=alternative.text.split(' ')[index]||'كلمة';
+      const altered=[...w]; altered[index]=replacement;
+      const wrong=this._shuffle(w.filter((x,i)=>i!==index&&x.length>2)).slice(0,3);
+      return this._choice(`ما الكلمة الصحيحة بدل الكلمة المظللة؟<br><br><span class="quran-text">${altered.join(' ')}</span>`,w[index],wrong);
+    });
+  },
+  _matchEdges(ayahs,count){
+    const v=this._valid(ayahs);
+    return this._shuffle(v).slice(0,count).map((a,i)=>{this._cur=a;
+      const w=a.text.split(' '),cut=Math.max(2,Math.floor(w.length/2)),back=i%2===0;
+      const pick=x=>{const t=x.text.split(' ');return back?t.slice(-5).join(' '):t.slice(0,5).join(' ');};
+      const shown=back?w.slice(0,cut).join(' '):w.slice(cut).join(' ');
+      return this._choice(back?`اختر نهاية الآية المطابقة للبداية:<br><br><span class="quran-text">${shown} …</span>`:`اختر بداية الآية المطابقة للنهاية:<br><br><span class="quran-text">… ${shown}</span>`,pick(a),this._sim(a,v,12).map(pick));
+    });
+  },
+  _beforeAfter(ayahs,count){
+    const v=this._valid(ayahs),idx=new Map(ayahs.map((x,i)=>[x,i])),ok=[];
+    v.forEach(a=>{const i=idx.get(a);[-1,1].forEach(d=>{const n=ayahs[i+d];if(n&&n.text&&n.surah?.name===a.surah?.name)ok.push([a,n,d]);});});
+    return this._shuffle(ok).slice(0,count).map(([a,n,d])=>{this._cur=a;
+      const t=x=>this._short(x.text,7);this._cur=n;
+      return this._choice(`ما الآية التي تأتي ${d>0?'بعد':'قبل'} هذه الآية؟<br><br><span class="quran-text">${this._short(a.text,10)} …</span>`,t(n),this._sim(n,v,12).filter(x=>x!==a).map(t));
+    });
+  },
+  _location(ayahs,count){
+    const valid=this._valid(ayahs); if(!valid.length)return [];
+    return this._shuffle(valid).slice(0,Math.min(count,valid.length)).map(a=>{this._cur=a;
+      const fields=[['الجزء',a.juz],['الصفحة',a.page],['الحزب',a.hizbQuarter?Math.ceil(a.hizbQuarter/4):null]].filter(x=>x[1]);
+      const field=this._pick(fields.length?fields:[['السورة',a.surah?.name||'']]);
+      const wrong=fields.filter(x=>x[0]===field[0]&&x[1]!==field[1]).map(x=>x[1]);
+      const pool=wrong.concat([1,2,3,4,5,6,7,8,9,10].filter(x=>String(x)!==String(field[1])));
+      return this._choice(`حدد موضع الآية (${field[0]}):<br><br><span class="quran-text">${a.text}</span>`,field[1],pool.slice(0,3));
+    });
+  },
+  _wordOrder(ayahs,count){
+    const v=this._valid(ayahs);
+    return this._shuffle(v).slice(0,count).map(a=>{this._cur=a;
+      const words=a.text.split(' ').slice(0,5),ans=words.join(' '),mix=()=>{let t,k=0;do{t=this._shuffle(words).join(' ');}while(t===ans&&++k<9);return t;};
+      return this._choice(`رتّب الكلمات لتكوين بداية الآية:<br><br><span class="quran-text">${mix()}</span>`,ans,[mix(),mix(),mix(),mix()]);
+    });
+  },
+  _buildForMode(mode,ayahs,count){
+    const builders={
+      'fill-blank':this._fillBlank,'complete-ayah':this._complete,'continue-ayah':this._continue,
+      'identify-surah':this._identifySurah,'ayah-number':this._ayahNumber,'true-false':this._trueFalse,
+      'mutashabihat':this._mutashabihat,'word-difference':this._wordDifference,'match-edges':this._matchEdges,
+      'before-after':this._beforeAfter,'location':this._location,'word-order':this._wordOrder
+    };
+    return builders[mode] ? builders[mode].call(this,ayahs,count) : this._fillBlank(ayahs,count);
+  },
+  _build(ayahs,count){
+    const mixed=['fill-blank','complete-ayah','continue-ayah','identify-surah','ayah-number','true-false','mutashabihat','word-difference','match-edges','before-after','location','word-order'];
+    let qs;
+    if(['comprehensive','timed','streak','daily'].includes(state.mode)){
+      const per=Math.ceil(count/mixed.length);
+      qs=this._shuffle(mixed.flatMap(m=>this._buildForMode(m,ayahs,per))).slice(0,count);
+    } else qs=this._buildForMode(state.mode,ayahs,count);
+    return qs.filter(q=>q.options.length>1);
+  },
+  start(ayahs){
+    this._stopTimer();
+    this._seed=state.mode==='daily' ? Number(todayStr().replace(/-/g,'')) : 0;
+    if(state.mode==='timed') state.totalQuestions=Math.max(state.totalQuestions,30);
+    if(state.mode==='streak') state.totalQuestions=Math.max(state.totalQuestions,50);
+    state.questions=this._build(ayahs,state.totalQuestions);
+    if(!state.questions.length){ Snackbar.show('النطاق قصير جداً لإنشاء هذا النوع من الأسئلة.'); return false; }
+    const on=$('#setting-challenge').checked, ids=on?[...document.querySelectorAll('#challenge-players input:checked')].map(i=>i.value):[];
+    if(on&&ids.length<2){ Snackbar.show('اختر لاعبَين على الأقل للتحدي.'); return false; }
+    const all=ProfileService.getAll();
+    this._ch=on?{ids,i:0,res:[],qs:state.questions,orig:Storage.get(CONFIG.KEYS.activeProfile),names:ids.map(id=>{const p=all.find(x=>x.id===id);return p?`${p.emoji} ${p.name}`:'؟';})}:null;
+    if(this._ch) ProfileService.setActive(ids[0]);
+    state.currentQuestionIndex=0; state.score=0; state.correctCount=0; state.wrongCount=0; this._run=0; this._best=0; this._missed=[];
+    if(state.mode==='timed'){ this._deadline=Date.now()+60000; this._timer=setInterval(()=>this._tick(),250); dom.timerDisplay.classList.remove('hidden'); }
+    else dom.timerDisplay.classList.add('hidden');
+    ScreenManager.show('quiz'); this._render(); return true;
+  },
+  startErrorBank(){
+    const errors=ProfileService.getErrors().slice(0,30);
+    if(!errors.length){ Snackbar.show('لا توجد أخطاء محفوظة بعد.'); return false; }
+    this._stopTimer(); this._ch=null; state.mode='errors'; state.totalQuestions=errors.length;
+    state.questions=errors.map(e=>{
+      const choices=[e.correct,e.selected,...errors.filter(x=>x!==e).map(x=>x.correct)];
+      return { questionText:`راجع الآية ثم اختر الإجابة الصحيحة:<br><br><span class="quran-text">${escapeHTML(e.sourceText || 'هذه الآية تحتاج إلى مراجعة')}</span>`, correctAnswer:e.correct, options:[...new Set(choices.filter(Boolean))].slice(0,4), ref:e.surahNumber?{sn:e.surahNumber,s:e.surahName,n:e.ayahNumber}:null, sourceText:e.sourceText || '' };
+    }).filter(q=>q.options.length>1);
+    if(!state.questions.length){ Snackbar.show('لا توجد أسئلة قابلة لإعادة الاختبار.'); return false; }
+    state.currentQuestionIndex=0; state.score=0; state.correctCount=0; state.wrongCount=0; this._run=0; this._best=0; this._missed=[];
+    ScreenManager.show('quiz'); this._render(); return true;
+  },
+  _tick(){
+    const left=Math.max(0,this._deadline-Date.now()), seconds=Math.ceil(left/1000);
+    dom.timerDisplay.textContent=`00:${String(seconds).padStart(2,'0')}`;
+    if(!left){ this._stopTimer(); this._showResults(); }
+  },
+  _stopTimer(){ if(this._timer){clearInterval(this._timer);this._timer=null;} if(dom.timerDisplay) dom.timerDisplay.classList.add('hidden'); },
+  _render(){
+    if(state.currentQuestionIndex>=state.questions.length){this._showResults();return;}
+    const q=state.questions[state.currentQuestionIndex];
+    dom.questionCounter.textContent=`${this._ch?this._ch.names[this._ch.i]+' · ':''}السؤال ${state.currentQuestionIndex+1} من ${state.questions.length}`;
+    dom.scoreDisplay.textContent=`النقاط: ${Math.round(state.score)}${this._run>1?` · 🔥${this._run}`:''}`;$('#quiz-progress').style.width=`${state.currentQuestionIndex/state.questions.length*100}%`;
+    dom.questionText.innerHTML=q.questionText; dom.optionsContainer.innerHTML='';
+    const mk=(t,fn)=>{const b=document.createElement('button');b.className='option-btn md-state';b.textContent=t;b.onclick=()=>afterPress(b,()=>fn(b));dom.optionsContainer.appendChild(b);};
+    if(state.difficulty==='hard'){mk('أظهر الإجابة',()=>{dom.optionsContainer.innerHTML='';const d=document.createElement('div');d.className='quran-text';d.style.cssText='text-align:center;margin:8px 0';d.textContent=q.correctAnswer;dom.optionsContainer.appendChild(d);mk('عرفتها ✓',b=>this._answer(b,'1','1'));mk('لم أعرفها ✗',b=>this._answer(b,'0','1'));attachRippleAll(dom.optionsContainer);});}
+    else q.options.forEach(opt=>mk(opt,b=>this._answer(b,opt,q.correctAnswer)));
+    attachRippleAll(dom.optionsContainer); if(state.mode==='timed') this._tick();
+  },
+  _answer(btn,sel,correct){
+    $$('button',dom.optionsContainer).forEach(b=>b.disabled=true);
+    const ok=String(sel)===String(correct),q=state.questions[state.currentQuestionIndex];
+    if(ok){btn.classList.add('correct');state.score+=CONFIG.LIMITS.maxScore/state.questions.length;state.correctCount++;this._run=(this._run||0)+1;this._best=Math.max(this._best||0,this._run);vibrate(50);}
+    else{btn.classList.add('wrong');state.wrongCount++;this._run=0;(this._missed=this._missed||[]).push(q);ProfileService.recordError(q,sel,correct,state.mode);vibrate([100,50,100]);$$('button',dom.optionsContainer).forEach(b=>{if(b.textContent===String(correct))b.classList.add('correct');});}
+    dom.scoreDisplay.textContent=`النقاط: ${Math.round(state.score)}${this._run>1?` · 🔥${this._run}`:''}`;
+    const go=()=>{if(state.mode==='streak'&&!ok){this._showResults();return;}state.currentQuestionIndex++;this._render();};
+    if(ok||state.mode==='timed'||state.difficulty==='hard'){setTimeout(go,CONFIG.LIMITS.answerDelay*(ok?.7:1));return;}
+    this._refBox(q);
+    const n=document.createElement('button');n.className='md-btn md-btn-filled md-btn-block md-state';n.style.marginTop='4px';n.textContent=state.mode==='streak'?'عرض النتيجة':'التالي';n.onclick=()=>afterPress(n,go);dom.optionsContainer.appendChild(n);attachRippleAll(dom.optionsContainer);n.scrollIntoView({block:'nearest',behavior:'smooth'});
+  },
+  _refBox(q){
+    const r=q.ref; if(!r) return;
+    const bx=document.createElement('div'), t=document.createElement('button');
+    bx.className='info-box'; bx.textContent=`📍 ${r.s} • الآية ${r.n}`;
+    t.className='md-btn md-btn-text md-state'; t.textContent='تفسير مختصر';
+    t.onclick=()=>afterPress(t,async()=>{ t.disabled=true; t.textContent='جارٍ التحميل…'; const x=await api.getTafsir(r.sn,r.n); if(!x){ t.disabled=false; t.textContent='تعذّر الجلب — أعد المحاولة'; return; } bx.style.whiteSpace='pre-line'; bx.textContent=`📍 ${r.s} • الآية ${r.n}\n${String(x).slice(0,420)}…`; });
+    bx.appendChild(document.createElement('br')); bx.appendChild(t); dom.optionsContainer.appendChild(bx);
+  },
+  _summary(fs){
+    const c=this._ch, miss=(this._missed||[]).length, last=!!c&&c.i>=c.ids.length-1;
+    let msg=(fs>=90?'ما شاء الله! حفظ متقن 🌟':fs>=70?'أحسنت، أنت على الطريق الصحيح 👏':fs>=50?'بداية جيدة، والتكرار يثبّت الحفظ 🌱':'لا بأس، كل مراجعة تقرّبك أكثر 🤍')+(this._best>1?` · أطول سلسلة صحيحة: ${this._best}`:'');
+    if(c){
+      c.res.push({n:c.names[c.i],s:fs,k:state.correctCount});
+      if(last){ const md=['🥇','🥈','🥉']; c.text='🏆 تحدي القرآن\n'+[...c.res].sort((a,b)=>b.s-a.s).map((r,i)=>`${md[i]||'▫️'} ${r.n} — ${r.s}/100 (${r.k} صحيحة)`).join('\n'); msg=c.text; }
+      else msg=`انتهى دور ${c.names[c.i]} بنتيجة ${fs}/100`;
+    }
+    $('#res-msg').textContent=msg;
+    $('#retry-btn').style.display=miss&&!c?'':'none';
+    const nb=$('#next-player-btn'); nb.style.display=c&&!last?'':'none'; if(c&&!last) nb.textContent=`دور ${c.names[c.i+1]} ←`;
+    $('#share-challenge-btn').style.display=last?'':'none';
+  },
+  nextPlayer(){
+    const c=this._ch; if(!c||c.i>=c.ids.length-1) return;
+    c.i++; ProfileService.setActive(c.ids[c.i]);
+    state.questions=c.qs; state.currentQuestionIndex=0; state.score=0; state.correctCount=0; state.wrongCount=0; this._run=0; this._best=0; this._missed=[];
+    this._stopTimer();
+    if(state.mode==='timed'){ this._deadline=Date.now()+60000; this._timer=setInterval(()=>this._tick(),250); dom.timerDisplay.classList.remove('hidden'); }
+    ScreenManager.show('quiz'); this._render();
+  },
+  _chEnd(){ const c=this._ch; if(c&&c.i>=c.ids.length-1&&c.orig) ProfileService.setActive(c.orig); },
+  endChallenge(){ const c=this._ch; if(c&&c.orig) ProfileService.setActive(c.orig); this._ch=null; },
+  retryMissed(){
+    const q=this._missed||[]; if(!q.length) return;
+    state.mode='retry'; state.questions=this._shuffle(q); state.currentQuestionIndex=0; state.score=0; state.correctCount=0; state.wrongCount=0; this._run=0; this._best=0; this._missed=[];
+    dom.timerDisplay.classList.add('hidden'); ScreenManager.show('quiz'); this._render();
+  },
+  finishEarly(){if(state.correctCount+state.wrongCount===0)return false;this._showResults();return true;},
+  _showResults(){this._stopTimer();const fs=Math.round(state.score);dom.resTotal.textContent=state.questions.length;dom.resCorrect.textContent=state.correctCount;dom.resWrong.textContent=state.wrongCount;dom.resScore.textContent=`${fs}/${CONFIG.LIMITS.maxScore}`;this._summary(fs);ScreenManager.show('result');ProfileService.recordTest(fs,state.correctCount,state.wrongCount);this._chEnd();if(fs>=90&&state.questions.length>0)this._confetti();},
+  _confetti(){if(typeof confetti!=='function'||prefersReducedMotion())return;const end=Date.now()+2000,colors=['#B3261E','#B26A00','#146C2E','#1565C0'];(function f(){confetti({particleCount:4,angle:60,spread:55,origin:{x:0},colors});confetti({particleCount:4,angle:120,spread:55,origin:{x:1},colors});if(Date.now()<end)requestAnimationFrame(f);})();}
+};
+
+const ReviewMode = {
+  start(ayahs, title){
+    state.currentAyahs = ayahs;
+    state.currentAyahIndex = 0;
+    state.reviewTitle = title;
+    state.tafsirOpen = false;
+    dom.tafsirPanel.classList.add('hidden');
+    dom.mutashabihatWarning.classList.add('hidden');
+    ScreenManager.show('review');
+    this._render();
+  },
+  async _render(){
+    const a = state.currentAyahs[state.currentAyahIndex];
+    if(!a) return;
+    dom.reviewSurahName.textContent = a.surah ? a.surah.name : state.reviewTitle;
+    dom.reviewAyahCounter.textContent = `الآية ${a.numberInSurah}`;
+    dom.reviewAyahText.innerHTML = `${escapeHTML(a.text)} <span class="ayah-end">${Number(a.numberInSurah).toLocaleString('ar-EG')}</span>${a.sajda ? ' <span class="sajda-tag">سجدة</span>' : ''}`;
+    dom.reviewAyahText.classList.remove('ayah-anim'); void dom.reviewAyahText.offsetWidth; dom.reviewAyahText.classList.add('ayah-anim');
+    dom.reviewProgress.style.width = `${((state.currentAyahIndex + 1) / state.currentAyahs.length) * 100}%`;
+    dom.prevAyahBtn.disabled = state.currentAyahIndex === 0;
+    dom.nextAyahBtn.disabled = state.currentAyahIndex === state.currentAyahs.length - 1;
+    if(state.tafsirOpen) this._closeTafsir();
+    this._checkMut(a);
+  },
+  prev(){ if(state.currentAyahIndex > 0){ state.currentAyahIndex--; this._render(); } },
+  next(){ if(state.currentAyahIndex < state.currentAyahs.length - 1){ state.currentAyahIndex++; this._render(); } },
+  async toggleTafsir(){
+    if(state.tafsirOpen) return this._closeTafsir();
+    state.tafsirOpen = true;
+    dom.tafsirPanel.classList.remove('hidden');
+    dom.tafsirPanel.innerHTML = '<div class="md-circular-progress sm" style="margin:0 auto"></div>';
+    const a = state.currentAyahs[state.currentAyahIndex];
+    const sn = a.surah ? a.surah.number : 1;
+    const text = await api.getTafsir(sn, a.numberInSurah);
+    if(!state.tafsirOpen) return;
+    dom.tafsirPanel.innerHTML = text
+      ? `<h4>📖 التفسير الميسر · الآية ${a.numberInSurah}</h4><p style="margin:0">${escapeHTML(text)}</p>`
+      : `<h4>تعذّر جلب التفسير</h4><p style="margin:0 0 10px">تحقّق من الاتصال بالإنترنت ثم أعد المحاولة.</p><button class="md-btn md-btn-outlined md-state retry-tafsir">إعادة المحاولة</button>`;
+    const rb = dom.tafsirPanel.querySelector('.retry-tafsir');
+    if(rb) rb.onclick = () => afterPress(rb, () => { this._closeTafsir(); this.toggleTafsir(); });
+  },
+  _closeTafsir(){ state.tafsirOpen = false; dom.tafsirPanel.classList.add('hidden'); },
+  _checkMut(a){
+    const id = this._mutId = (this._mutId || 0) + 1;
+    clearTimeout(this._mutT);
+    dom.mutashabihatWarning.classList.add('hidden');
+    if(!Settings.get('mutashabihat') || !a.surah) return;
+    this._mutT = setTimeout(async () => {
+      const others = await api.similarVerses(a);
+      if(id !== this._mutId || !others.length) return;
+      const ar = n => Number(n).toLocaleString('ar-EG');
+      const refs = others.slice(0, 3).map(m => {
+        const parts = String(m.surah.name || '').trim().split(/\s+/);
+        const name = parts[0].replace(/[\u064B-\u065F\u0670]/g, '') === 'سورة' && parts.length > 1 ? parts.slice(1).join(' ') : parts.join(' ');
+        return `${name} ${ar(m.numberInSurah)}`;
+      }).join('، ');
+      dom.mutashabihatText.textContent = `هذه الآية تشبه ${ar(others.length)} آية أخرى (${refs}${others.length > 3 ? '…' : ''}). تأكد من حفظك.`;
+      dom.mutashabihatWarning.classList.remove('hidden');
+    }, 250);
+  }
+};
+
+const StatsView = {
+  show(){
+    try{
+      const p = ProfileService.getActive();
+      if(!p){ Snackbar.show('الرجاء إنشاء ملف شخصي أولاً.'); return; }
+      const s = p.stats;
+      const scores = Array.isArray(s.scores) ? s.scores : [];
+      const answered = (s.totalCorrect || 0) + (s.totalWrong || 0);
+      const accuracy = answered ? Math.round((s.totalCorrect / answered) * 100) : 0;
+      const average = scores.length ? Math.round(scores.reduce((sum, item) => sum + Number(item.score || 0), 0) / scores.length) : 0;
+      const best = scores.length ? Math.max(...scores.map(item => Number(item.score || 0))) : 0;
+      dom.statTotalTests.textContent = s.totalTests || 0;
+      dom.statAnswered.textContent = answered;
+      dom.statAccuracy.textContent = `${accuracy}%`;
+      dom.statAvgScore.textContent = average;
+      dom.statBestScore.textContent = best;
+      dom.statStreak.textContent = ProfileService.calculateStreak(s.activeDays);
+      this._heatmap(s.activeDays, scores);
+      this._chart(scores);
+      this._analysis({ ...s, accuracy, average, best, answered, scores });
+      this._renderErrors(ProfileService.getErrors());
+      ScreenManager.show('stats');
+    } catch(e){ console.error('[StatsView]', e); Snackbar.show('تعذر عرض الإحصائيات الآن.'); }
+  },
+  _heatmap(days, scores){
+    const counts = {};
+    (scores || []).forEach(item => { if(item.date) counts[item.date] = (counts[item.date] || 0) + 1; });
+    (days || []).forEach(day => { if(counts[day] == null) counts[day] = 1; });
+    const max = Math.max(1, ...Object.values(counts));
+    let h = '<div class="heatmap-grid">';
+    for(let i = 83; i >= 0; i--){
+      const d = daysAgoStr(i);
+      const count = counts[d] || 0;
+      const level = count ? Math.min(4, Math.max(1, Math.ceil((count / max) * 4))) : 0;
+      h += `<div class="heatmap-cell" data-level="${level}" title="${d}: ${count} ${count === 1 ? 'اختبار' : 'اختبارات'}" aria-label="${d}: ${count} ${count === 1 ? 'اختبار' : 'اختبارات'}"></div>`;
+    }
+    h += '</div>';
+    dom.heatmapContainer.innerHTML = h;
+  },
+  _chart(scores){
+    const r = scores.slice(-10);
+    if(!r.length){
+      dom.barChartContainer.innerHTML = '<p class="text-muted md-body-small" style="margin:auto">لا توجد اختبارات بعد</p>';
+      return;
+    }
+    dom.barChartContainer.innerHTML = r.map((item, i) => {
+      const score = Number(item.score || 0);
+      const h = Math.max(4, (score / CONFIG.LIMITS.maxScore) * 130);
+      const date = item.date ? item.date.slice(5).replace('-', '/') : `#${i + 1}`;
+      return `<div class="bar" style="height:${h}px" title="${date}: ${score}/100" aria-label="${date}: ${score} من 100"><span class="bar-label">${date}</span></div>`;
+    }).join('');
+  },
+  _analysis(s){
+    const { totalCorrect: tc = 0, totalWrong: tw = 0, scores = [], accuracy = 0, average = 0, best = 0, answered = 0 } = s;
+    if(!answered){
+      dom.weaknessAnalysis.innerHTML = '<p class="text-muted md-body-medium">ابدأ أول اختبار لتظهر قراءة دقيقة لمستواك.</p>';
+      return;
+    }
+    const items = [
+      { color: 'var(--md-primary)', text: `أجبت عن ${answered} سؤالاً بدقة ${accuracy}%.` },
+      { color: 'var(--md-primary)', text: `متوسط العلامة ${average}/100، وأفضل علامة ${best}/100.` }
+    ];
+    if(accuracy >= 90) items.push({ color: 'var(--md-success)', text: 'أداء ممتاز! حافظ على المراجعة اليومية.' });
+    else if(accuracy >= 70) items.push({ color: 'var(--md-warning)', text: 'أداء جيد، واصل المراجعة للوصول إلى الإتقان.' });
+    else items.push({ color: 'var(--md-error)', text: 'زد وقت المراجعة وابدأ بنطاقات أقصر.' });
+    if(scores.length > 1){
+      const recent = scores.slice(-3).reduce((sum, item) => sum + Number(item.score || 0), 0) / Math.min(3, scores.length);
+      const previous = scores.slice(Math.max(0, scores.length - 6), Math.max(0, scores.length - 3));
+      if(previous.length){
+        const previousAvg = previous.reduce((sum, item) => sum + Number(item.score || 0), 0) / previous.length;
+        const delta = Math.round(recent - previousAvg);
+        if(delta > 0) items.push({ color: 'var(--md-success)', text: `تحسن متوسط آخر 3 اختبارات بمقدار ${delta} نقطة.` });
+        else if(delta < 0) items.push({ color: 'var(--md-error)', text: `انخفض متوسط آخر 3 اختبارات بمقدار ${Math.abs(delta)} نقطة.` });
+      }
+    }
+    dom.weaknessAnalysis.innerHTML = items.map(it => `<div class="analysis-item"><span class="dot" style="background:${it.color}"></span><span>${it.text}</span></div>`).join('');
+  },
+  _renderErrors(errors){
+    dom.errorBankCount.textContent = errors.length;
+    if(!errors.length){
+      dom.errorBankPreview.innerHTML = '<div class="error-bank-empty">ممتاز، لا توجد أخطاء محفوظة بعد.</div>';
+      return;
+    }
+    dom.errorBankPreview.innerHTML = errors.slice(0,5).map(e => `
+      <div class="error-item">
+        <span class="ref">${escapeHTML(e.surahName || 'آية')}${e.ayahNumber ? ` — الآية ${Number(e.ayahNumber).toLocaleString('ar-EG')}` : ''}</span>
+        <span class="meta">تكرر الخطأ ${Number(e.count || 1).toLocaleString('ar-EG')} ${e.count === 1 ? 'مرة' : 'مرات'}${e.selected ? ` · إجابتك: ${escapeHTML(e.selected)}` : ''}</span>
+      </div>`).join('') + (errors.length > 5 ? `<div class="error-bank-empty">و ${Number(errors.length - 5).toLocaleString('ar-EG')} أخطاء أخرى</div>` : '');
+  }
+};
+
+const GestureHandler = {
+  init(el){
+    let sx = 0, sy = 0, dx = 0, dy = 0, active = false;
+    el.addEventListener('touchstart', e => {
+      sx = e.touches[0].clientX; sy = e.touches[0].clientY;
+      dx = dy = 0; active = true;
+      el.classList.remove('swiping-left', 'swiping-right');
+    }, { passive: true });
+    el.addEventListener('touchmove', e => {
+      if(!active) return;
+      dx = e.touches[0].clientX - sx;
+      dy = e.touches[0].clientY - sy;
+      if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10){
+        el.classList.toggle('swiping-right', dx > 0);
+        el.classList.toggle('swiping-left', dx < 0);
+      }
+    }, { passive: true });
+    el.addEventListener('touchend', () => {
+      if(!active) return;
+      active = false;
+      el.classList.remove('swiping-left', 'swiping-right');
+      if(Math.abs(dx) < CONFIG.LIMITS.swipeThreshold || Math.abs(dx) < Math.abs(dy)) return;
+      if(dx < 0) ReviewMode.next(); else ReviewMode.prev();
+    }, { passive: true });
+  }
+};
+
+const ProfilesView = {
+  open(){ this._render(); this._hideForm(); dom.profilesModal.classList.add('active'); },
+  close(){ dom.profilesModal.classList.remove('active'); },
+  _render(){
+    const list = ProfileService.getAll();
+    const aid = Storage.get(CONFIG.KEYS.activeProfile);
+    if(!list.length){
+      dom.profilesList.innerHTML = '<p class="text-muted text-center w-full" style="padding:16px 0">لا توجد ملفات بعد</p>';
+      return;
+    }
+    dom.profilesList.innerHTML = list.map(p => {
+      const st = ProfileService.calculateStreak(p.stats.activeDays);
+      return `
+        <div class="profile-item">
+          <div class="profile-avatar ${p.id === aid ? 'active' : ''}"
+               style="background:${p.color}" data-profile="${p.id}">
+            ${p.emoji}
+            ${st > 0 ? `<span class="streak-badge">🔥${st}</span>` : ''}
+          </div>
+          <span class="name">${escapeHTML(p.name)}</span>
+          ${list.length > 1 ? `<button data-delete-profile="${p.id}" class="del">حذف</button>` : ''}
+        </div>`;
+    }).join('');
+    attachRippleAll(dom.profilesList);
+  },
+  _showForm(){
+    dom.newProfileForm.classList.remove('hidden');
+    dom.btnShowNewProfile.classList.add('hidden');
+    dom.newProfileName.value = '';
+    setTimeout(() => dom.newProfileName.focus(), 100);
+  },
+  _hideForm(){
+    dom.newProfileForm.classList.add('hidden');
+    dom.btnShowNewProfile.classList.remove('hidden');
+  },
+  confirm(){
+    const n = dom.newProfileName.value.trim();
+    if(!n){ Snackbar.show('الرجاء إدخال اسم.'); return; }
+    try{
+      ProfileService.create(n);
+      this._render();
+      this._hideForm();
+      updateWelcomeBanner();
+      setTimeout(() => this.close(), 300);
+    } catch(e){ Snackbar.show(e.message); }
+  },
+  select(id){
+    ProfileService.setActive(id);
+    this._render();
+    updateWelcomeBanner();
+    this.close();
+    Snackbar.show('تم تبديل الملف الشخصي.');
+  },
+  remove(id){
+    if(!confirm('هل أنت متأكد من حذف هذا الملف؟')) return;
+    ProfileService.remove(id);
+    this._render();
+    updateWelcomeBanner();
+  }
+};
+
+function updateWelcomeBanner(){
+  const p = ProfileService.getActive();
+  if(!p){ dom.welcomeBanner.classList.add('hidden'); return; }
+  const st = ProfileService.calculateStreak(p.stats.activeDays);
+  dom.welcomeBanner.classList.remove('hidden');
+  dom.welcomeEmoji.textContent = p.emoji;
+  dom.welcomeEmoji.style.background = p.color;
+  dom.welcomeText.innerHTML = `أهلاً <strong>${escapeHTML(p.name)}</strong>${st > 0 ? ` • سلسلة <strong>${st}</strong> يوم 🔥` : ''}`;
+}
+
+function resetApp(){
+  const f = createInitialState();
+  f.surahList = state.surahList;
+  Object.assign(state, f);
+  dom.activityMode.value = 'fill-blank';
+
+  $$('#activity-segmented button').forEach(b => b.classList.toggle('active', b.dataset.value === 'fill-blank'));
+  dom.questionsCountContainer.classList.remove('hidden');
+  dom.scopeTabs.forEach(t => t.classList.toggle('active', t.dataset.scope === 'surah'));
+  SessionService.updateScopeUI();
+  RangeService.syncDisplays();
+  PrefetchService.clearReady();
+  PrefetchService._status = 'idle';
+  PrefetchService._setStatus('loading');
+  dom.startBtn.disabled = false;
+  dom.startBtn.querySelector('span:last-child').textContent = 'بدء';
+  dom.questionText.innerHTML = '';
+  dom.optionsContainer.innerHTML = '';
+  dom.tafsirPanel.classList.add('hidden');
+  dom.mutashabihatWarning.classList.add('hidden');
+  ScreenManager.show('setup');
+  updateWelcomeBanner();
+  PrefetchService.schedule();
+}
+
+const actionHandlers = {
+  'open-profiles':    () => ProfilesView.open(),
+  'close-profiles':   () => ProfilesView.close(),
+  'show-new-profile': () => ProfilesView._showForm(),
+  'confirm-profile':  () => ProfilesView.confirm(),
+  'cancel-profile':   () => ProfilesView._hideForm(),
+  'open-themes':      () => dom.themeModal.classList.add('active'),
+  'close-themes':     () => dom.themeModal.classList.remove('active'),
+  'open-surah':       () => SurahView.open(),
+  'close-surah':      () => SurahView.close(),
+  'close-number':     () => NumberPicker.close(),
+  'show-stats':       () => StatsView.show(),
+  'start-errors':     () => QuizMode.startErrorBank(),
+  'share-progress':   () => {
+    const p = ProfileService.getActive();
+    const score = dom.resScore?.textContent || '';
+    TelegramBridge.share(p ? `أراجع القرآن الكريم مع ${p.name}${score ? ` — آخر نتيجة: ${score}` : ''}` : 'أراجع القرآن الكريم يومياً.');
+  },
+  'back-to-setup':    () => { ScreenManager.show('setup'); updateWelcomeBanner(); },
+  'end-test':         () => { if(!QuizMode.finishEarly()){ QuizMode.endChallenge(); resetApp(); } },
+  'retry-missed':     () => QuizMode.retryMissed(),
+  'toggle-tafsir':    () => ReviewMode.toggleTafsir(),
+  'reset':            () => { QuizMode.endChallenge(); resetApp(); },
+  'next-player':      () => QuizMode.nextPlayer(),
+  'share-challenge':  () => TelegramBridge.share((QuizMode._ch&&QuizMode._ch.text)||''),
+  'open-number':      el => NumberPicker.open(el.dataset.field, el.dataset.type)
+};
+
+function wireEvents(){
+  $$('.md-bottom-sheet').forEach(x => { x.inert = true; });
+
+  
+  $('#btn-darkmode').addEventListener('click', e => afterPress(e.currentTarget, () => ThemeService.applyDark(!ThemeService.isDark(), true)));
+
+  
+  document.addEventListener('click', e => {
+    const actionEl = e.target.closest('[data-action]');
+    if(actionEl){
+      const a = actionEl.dataset.action;
+      const h = actionHandlers[a];
+      if(h){ e.preventDefault(); afterPress(actionEl, () => { try { h(actionEl); } catch(err){ console.error(`[Handler ${a}]`, err); Snackbar.show('خطأ: ' + err.message); } }); return; }
+    }
+
+    const dialogScrim = e.target.closest('.md-dialog-scrim');
+    if(dialogScrim && e.target === dialogScrim){
+      dialogScrim.classList.remove('active');
+      return;
+    }
+    if(e.target === dom.scrim){
+      Overlay.close();
+      dom.profilesModal.classList.remove('active');
+      dom.themeModal.classList.remove('active');
+      return;
+    }
+
+    const tb = e.target.closest('.theme-swatch');
+    if(tb){ afterPress(tb, () => ThemeService.apply(tb.dataset.theme)); return; }
+
+    const sc = e.target.closest('[data-surah]');
+    if(sc){ afterPress(sc, () => SurahView.select(parseInt(sc.dataset.surah, 10))); return; }
+
+    const chip = e.target.closest('.md-number-chip');
+    if(chip){
+      afterPress(chip, () => {
+      const v = parseInt(chip.dataset.value, 10);
+      RangeService.updateValue(NumberPicker.type, NumberPicker.field, v);
+      RangeService.syncDisplays();
+      if(NumberPicker.type === 'ayah'){ PrefetchService._setStatus('ready'); PrefetchService._markReady(); }
+      else { PrefetchService.clearReady(); PrefetchService.schedule(); }
+      NumberPicker.close();
+      SessionService.save();
+      });
+      return;
+    }
+
+    const pe = e.target.closest('[data-profile]');
+    if(pe){ afterPress(pe, () => ProfilesView.select(pe.dataset.profile)); return; }
+    const db = e.target.closest('[data-delete-profile]');
+    if(db){ afterPress(db, () => ProfilesView.remove(db.dataset.deleteProfile)); return; }
+  });
+
+  
+  $$('#activity-segmented button').forEach(b => b.addEventListener('click', () => afterPress(b, () => {
+    $$('#activity-segmented button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    dom.activityMode.value = b.dataset.value;
+    dom.questionsCountContainer.classList.toggle('hidden', b.dataset.value === 'review');
+    $('#difficulty-container').classList.toggle('hidden', b.dataset.value === 'review');
+    SessionService.save();
+  })));
+
+  
+  $$('#difficulty-segmented button').forEach(b => b.addEventListener('click', () => afterPress(b, () => {
+    $$('#difficulty-segmented button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    SessionService.save();
+  })));
+  $$('#count-segmented button').forEach(b => b.addEventListener('click', () => afterPress(b, () => {
+    $$('#count-segmented button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    dom.questionsCount.value = b.dataset.value;
+    SessionService.save();
+  })));
+
+  
+  dom.scopeTabs.forEach(t => t.addEventListener('click', () => afterPress(t, () => {
+    dom.scopeTabs.forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    state.scope = t.dataset.scope;
+    SessionService.updateScopeUI();
+    PrefetchService.schedule();
+    SessionService.save();
+  })));
+
+  
+  dom.activityMode.addEventListener('change', e => {
+    dom.questionsCountContainer.classList.toggle('hidden', e.target.value === 'review');
+    $('#difficulty-container').classList.toggle('hidden', e.target.value === 'review');
+    $$('#activity-segmented button').forEach(b => b.classList.toggle('active', b.dataset.value === e.target.value));
+    SessionService.save();
+  });
+
+  
+  dom.surahSearch.addEventListener('input', e => SurahView.filter(e.target.value));
+  dom.numberJump.addEventListener('input', e => NumberPicker.jump(e.target.value));
+
+  
+  $('#setting-tajweed').addEventListener('change', e => Settings.set('tajweed', e.target.checked));
+  $('#setting-mutashabihat').addEventListener('change', e => Settings.set('mutashabihat', e.target.checked));
+
+  
+  dom.newProfileName.addEventListener('keypress', e => { if(e.key === 'Enter') ProfilesView.confirm(); });
+
+  
+  dom.prevAyahBtn.addEventListener('click', e => afterPress(e.currentTarget, () => ReviewMode.prev()));
+  dom.nextAyahBtn.addEventListener('click', e => afterPress(e.currentTarget, () => ReviewMode.next()));
+
+  
+  dom.startBtn.addEventListener('click', e => afterPress(e.currentTarget, async () => {
+    state.mode = dom.activityMode.value;
+    state.totalQuestions = parseInt(dom.questionsCount.value, 10);
+    state.difficulty = (document.querySelector('#difficulty-segmented .active')||{dataset:{}}).dataset.value || 'easy';
+    if(!RangeService.validate()) return;
+    dom.startBtn.disabled = true;
+    const label = dom.startBtn.querySelector('span:last-child');
+    const prev = label.textContent;
+    label.textContent = 'جاري التحميل...';
+    clearTimeout(PrefetchService._timer);
+    try{
+      const { ayahs, title } = await RangeService.fetchAyahs();
+      dom.startBtn.disabled = false;
+      label.textContent = prev;
+      if(!ayahs.length){ Snackbar.show('لم يتم العثور على آيات.'); return; }
+      if(state.mode === 'review') ReviewMode.start(ayahs, title);
+      else QuizMode.start(ayahs);
+    } catch(err){
+      console.error(err);
+      dom.startBtn.disabled = false;
+      label.textContent = prev;
+      Snackbar.show('تعذر تحميل هذا النطاق الآن. حاول مرة أخرى.');
+    }
+  }));
+
+  
+  GestureHandler.init(dom.swipeContainer);
+
+  
+  document.addEventListener('keydown', e => {
+    if(ScreenManager.current === 'review'){
+      if(e.key === 'ArrowRight') ReviewMode.next();
+      else if(e.key === 'ArrowLeft') ReviewMode.prev();
+      else if(e.key === 'Escape') resetApp();
+    } else if(ScreenManager.current === 'setup' && e.key === 'Enter' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'SELECT'){
+      dom.startBtn.click();
+    }
+
+    if(e.key === 'Escape'){
+      if(dom.surahPicker.classList.contains('active')) SurahView.close();
+      if(dom.numberPicker.classList.contains('active')) NumberPicker.close();
+      if(dom.profilesModal.classList.contains('active')) ProfilesView.close();
+      if(dom.themeModal.classList.contains('active')) dom.themeModal.classList.remove('active');
+    }
+  });
+
+  
+  window.addEventListener('scroll', () => {
+    const bar = $('#app-bar');
+    if(bar) bar.classList.toggle('scrolled', window.scrollY > 8);
+  }, { passive: true });
+}
+
+function initExtras(){
+  const body=document.body, D=()=>Storage.get('quran.display',{size:100,lh:2.1});
+  const A=()=>{ const d=D(); body.style.setProperty('--q-scale',d.size/100); body.style.setProperty('--q-lh',d.lh); };
+  const sz=$('#set-size'), lh=$('#set-lh'), d0=D(); sz.value=d0.size; lh.value=d0.lh; A();
+  [sz,lh].forEach(el=>el.addEventListener('input',()=>{ Storage.set('quran.display',{size:+sz.value,lh:+lh.value}); A(); }));
+  const cc=$('#custom-color'); cc.value=Storage.get('quran.customColor')||'#00796B';
+  cc.addEventListener('input',e=>{ Storage.set('quran.customColor',e.target.value); ThemeService.apply('theme-custom'); });
+  const bind=(id,key,fn)=>{ const c=$(id); c.checked=Settings.get(key); c.addEventListener('change',()=>{ Settings.set(key,c.checked); fn(); }); };
+  const oled=()=>body.classList.toggle('oled',Settings.get('oled')), dk=()=>ThemeService.applyDark(ThemeService.isDark());
+  bind('#setting-oled','oled',oled); bind('#setting-auto-dark','autoDark',dk); oled(); dk();
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{ if(Settings.get('autoDark')) dk(); });
+  $('#btn-backup').addEventListener('click',async()=>{
+    const data={}; Object.keys(localStorage).filter(k=>k.startsWith('quran.')&&!/cache/i.test(k)).forEach(k=>data[k]=localStorage.getItem(k));
+    const file=new File([JSON.stringify({app:'quran-quiz',v:1,date:new Date().toISOString(),data})],`quran-backup-${todayStr()}.json`,{type:'application/json'});
+    try{ if(navigator.canShare&&navigator.canShare({files:[file]})){ await navigator.share({files:[file]}); return; } }catch(e){ if(e&&e.name==='AbortError') return; }
+    try{ const a=document.createElement('a'); a.href=URL.createObjectURL(file); a.download=file.name; document.body.appendChild(a); a.click(); a.remove(); Snackbar.show('تم إنشاء النسخة الاحتياطية'); }
+    catch(_){ Snackbar.show('تعذّر إنشاء النسخة الاحتياطية.'); }
+  });
+  $('#btn-restore').addEventListener('click',()=>$('#restore-file').click());
+  $('#restore-file').addEventListener('change',async e=>{
+    const f=e.target.files[0]; if(!f) return;
+    try{ const o=JSON.parse(await f.text()); if(o.app!=='quran-quiz'||!o.data) throw 0;
+      Object.entries(o.data).forEach(([k,v])=>{ if(k.startsWith('quran.')&&typeof v==='string') localStorage.setItem(k,v); });
+      Snackbar.show('تمت الاستعادة، جارٍ إعادة التحميل…'); setTimeout(()=>location.reload(),900);
+    }catch(_){ Snackbar.show('الملف غير صالح.'); }
+    e.target.value='';
+  });
+  const sw=$('#setting-challenge'), box=$('#challenge-players');
+  sw.addEventListener('change',()=>{
+    box.classList.toggle('hidden',!sw.checked);
+    const l=ProfileService.getAll(), clean=x=>String(x).replace(/[<>&"']/g,'');
+    box.innerHTML=l.length<2?'<div class="info-box">أضف ملفًا شخصيًا آخر من أيقونة الملفات في الأعلى ليبدأ التحدي.</div>':l.map(p=>`<label class="md-switch"><input type="checkbox" value="${clean(p.id)}" checked><span class="track"></span><span class="label">${clean(p.emoji)} ${clean(p.name)}</span></label>`).join('');
+  });
+}
+
+async function bootstrap(){
+  TelegramBridge.init();
+  ThemeService.render();
+  ThemeService.apply(ThemeService.current());
+  ThemeService.applyDark(ThemeService.isDark());
+  initExtras();
+
+  $('#setting-tajweed').checked = Settings.get('tajweed');
+  $('#setting-mutashabihat').checked = Settings.get('mutashabihat');
+
+  ProfileService.ensureDefault();
+  SessionService.restore();
+  updateWelcomeBanner();
+
+  wireEvents();
+  attachRippleAll(document);
+
+  try{
+    state.surahList = await api.listSurahs();
+    const d = state.surahList.find(s => s.number === state.surahNumber) || state.surahList[1];
+    state.surahNumber = d.number;
+    dom.surahTriggerBadge.textContent = d.number;
+    dom.surahTriggerValue.textContent = d.name;
+    dom.ayahHint.textContent = `عدد آيات ${d.name}: ${d.numberOfAyahs}`;
+    RangeService.syncDisplays();
+    PrefetchService.schedule();
+  } catch(e){
+    console.error('[Bootstrap]', e);
+    dom.prefetchStatus.className = 'prefetch-bar error';
+    dom.prefetchStatus.innerHTML = '<span class="material-symbols-rounded" style="font-size:18px">error</span><span>تعذر تحميل قائمة السور</span>';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', bootstrap);
+</script>
+</body>
+</html>
