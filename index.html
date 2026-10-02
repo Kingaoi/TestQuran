@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" rel="stylesheet">
 
 <style>
 
@@ -1217,10 +1217,85 @@ body.dark.oled{--md-surface:#000;--md-surface-container-lowest:#000;--md-surface
 }
 .tafsir-panel p{ white-space:pre-line; }
 @media (prefers-reduced-motion:reduce){ .review-card .review-text.ayah-anim{ animation:none } }
+
+/* ===== Splash Screen ===== */
+#splash-screen{
+  position:fixed;inset:0;z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--md-surface,#fffbfe);
+  color:var(--md-on-surface,#1c1b1f);
+  font-family:'Tajawal','Roboto',system-ui,sans-serif;
+  transition:opacity .55s ease, visibility 0s .55s;
+  will-change:opacity;
+}
+#splash-screen.hide{opacity:0;visibility:hidden;pointer-events:none;}
+.splash-inner{
+  text-align:center;padding:24px;max-width:340px;
+  display:flex;flex-direction:column;align-items:center;gap:16px;
+}
+.splash-logo{
+  font-size:64px;line-height:1;
+  animation:splashPulse 1.8s ease-in-out infinite;
+  filter:drop-shadow(0 4px 12px rgba(0,0,0,.12));
+}
+.splash-title{
+  margin:0;font-size:1.4rem;line-height:1.7;font-weight:700;
+  color:var(--md-primary);letter-spacing:-.2px;
+}
+.splash-sub{margin:0;font-size:.92rem;color:var(--md-on-surface-variant);opacity:.85;}
+.splash-bar{
+  width:180px;height:4px;border-radius:9999px;
+  background:var(--md-surface-container-high);overflow:hidden;
+  position:relative;margin-top:4px;
+}
+.splash-bar span{
+  position:absolute;top:0;bottom:0;width:38%;border-radius:inherit;
+  background:var(--md-primary);
+  animation:splashSlide 1.3s ease-in-out infinite;
+}
+@keyframes splashPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+@keyframes splashSlide{0%{left:-40%;}100%{left:100%;}}
+body.splash-active{overflow:hidden;height:100%;}
+@media (prefers-reduced-motion:reduce){
+  .splash-logo{animation:none;}
+  .splash-bar span{animation:none;left:31%;}
+}
 </style>
 </head>
 
-<body class="theme-red">
+<body class="theme-red splash-active">
+<script>
+/* استعادة الثيم قبل رسم المحتوى لمنع الفلاش */
+(function(){
+  try{
+    var themes=['theme-red','theme-blue','theme-emerald','theme-purple','theme-gold','theme-slate','theme-pink','theme-teal','theme-terracotta','theme-olive','theme-indigo','theme-sepia','theme-custom'];
+    var t=JSON.parse(localStorage.getItem('quran.theme')||'null');
+    if(t&&themes.indexOf(t)>=0){
+      document.body.classList.remove.apply(document.body.classList,
+        Array.from(document.body.classList).filter(function(c){return c.indexOf('theme-')===0;}));
+      document.body.classList.add(t);
+      if(t==='theme-custom'){
+        var c=JSON.parse(localStorage.getItem('quran.customColor')||'null');
+        if(c)document.body.style.setProperty('--md-seed',c);
+      }
+    }
+    var s=JSON.parse(localStorage.getItem('quran.settings')||'{}');
+    var d=JSON.parse(localStorage.getItem('quran.dark')||'false');
+    if(s.autoDark)d=matchMedia('(prefers-color-scheme: dark)').matches;
+    if(d)document.body.classList.add('dark');
+    if(s.oled)document.body.classList.add('oled');
+  }catch(e){}
+})();
+</script>
+
+<div id="splash-screen" role="status" aria-live="polite" aria-label="جارٍ تحضير التطبيق">
+  <div class="splash-inner">
+    <div class="splash-logo">📖</div>
+    <h1 class="splash-title">اختبار ومراجعة القرآن الكريم</h1>
+    <p class="splash-sub">جارٍ تحضير البيانات…</p>
+    <div class="splash-bar"><span></span></div>
+  </div>
+</div>
 
 <header class="md-top-app-bar" id="app-bar">
   <div class="leading">
@@ -3225,7 +3300,24 @@ function initExtras(){
   });
 }
 
+function waitForFonts(){
+  if(!document.fonts || !document.fonts.load) return Promise.resolve();
+  const p = Promise.allSettled([
+    document.fonts.load('400 24px "Material Symbols Rounded"'),
+    document.fonts.load('400 24px "QPC Uthmanic Hafs"'),
+    document.fonts.load('400 16px "Tajawal"'),
+    document.fonts.load('700 16px "Tajawal"'),
+    document.fonts.load('400 16px "Roboto"')
+  ]).then(() => document.fonts.ready).catch(() => {});
+  const timeout = new Promise(r => setTimeout(r, 5000));
+  return Promise.race([p, timeout]);
+}
+
 async function bootstrap(){
+  const splash = document.getElementById('splash-screen');
+  const splashStart = Date.now();
+  const MIN_SPLASH_MS = 3000;
+
   TelegramBridge.init();
   ThemeService.render();
   ThemeService.apply(ThemeService.current());
@@ -3255,6 +3347,19 @@ async function bootstrap(){
     console.error('[Bootstrap]', e);
     dom.prefetchStatus.className = 'prefetch-bar error';
     dom.prefetchStatus.innerHTML = '<span class="material-symbols-rounded" style="font-size:18px">error</span><span>تعذر تحميل قائمة السور</span>';
+  }
+
+  const remaining = Math.max(0, MIN_SPLASH_MS - (Date.now() - splashStart));
+  await Promise.allSettled([
+    new Promise(r => setTimeout(r, remaining)),
+    waitForFonts()
+  ]);
+
+  if(splash){
+    splash.classList.add('hide');
+    splash.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('splash-active');
+    setTimeout(() => { try{ splash.remove(); }catch(_){} }, 700);
   }
 }
 
