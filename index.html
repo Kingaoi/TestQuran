@@ -18,7 +18,6 @@
 @font-face{font-family:'Awsat Digital';src:url('https://aawsat.com/themes/custom/aawsatv3/assets/fonts/AwsatDigital-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
 
 :root{
-  
   --md-typescale-display-large-size: 57px;  --md-typescale-display-large-line: 64px;
   --md-typescale-display-medium-size: 45px; --md-typescale-display-medium-line: 52px;
   --md-typescale-display-small-size: 36px;  --md-typescale-display-small-line: 44px;
@@ -35,7 +34,6 @@
   --md-typescale-label-medium-size: 12px;   --md-typescale-label-medium-line: 16px;
   --md-typescale-label-small-size: 11px;    --md-typescale-label-small-line: 16px;
 
-  
   --md-shape-xs: 4px;
   --md-shape-sm: 8px;
   --md-shape-md: 12px;
@@ -44,14 +42,12 @@
   --md-shape-xxl: 32px;
   --md-shape-full: 9999px;
 
-  
   --md-motion-standard: cubic-bezier(.2, 0, 0, 1);
   --md-motion-emphasized: cubic-bezier(.2, 0, 0, 1);
   --md-duration-short: 150ms;
   --md-duration-medium: 250ms;
   --md-duration-long: 400ms;
 
-  
   --md-elev-0: none;
   --md-elev-1: 0 1px 2px rgba(0,0,0,.3), 0 1px 3px 1px rgba(0,0,0,.15);
   --md-elev-2: 0 1px 2px rgba(0,0,0,.3), 0 2px 6px 2px rgba(0,0,0,.15);
@@ -61,7 +57,6 @@
 }
 
 body{
-  
   --md-primary: var(--md-seed);
   --md-on-primary: #ffffff;
   --md-primary-container: color-mix(in srgb, var(--md-seed) 18%, #ffffff);
@@ -1218,6 +1213,28 @@ body.dark.oled{--md-surface:#000;--md-surface-container-lowest:#000;--md-surface
 .tafsir-panel p{ white-space:pre-line; }
 @media (prefers-reduced-motion:reduce){ .review-card .review-text.ayah-anim{ animation:none } }
 
+/* ===== تمييز الكلمة المظللة ===== */
+.highlight-word{
+  background: color-mix(in srgb, var(--md-warning) 42%, transparent);
+  color: inherit;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: inherit;
+  padding: 0 .3em;
+  border-radius: .35em;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--md-warning) 55%, transparent);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.quran-text .highlight-word{
+  text-decoration: none;
+  line-height: inherit;
+}
+body.dark .highlight-word{
+  background: color-mix(in srgb, var(--md-warning) 32%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--md-warning) 45%, transparent);
+}
+
 /* ===== Splash Screen ===== */
 #splash-screen{
   position:fixed;inset:0;z-index:9999;
@@ -1328,7 +1345,6 @@ body.splash-active{overflow:hidden;height:100%;}
   </div>
 <h1 class="md-headline-small mb-6" style="font-weight:500">إعداد الجلسة</h1>
 
-  
   <div class="mb-5">
     <label class="section-label">نوع النشاط</label>
     <div class="activity-grid" id="activity-segmented">
@@ -1371,7 +1387,6 @@ body.splash-active{overflow:hidden;height:100%;}
     </select>
   </div>
 
-  
   <div class="mb-5">
     <label class="section-label">نطاق التحديد</label>
     <div class="md-segmented" id="scope-tabs" style="flex-wrap:wrap;height:auto;border-radius:var(--md-shape-full)">
@@ -1383,7 +1398,6 @@ body.splash-active{overflow:hidden;height:100%;}
     </div>
   </div>
 
-  
   <div id="surah-scope" class="scope-panel mb-5">
     <button class="picker-trigger md-state" data-action="open-surah">
       <div class="badge" id="surah-trigger-badge">2</div>
@@ -1404,7 +1418,6 @@ body.splash-active{overflow:hidden;height:100%;}
     <div class="info-box" id="ayah-hint">اختر سورة</div>
   </div>
 
-  
   <div id="page-scope" class="scope-panel hidden mb-5">
     <div class="range-row">
       <button class="picker-trigger md-state" data-action="open-number" data-field="from" data-type="page">
@@ -1417,7 +1430,6 @@ body.splash-active{overflow:hidden;height:100%;}
     <div class="info-box">المصحف يحتوي على 604 صفحات</div>
   </div>
 
-  
   <div id="juz-scope" class="scope-panel hidden mb-5">
     <div class="range-row">
       <button class="picker-trigger md-state" data-action="open-number" data-field="from" data-type="juz">
@@ -1430,7 +1442,6 @@ body.splash-active{overflow:hidden;height:100%;}
     <div class="info-box">القرآن يحتوي على 30 جزءاً</div>
   </div>
 
-  
   <div id="hizb-scope" class="scope-panel hidden mb-5">
     <div class="range-row">
       <button class="picker-trigger md-state" data-action="open-number" data-field="from" data-type="hizb">
@@ -1443,7 +1454,6 @@ body.splash-active{overflow:hidden;height:100%;}
     <div class="info-box">القرآن يحتوي على 60 حزباً</div>
   </div>
 
-  
   <div id="rub-scope" class="scope-panel hidden mb-5">
     <div class="range-row">
       <button class="picker-trigger md-state" data-action="open-number" data-field="from" data-type="rub">
@@ -1456,7 +1466,6 @@ body.splash-active{overflow:hidden;height:100%;}
     <div class="info-box">القرآن يحتوي على 240 ربعاً</div>
   </div>
 
-  
   <div id="difficulty-container" class="mb-5">
     <label class="section-label">مستوى الصعوبة</label>
     <div class="md-segmented" id="difficulty-segmented">
@@ -1485,7 +1494,6 @@ body.splash-active{overflow:hidden;height:100%;}
     </select>
   </div>
 
-  
   <button id="start-btn" class="md-fab w-full md-state" style="width:100%;justify-content:center;height:56px">
     <span class="material-symbols-rounded filled">play_arrow</span>
     <span>بدء</span>
@@ -2586,13 +2594,30 @@ const QuizMode = {
       return this._choice(q.join(' '),words[index],wrong);
     });
   },
-  _complete(ayahs,count){
-    const v=this._valid(ayahs),len={easy:1,medium:2,hard:3}[state.difficulty]||1;
-    return this._shuffle(v).slice(0,count).map(a=>{this._cur=a;
-      const w=a.text.split(' '),cut=Math.max(2,Math.min(w.length-len,Math.floor(w.length*.5))),ans=w.slice(cut,cut+len).join(' ');
-      const wrong=this._sim(a,v,12).map(x=>this._w(x,cut,len)).filter(t=>t&&t!==ans);
-      return this._choice(`أكمل الآية:<br><br><span class="quran-text">${w.slice(0,cut).join(' ')} <span class="blank-space"></span></span>`,ans,wrong);
-    });
+  _complete(ayahs, count){
+    const v = this._valid(ayahs);
+    if(!v.length) return [];
+    const baseLen = { easy: 1, medium: 2, hard: 3 }[state.difficulty] || 1;
+
+    return this._shuffle(v).slice(0, count).map(a => {
+      this._cur = a;
+      const w = a.text.split(' ');
+      let len = baseLen;
+      if(w.length < len + 3) len = Math.max(1, w.length - 3);
+
+      const maxCut = Math.max(1, w.length - len - 1);
+      const cut = Math.max(2, Math.min(maxCut, Math.floor(w.length * 0.5)));
+      if(cut + len > w.length || cut < 1) return null;
+
+      const ans = w.slice(cut, cut + len).join(' ');
+      const wrong = this._sim(a, v, 12).map(x => this._w(x, cut, len)).filter(t => t && t !== ans);
+
+      return this._choice(
+        `أكمل الآية:<br><br><span class="quran-text">${w.slice(0, cut).join(' ')} <span class="blank-space"></span></span>`,
+        ans,
+        wrong
+      );
+    }).filter(Boolean);
   },
   _continue(ayahs,count){
     const v=this._valid(ayahs);
@@ -2639,14 +2664,70 @@ const QuizMode = {
     });
     return out.length?out:this._complete(ayahs,count);
   },
-  _wordDifference(ayahs,count){
-    const valid=this._valid(ayahs); if(!valid.length)return [];
-    return this._shuffle(valid).slice(0,Math.min(count,valid.length)).map(a=>{this._cur=a;
-      const w=a.text.split(' '), index=Math.min(2,w.length-1), alternative=this._pick(valid.filter(x=>x!==a)) || a, replacement=alternative.text.split(' ')[index]||'كلمة';
-      const altered=[...w]; altered[index]=replacement;
-      const wrong=this._shuffle(w.filter((x,i)=>i!==index&&x.length>2)).slice(0,3);
-      return this._choice(`ما الكلمة الصحيحة بدل الكلمة المظللة؟<br><br><span class="quran-text">${altered.join(' ')}</span>`,w[index],wrong);
-    });
+  _wordDifference(ayahs, count){
+    const valid = this._valid(ayahs);
+    if(!valid.length) return [];
+    const out = [];
+    const pool = this._shuffle(valid);
+
+    for(const a of pool){
+      if(out.length >= count) break;
+      const words = a.text.split(' ');
+      if(words.length < 4) continue;
+
+      const candidates = words
+        .map((w, i) => {
+          const stripped = w.replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, '');
+          return (i > 0 && i < words.length - 1 && stripped.length >= 3) ? i : -1;
+        })
+        .filter(i => i >= 0);
+      if(!candidates.length) continue;
+
+      const index = this._pick(candidates);
+      const correctWord = words[index];
+
+      let replacement = null;
+      for(const other of this._shuffle(valid)){
+        if(other.text === a.text) continue;
+        const ow = other.text.split(' ');
+        const cand = (ow[index] && ow[index] !== correctWord)
+          ? ow[index]
+          : this._pick(ow.filter(x => x !== correctWord && x.length >= 3));
+        if(cand && cand !== correctWord && cand.length >= 2){
+          replacement = cand;
+          break;
+        }
+      }
+      if(!replacement) continue;
+
+      const altered = [...words];
+      altered[index] = `<mark class="highlight-word">${escapeHTML(replacement)}</mark>`;
+      this._cur = a;
+
+      const wrongPool = [];
+      for(const other of this._shuffle(valid)){
+        if(other.text === a.text) continue;
+        const ow = other.text.split(' ');
+        const c1 = ow[index];
+        if(c1 && c1 !== correctWord && c1 !== replacement && c1.length >= 3 && !wrongPool.includes(c1)){
+          wrongPool.push(c1);
+        }
+        if(wrongPool.length >= 6) break;
+      }
+      for(const w of words){
+        if(w !== correctWord && w !== replacement && w.length >= 3 && !wrongPool.includes(w)){
+          wrongPool.push(w);
+        }
+        if(wrongPool.length >= 8) break;
+      }
+
+      out.push(this._choice(
+        `الكلمة <mark class="highlight-word">المظللة</mark> غير صحيحة. ما الكلمة الصحيحة في مكانها؟<br><br><span class="quran-text">${altered.join(' ')}</span>`,
+        correctWord,
+        wrongPool.slice(0, 3)
+      ));
+    }
+    return out;
   },
   _matchEdges(ayahs,count){
     const v=this._valid(ayahs);
@@ -2675,12 +2756,25 @@ const QuizMode = {
       return this._choice(`حدد موضع الآية (${field[0]}):<br><br><span class="quran-text">${a.text}</span>`,field[1],pool.slice(0,3));
     });
   },
-  _wordOrder(ayahs,count){
-    const v=this._valid(ayahs);
-    return this._shuffle(v).slice(0,count).map(a=>{this._cur=a;
-      const words=a.text.split(' ').slice(0,5),ans=words.join(' '),mix=()=>{let t,k=0;do{t=this._shuffle(words).join(' ');}while(t===ans&&++k<9);return t;};
-      return this._choice(`رتّب الكلمات لتكوين بداية الآية:<br><br><span class="quran-text">${mix()}</span>`,ans,[mix(),mix(),mix(),mix()]);
-    });
+  _wordOrder(ayahs, count){
+    const v = this._valid(ayahs).filter(a => a.text.split(' ').length >= 4);
+    if(!v.length) return [];
+    return this._shuffle(v).slice(0, count).map(a => {
+      this._cur = a;
+      const words = a.text.split(' ').slice(0, 5);
+      if(words.length < 4) return null;
+      const ans = words.join(' ');
+      const mix = () => {
+        let t, k = 0;
+        do { t = this._shuffle(words).join(' '); } while(t === ans && ++k < 12);
+        return t;
+      };
+      return this._choice(
+        `رتّب الكلمات لتكوين بداية الآية:<br><br><span class="quran-text">${mix()}</span>`,
+        ans,
+        [mix(), mix(), mix(), mix()]
+      );
+    }).filter(Boolean);
   },
   _buildForMode(mode,ayahs,count){
     const builders={
@@ -2691,6 +2785,12 @@ const QuizMode = {
     };
     return builders[mode] ? builders[mode].call(this,ayahs,count) : this._fillBlank(ayahs,count);
   },
+  _isValidQuestion(q){
+    if(!q || !q.questionText || !q.correctAnswer) return false;
+    if(!Array.isArray(q.options) || q.options.length < 2) return false;
+    if(!q.options.includes(q.correctAnswer)) return false;
+    return true;
+  },
   _build(ayahs,count){
     const mixed=['fill-blank','complete-ayah','continue-ayah','identify-surah','ayah-number','true-false','mutashabihat','word-difference','match-edges','before-after','location','word-order'];
     let qs;
@@ -2698,7 +2798,7 @@ const QuizMode = {
       const per=Math.ceil(count/mixed.length);
       qs=this._shuffle(mixed.flatMap(m=>this._buildForMode(m,ayahs,per))).slice(0,count);
     } else qs=this._buildForMode(state.mode,ayahs,count);
-    return qs.filter(q=>q.options.length>1);
+    return qs.filter(q => q.options && q.options.length > 1 && this._isValidQuestion(q));
   },
   start(ayahs){
     this._stopTimer();
@@ -3105,10 +3205,8 @@ const actionHandlers = {
 function wireEvents(){
   $$('.md-bottom-sheet').forEach(x => { x.inert = true; });
 
-  
   $('#btn-darkmode').addEventListener('click', e => afterPress(e.currentTarget, () => ThemeService.applyDark(!ThemeService.isDark(), true)));
 
-  
   document.addEventListener('click', e => {
     const actionEl = e.target.closest('[data-action]');
     if(actionEl){
@@ -3155,7 +3253,6 @@ function wireEvents(){
     if(db){ afterPress(db, () => ProfilesView.remove(db.dataset.deleteProfile)); return; }
   });
 
-  
   $$('#activity-segmented button').forEach(b => b.addEventListener('click', () => afterPress(b, () => {
     $$('#activity-segmented button').forEach(x => x.classList.remove('active'));
     b.classList.add('active');
@@ -3165,7 +3262,6 @@ function wireEvents(){
     SessionService.save();
   })));
 
-  
   $$('#difficulty-segmented button').forEach(b => b.addEventListener('click', () => afterPress(b, () => {
     $$('#difficulty-segmented button').forEach(x => x.classList.remove('active'));
     b.classList.add('active');
@@ -3178,7 +3274,6 @@ function wireEvents(){
     SessionService.save();
   })));
 
-  
   dom.scopeTabs.forEach(t => t.addEventListener('click', () => afterPress(t, () => {
     dom.scopeTabs.forEach(x => x.classList.remove('active'));
     t.classList.add('active');
@@ -3188,7 +3283,6 @@ function wireEvents(){
     SessionService.save();
   })));
 
-  
   dom.activityMode.addEventListener('change', e => {
     dom.questionsCountContainer.classList.toggle('hidden', e.target.value === 'review');
     $('#difficulty-container').classList.toggle('hidden', e.target.value === 'review');
@@ -3196,22 +3290,17 @@ function wireEvents(){
     SessionService.save();
   });
 
-  
   dom.surahSearch.addEventListener('input', e => SurahView.filter(e.target.value));
   dom.numberJump.addEventListener('input', e => NumberPicker.jump(e.target.value));
 
-  
   $('#setting-tajweed').addEventListener('change', e => Settings.set('tajweed', e.target.checked));
   $('#setting-mutashabihat').addEventListener('change', e => Settings.set('mutashabihat', e.target.checked));
 
-  
   dom.newProfileName.addEventListener('keypress', e => { if(e.key === 'Enter') ProfilesView.confirm(); });
 
-  
   dom.prevAyahBtn.addEventListener('click', e => afterPress(e.currentTarget, () => ReviewMode.prev()));
   dom.nextAyahBtn.addEventListener('click', e => afterPress(e.currentTarget, () => ReviewMode.next()));
 
-  
   dom.startBtn.addEventListener('click', e => afterPress(e.currentTarget, async () => {
     state.mode = dom.activityMode.value;
     state.totalQuestions = parseInt(dom.questionsCount.value, 10);
@@ -3237,10 +3326,8 @@ function wireEvents(){
     }
   }));
 
-  
   GestureHandler.init(dom.swipeContainer);
 
-  
   document.addEventListener('keydown', e => {
     if(ScreenManager.current === 'review'){
       if(e.key === 'ArrowRight') ReviewMode.next();
@@ -3258,7 +3345,6 @@ function wireEvents(){
     }
   });
 
-  
   window.addEventListener('scroll', () => {
     const bar = $('#app-bar');
     if(bar) bar.classList.toggle('scrolled', window.scrollY > 8);
