@@ -18,6 +18,8 @@
 @font-face{font-family:'Awsat Digital';src:url('https://aawsat.com/themes/custom/aawsatv3/assets/fonts/AwsatDigital-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
 
 :root{
+  color-scheme: light dark; /* ✅ دعم كامل للأوضاع */
+
   --md-typescale-display-large-size: 57px;  --md-typescale-display-large-line: 64px;
   --md-typescale-display-medium-size: 45px; --md-typescale-display-medium-line: 52px;
   --md-typescale-display-small-size: 36px;  --md-typescale-display-small-line: 44px;
@@ -111,6 +113,8 @@ body{
 }
 
 body.dark{
+  color-scheme: dark; /* ✅ */
+
   --md-primary: color-mix(in srgb, var(--md-seed) 55%, #ffffff);
   --md-on-primary: color-mix(in srgb, var(--md-seed) 75%, #000000);
   --md-primary-container: color-mix(in srgb, var(--md-seed) 55%, #000000);
@@ -172,25 +176,29 @@ body.dark{
 .theme-slate   { --md-seed: #4A5560; }
 .theme-pink    { --md-seed: #B3456E; }
 
+/* ============================================
+   ✅ الإصلاح الرئيسي: لا نأخذ خلفية تيليغرام
+   ============================================ */
 body.telegram-app{
-  --tg-bg: var(--tg-theme-bg-color, var(--md-surface));
-  --tg-text: var(--tg-theme-text-color, var(--md-on-surface));
-  --tg-hint: var(--tg-theme-hint-color, var(--md-on-surface-variant));
-  --tg-button: var(--tg-theme-button-color, var(--md-primary));
-  --tg-button-text: var(--tg-theme-button-text-color, var(--md-on-primary));
-  background:var(--tg-bg); color:var(--tg-text);
+  --tg-bg: var(--md-surface);
+  --tg-text: var(--md-on-surface);
+  --tg-hint: var(--md-on-surface-variant);
+  --tg-button: var(--md-primary);
+  --tg-button-text: var(--md-on-primary);
+  background: var(--md-surface) !important;
+  color: var(--md-on-surface) !important;
 }
 body.telegram-app .md-top-app-bar{
   padding-top:env(safe-area-inset-top, 0px);
   height:calc(64px + env(safe-area-inset-top, 0px));
-  background:var(--tg-bg);
+  background:var(--md-surface) !important;
 }
 body.telegram-app .md-top-app-bar.scrolled{
-  background:color-mix(in srgb, var(--tg-bg) 92%, var(--tg-button));
+  background:var(--md-surface-container) !important;
 }
-body.telegram-app .telegram-share-btn{ color:var(--tg-button); }
+body.telegram-app .telegram-share-btn{ color:var(--md-primary); }
 body.telegram-app .md-btn-filled, body.telegram-app .md-fab{
-  background:var(--tg-button); color:var(--tg-button-text);
+  background:var(--md-primary); color:var(--md-on-primary);
 }
 body.telegram-app .md-bottom-sheet{ padding-bottom:max(12px, env(safe-area-inset-bottom, 0px)); }
 body.telegram-app .md-snackbar{ bottom:max(24px, calc(24px + env(safe-area-inset-bottom, 0px))); }
@@ -1879,7 +1887,6 @@ const SplashParticles = {
     resize();
     window.addEventListener('resize', debounce(resize, 200));
     if(reduced){
-      // إطار واحد فقط عند تقليل الحركة
       draw();
     } else {
       this.raf = requestAnimationFrame(draw);
@@ -1960,6 +1967,9 @@ const Storage = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch(_) {} }
 };
 
+/* ============================================
+   ✅ TelegramBridge بعد الإصلاح
+   ============================================ */
 const TelegramBridge = {
   tg: null,
   init(){
@@ -1969,10 +1979,22 @@ const TelegramBridge = {
       document.body.classList.add('telegram-app');
       this.tg.ready();
       this.tg.expand();
-      if(this.tg.setHeaderColor) this.tg.setHeaderColor(this.tg.themeParams?.bg_color || 'bg_color');
-      if(this.tg.setBackgroundColor) this.tg.setBackgroundColor(this.tg.themeParams?.bg_color || 'bg_color');
+
+      /* ✅ نزامن ألوان تيليغرام مع ثيمنا الخاص بدل العكس */
+      ThemeService.syncTelegramChrome(document.body.classList.contains('dark'));
+
       this.tg.BackButton?.onClick(() => this.handleBack());
       bus.on('screen:changed', screen => this.syncBackButton(screen));
+
+      /* ✅ استمع لتغيّر ثيم النظام من تيليغرام (للـ autoDark) */
+      this.tg.onEvent?.('themeChanged', () => {
+        if(Settings.get('autoDark')){
+          const isDark = this.tg.colorScheme === 'dark';
+          document.body.classList.toggle('dark', isDark);
+          ThemeService.syncTelegramChrome(isDark);
+        }
+      });
+
       return true;
     }catch(err){ console.warn('[Telegram]', err); return false; }
   },
@@ -2235,6 +2257,9 @@ const Settings = {
   set(k, v){ const a = this._load(); a[k] = !!v; Storage.set(CONFIG.KEYS.settings, a); }
 };
 
+/* ============================================
+   ✅ ThemeService بعد الإصلاح
+   ============================================ */
 const ThemeService = {
   apply(n){
     const cc = Storage.get('quran.customColor') || '#00796B';
@@ -2253,7 +2278,24 @@ const ThemeService = {
     Storage.set(CONFIG.KEYS.dark, on);
     const icon = $('#btn-darkmode .material-symbols-rounded');
     if(icon) icon.textContent = on ? 'light_mode' : 'dark_mode';
+
+    /* ✅ مزامنة ألوان واجهة تيليغرام مع ثيمنا */
+    this.syncTelegramChrome(on);
   },
+
+  /* ✅ دالة جديدة — تزامن شريط تيليغرام مع ثيمنا */
+  syncTelegramChrome(isDark){
+    const tg = window.Telegram && window.Telegram.WebApp;
+    if(!tg) return;
+    try{
+      const bg     = isDark ? '#141218' : '#fffbfe';
+      const header = isDark ? '#1d1b20' : '#f3edf7';
+      tg.setHeaderColor?.(header);
+      tg.setBackgroundColor?.(bg);
+      if(tg.setBottomBarColor) tg.setBottomBarColor(bg);
+    }catch(e){ /* تجاهل */ }
+  },
+
   current(){ return Storage.get(CONFIG.KEYS.theme) || 'theme-red'; },
   isDark(){ return Settings.get('autoDark') ? matchMedia('(prefers-color-scheme: dark)').matches : !!Storage.get(CONFIG.KEYS.dark, false); },
   render(){
@@ -3508,7 +3550,6 @@ async function bootstrap(){
   const splashStart = Date.now();
   const MIN_SPLASH_MS = 3000;
 
-  // شغّل Particle Network فوراً
   const splashCanvas = document.getElementById('splash-particles');
   SplashParticles.start(splashCanvas);
 
@@ -3516,6 +3557,7 @@ async function bootstrap(){
   ThemeService.render();
   ThemeService.apply(ThemeService.current());
   ThemeService.applyDark(ThemeService.isDark());
+  ThemeService.syncTelegramChrome(ThemeService.isDark()); /* ✅ أضف هذا السطر */
   initExtras();
 
   $('#setting-tajweed').checked = Settings.get('tajweed');
