@@ -1797,6 +1797,11 @@ body.splash-active{overflow:hidden;height:100%;}
 <script>
 'use strict';
 
+// ===== إعدادات التحكم اليدوي في تنظيف النص القرآني =====
+// 'replace': يستبدل U+06DF (الصفر العلوي المدور) بـ U+0652 (السكون) — الأفضل للمعنى الصوتي
+// 'remove' : يحذف جميع الرموز القرآنية تماماً — نص نظيف بدون علامات وقف
+const QURAN_CLEAN_MODE = 'replace';
+
 const $  = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
 const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
@@ -2116,10 +2121,43 @@ class QuranAPI {
     this._pending.set(url, p);
     return p;
   }
+
+  /**
+   * تنظيف النص القرآني من الرموز التي تسبب مشاكل العرض (الدوائر البيضاء).
+   *
+   * السبب: الرمز U+06DF (ARABIC SMALL HIGH ROUNDED ZERO) يُعرض كدائرة بيضاء
+   * في بعض الخطوط والمنصات. الحل: استبداله بـ U+0652 (ARABIC SUKUN) أو حذفه.
+   *
+   * وضعان:
+   *   - 'replace': يستبدل U+06DF بـ U+0652 + يحذف علامات الوقف
+   *   - 'remove' : يحذف كل الرموز القرآنية (علامات الوقف + U+06DF + U+25CC)
+   */
   _strip(a){
     if(typeof a.text !== 'string') return a;
     const sajda = !!a.sajda || /\u06E9/.test(a.text);
-    let text = a.text.replace(/[\u06DD\u06DE\u06E9\u25CC]/g, '').replace(/\s{2,}/g, ' ').trim();
+
+    let text = a.text;
+
+    if (QURAN_CLEAN_MODE === 'replace') {
+      // 1. استبدال U+06DF (الصفر العلوي المدور) بـ U+0652 (السكون) للحفاظ على المعنى الصوتي
+      text = text.replace(/\u06DF/g, '\u0652');
+
+      // 2. إزالة علامات الوقف (U+06D6 إلى U+06DE) + الرموز الأخرى (U+06E0 إلى U+06ED)
+      //    مع الإبقاء على U+06E9 (علامة السجدة) التي تظهر بشكل صحيح
+      text = text.replace(/[\u06D6-\u06DE\u06E0-\u06E8\u06EA-\u06ED]/g, '');
+
+      // 3. إزالة دائرة العلامة المنقطة U+25CC
+      text = text.replace(/\u25CC/g, '');
+
+    } else {
+      // وضع الإزالة الكاملة: حذف كل الرموز القرآنية بدون استثناء
+      text = text.replace(/[\u06D6-\u06ED\u25CC\u06DF\u06E0\u06E1]/g, '');
+    }
+
+    // 4. تنظيف المسافات المزدوجة الناتجة
+    text = text.replace(/\s{2,}/g, ' ').trim();
+
+    // 5. معالجة البسملة في بداية السور (إزالتها من النص المعروض ما عدا الفاتحة والتوبة)
     const sn = a.surah && a.surah.number;
     if(a.numberInSurah === 1 && sn && sn !== 1 && sn !== 9){
       const plain = text.replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, '');
@@ -2128,6 +2166,7 @@ class QuranAPI {
     }
     return { ...a, text, sajda };
   }
+
   _n(a, fb = { number: 0, name: 'سورة' }){ return a.map(x => this._strip({ ...x, surah: x.surah || fb })); }
   listSurahs(){ return this._fetch(`${CONFIG.API.quran}/surah`, d => { if(d.code !== 200) throw new Error('surahs'); return d.data; }); }
   getSurah(n){ return this._fetch(`${CONFIG.API.quran}/surah/${n}/quran-uthmani`, d => {
