@@ -18,7 +18,7 @@
 @font-face{font-family:'Awsat Digital';src:url('https://aawsat.com/themes/custom/aawsatv3/assets/fonts/AwsatDigital-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
 
 :root{
-  color-scheme: light dark; /* ✅ دعم كامل للأوضاع */
+  color-scheme: light dark;
 
   --md-typescale-display-large-size: 57px;  --md-typescale-display-large-line: 64px;
   --md-typescale-display-medium-size: 45px; --md-typescale-display-medium-line: 52px;
@@ -113,7 +113,7 @@ body{
 }
 
 body.dark{
-  color-scheme: dark; /* ✅ */
+  color-scheme: dark;
 
   --md-primary: color-mix(in srgb, var(--md-seed) 55%, #ffffff);
   --md-on-primary: color-mix(in srgb, var(--md-seed) 75%, #000000);
@@ -176,9 +176,6 @@ body.dark{
 .theme-slate   { --md-seed: #4A5560; }
 .theme-pink    { --md-seed: #B3456E; }
 
-/* ============================================
-   ✅ الإصلاح الرئيسي: لا نأخذ خلفية تيليغرام
-   ============================================ */
 body.telegram-app{
   --tg-bg: var(--md-surface);
   --tg-text: var(--md-on-surface);
@@ -1626,6 +1623,11 @@ body.splash-active{overflow:hidden;height:100%;}
         <span class="material-symbols-rounded">replay</span>
         أعد الأسئلة التي أخطأت فيها
       </button>
+      <!-- زر الإعلان الجديد -->
+      <button id="watch-ad-btn" data-action="watch-ad" class="md-btn md-btn-tonal md-btn-lg md-btn-block md-state" style="display:none">
+        <span class="material-symbols-rounded">play_circle</span>
+        شاهد إعلاناً وادعم التطبيق
+      </button>
       <button data-action="reset" class="md-btn md-btn-filled md-btn-lg md-btn-block md-state">
         <span class="material-symbols-rounded">restart_alt</span>
         اختبار جديد
@@ -1788,6 +1790,8 @@ body.splash-active{overflow:hidden;height:100%;}
 </div>
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
+<!-- مكتبة Adsgram -->
+<script src="https://sad.adsgram.ai/js/sad.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
 
 <script>
@@ -1805,6 +1809,38 @@ const vibrate = p => { try{ navigator.vibrate && navigator.vibrate(p); }catch(_)
 const prefersReducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const escapeHTML = value => String(value ?? '').replace(/[&<>\"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch]));
+
+/* ===== Adsgram Integration ===== */
+let AdController = null;
+function initAdsgram() {
+    try {
+        if (window.Adsgram) {
+            AdController = window.Adsgram.init({ blockId: "52266" });
+        }
+    } catch(e) { console.warn("Adsgram init failed", e); }
+}
+
+async function showRewardAd() {
+    if (!AdController) {
+        Snackbar.show("الإعلانات غير متاحة حالياً.");
+        return;
+    }
+    try {
+        const result = await AdController.show();
+        if (result && result.done) {
+            Snackbar.show("🎉 شكراً لدعمك! تمت مكافأتك.");
+            // مكافأة: فتح زر إعادة الأسئلة الخاطئة إذا كان مخفياً
+            const retryBtn = $('#retry-btn');
+            if (retryBtn) {
+                retryBtn.style.display = 'inline-flex';
+                retryBtn.dataset.unlocked = 'true';
+            }
+        }
+    } catch (error) {
+        console.warn("Ad error", error);
+        Snackbar.show("لم يتم إكمال الإعلان.");
+    }
+}
 
 /* ===== Splash Particle Network ===== */
 const SplashParticles = {
@@ -1967,9 +2003,6 @@ const Storage = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch(_) {} }
 };
 
-/* ============================================
-   ✅ TelegramBridge بعد الإصلاح
-   ============================================ */
 const TelegramBridge = {
   tg: null,
   init(){
@@ -1980,13 +2013,11 @@ const TelegramBridge = {
       this.tg.ready();
       this.tg.expand();
 
-      /* ✅ نزامن ألوان تيليغرام مع ثيمنا الخاص بدل العكس */
       ThemeService.syncTelegramChrome(document.body.classList.contains('dark'));
 
       this.tg.BackButton?.onClick(() => this.handleBack());
       bus.on('screen:changed', screen => this.syncBackButton(screen));
 
-      /* ✅ استمع لتغيّر ثيم النظام من تيليغرام (للـ autoDark) */
       this.tg.onEvent?.('themeChanged', () => {
         if(Settings.get('autoDark')){
           const isDark = this.tg.colorScheme === 'dark';
@@ -2257,9 +2288,6 @@ const Settings = {
   set(k, v){ const a = this._load(); a[k] = !!v; Storage.set(CONFIG.KEYS.settings, a); }
 };
 
-/* ============================================
-   ✅ ThemeService بعد الإصلاح
-   ============================================ */
 const ThemeService = {
   apply(n){
     const cc = Storage.get('quran.customColor') || '#00796B';
@@ -2279,11 +2307,9 @@ const ThemeService = {
     const icon = $('#btn-darkmode .material-symbols-rounded');
     if(icon) icon.textContent = on ? 'light_mode' : 'dark_mode';
 
-    /* ✅ مزامنة ألوان واجهة تيليغرام مع ثيمنا */
     this.syncTelegramChrome(on);
   },
 
-  /* ✅ دالة جديدة — تزامن شريط تيليغرام مع ثيمنا */
   syncTelegramChrome(isDark){
     const tg = window.Telegram && window.Telegram.WebApp;
     if(!tg) return;
@@ -2293,7 +2319,7 @@ const ThemeService = {
       tg.setHeaderColor?.(header);
       tg.setBackgroundColor?.(bg);
       if(tg.setBottomBarColor) tg.setBottomBarColor(bg);
-    }catch(e){ /* تجاهل */ }
+    }catch(e){ }
   },
 
   current(){ return Storage.get(CONFIG.KEYS.theme) || 'theme-red'; },
@@ -3023,6 +3049,10 @@ const QuizMode = {
     $('#retry-btn').style.display=miss&&!c?'':'none';
     const nb=$('#next-player-btn'); nb.style.display=c&&!last?'':'none'; if(c&&!last) nb.textContent=`دور ${c.names[c.i+1]} ←`;
     $('#share-challenge-btn').style.display=last?'':'none';
+    
+    // إظهار زر الإعلان في شاشة النتائج
+    const adBtn = $('#watch-ad-btn');
+    if (adBtn) adBtn.style.display = 'inline-flex';
   },
   nextPlayer(){
     const c=this._ch; if(!c||c.i>=c.ids.length-1) return;
@@ -3345,7 +3375,8 @@ const actionHandlers = {
   'reset':            () => { QuizMode.endChallenge(); resetApp(); },
   'next-player':      () => QuizMode.nextPlayer(),
   'share-challenge':  () => TelegramBridge.share((QuizMode._ch&&QuizMode._ch.text)||''),
-  'open-number':      el => NumberPicker.open(el.dataset.field, el.dataset.type)
+  'open-number':      el => NumberPicker.open(el.dataset.field, el.dataset.type),
+  'watch-ad':         () => showRewardAd() // ربط زر الإعلان
 };
 
 function wireEvents(){
@@ -3553,11 +3584,12 @@ async function bootstrap(){
   const splashCanvas = document.getElementById('splash-particles');
   SplashParticles.start(splashCanvas);
 
+  initAdsgram(); // تهيئة الإعلانات
   TelegramBridge.init();
   ThemeService.render();
   ThemeService.apply(ThemeService.current());
   ThemeService.applyDark(ThemeService.isDark());
-  ThemeService.syncTelegramChrome(ThemeService.isDark()); /* ✅ أضف هذا السطر */
+  ThemeService.syncTelegramChrome(ThemeService.isDark());
   initExtras();
 
   $('#setting-tajweed').checked = Settings.get('tajweed');
