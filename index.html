@@ -6,12 +6,10 @@
 <meta name="theme-color" content="#e8dcc0">
 <title>اختبار ومراجعة القرآن الكريم</title>
 
-
 <!-- ═══════════════════════════════════════════════════════════════
-     Monetag SDK — Rewarded Popup
+     Monetag SDK — Rewarded Interstitial + Rewarded Popup + In-app
      ═══════════════════════════════════════════════════════════════ -->
-<script src='//libtl.com/sdk.js' data-zone='12007850' data-sdk='show_12007850'></script>    
-
+<script src='//libtl.com/sdk.js' data-zone='12007850' data-sdk='show_12007850'></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2024,32 +2022,98 @@ const prefersReducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const escapeHTML = value => String(value ?? '').replace(/[&<>\"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch]));
 
-/* ===== Monetag Rewarded Popup Integration ===== */
-const MONETAG_ZONE_ID = '12007850';
-const MONETAG_SHOW_FUNCTION = 'show_' + MONETAG_ZONE_ID;
+/* ═══════════════════════════════════════════════════════════════
+   Monetag Ads Manager — يدمج 3 تنسيقات بمعرّف منطقة واحد
+   ─────────────────────────────────────────────────────────────
+   1) Rewarded Interstitial  → show_12007850()               [زر المكافأة]
+   2) Rewarded Popup         → show_12007850('pop')          [احتياطي]
+   3) In-app Interstitial    → show_12007850({type:'inApp'}) [تلقائي]
+   ═══════════════════════════════════════════════════════════════ */
+const MonetagAds = {
+  ZONE_ID: '12007850',
+  _fn: null,
+  _lastInApp: 0,
+  _inAppCount: 0,
+  IN_APP_COOLDOWN: 90_000,      // 90 ثانية بين كل عرضين تلقائيين
+  IN_APP_MAX_PER_SESSION: 5,    // حد أقصى 5 مرات في الجلسة
 
-async function showRewardAd() {
-    const showFn = window[MONETAG_SHOW_FUNCTION];
-    if (typeof showFn !== 'function') {
-        console.warn('[Monetag] show function not found:', MONETAG_SHOW_FUNCTION);
-        Snackbar.show("الإعلانات غير متاحة حالياً. تأكد من تفعيلها في لوحة التحكم.");
-        return;
+  get fn(){
+    if(!this._fn) this._fn = window['show_' + this.ZONE_ID];
+    return this._fn;
+  },
+
+  isReady(){ return typeof this.fn === 'function'; },
+
+  /* ─── إعلان المكافأة: عند ضغط المستخدم ─── */
+  async showRewarded(){
+    if(!this.isReady()){
+      console.warn('[Monetag] SDK not ready yet');
+      return false;
     }
-    try {
-        // استدعاء دالة Monetag لعرض إعلان المكافأة (Rewarded Popup)
-        await showFn('pop');
-        // إذا وصلنا هنا، فقد شاهد المستخدم الإعلان بنجاح
-        Snackbar.show("🎉 شكراً لدعمك! تمت مكافأتك.");
-        // مكافأة: فتح زر إعادة الأسئلة الخاطئة إذا كان مخفياً
-        const retryBtn = $('#retry-btn');
-        if (retryBtn) {
-            retryBtn.style.display = 'inline-flex';
-            retryBtn.dataset.unlocked = 'true';
+    // أولاً: Rewarded Interstitial (بدون وسيط) — تجربة أفضل
+    try{
+      await this.fn();
+      return true;
+    }catch(e1){
+      console.warn('[Monetag] Rewarded Interstitial failed:', e1);
+    }
+    // ثانياً: Rewarded Popup كبديل
+    try{
+      await this.fn('pop');
+      return true;
+    }catch(e2){
+      console.warn('[Monetag] Rewarded Popup also failed:', e2);
+      return false;
+    }
+  },
+
+  /* ─── إعلان تلقائي: في لحظات الانتقال فقط ─── */
+  showInApp(){
+    if(!this.isReady()) return;
+    const now = Date.now();
+
+    // حماية 1: فاصل زمني بين العروض
+    if(now - this._lastInApp < this.IN_APP_COOLDOWN) return;
+    // حماية 2: حد أقصى لكل جلسة
+    if(this._inAppCount >= this.IN_APP_MAX_PER_SESSION) return;
+
+    this._lastInApp = now;
+    this._inAppCount++;
+    console.log(`[Monetag] In-app #${this._inAppCount}`);
+
+    try{
+      this.fn({
+        type: 'inApp',
+        inAppSettings: {
+          frequency: 2,       // إعلانان خلال النافذة
+          capping: 0.1,       // خلال 0.1 ساعة (6 دقائق)
+          interval: 30,       // 30 ثانية بينهما
+          timeout: 5,         // تأخير 5 ثوانٍ قبل الأول
+          everyPage: false    // احتفظ بالجلسة عند التنقل
         }
-    } catch (error) {
-        console.warn("[Monetag] Ad error:", error);
-        Snackbar.show("لم يتم إكمال الإعلان.");
+      }).catch(e => console.warn('[Monetag] inApp error:', e));
+    }catch(e){
+      console.warn('[Monetag] inApp throw:', e);
     }
+  }
+};
+
+/* ─── دالة زر المكافأة (نفس الاسم القديم للحفاظ على الربط) ─── */
+async function showRewardAd(){
+  const ok = await MonetagAds.showRewarded();
+
+  if(!ok){
+    Snackbar.show("لم تكتمل مشاهدة الإعلان. حاول مرة أخرى.");
+    return;
+  }
+
+  // منح المكافأة
+  Snackbar.show("🎉 شكراً لدعمك! تمت مكافأتك.");
+  const retryBtn = $('#retry-btn');
+  if(retryBtn){
+    retryBtn.style.display = 'inline-flex';
+    retryBtn.dataset.unlocked = 'true';
+  }
 }
 
 /* ===== Splash Particle Network ===== */
@@ -3322,7 +3386,7 @@ const QuizMode = {
     $('#retry-btn').style.display=miss&&!c?'':'none';
     const nb=$('#next-player-btn'); nb.style.display=c&&!last?'':'none'; if(c&&!last) nb.textContent=`دور ${c.names[c.i+1]} ←`;
     $('#share-challenge-btn').style.display=last?'':'none';
-    
+
     // إظهار زر الإعلان في شاشة النتائج
     const adBtn = $('#watch-ad-btn');
     if (adBtn) adBtn.style.display = 'inline-flex';
@@ -3343,7 +3407,22 @@ const QuizMode = {
     dom.timerDisplay.classList.add('hidden'); ScreenManager.show('quiz'); this._render();
   },
   finishEarly(){if(state.correctCount+state.wrongCount===0)return false;this._showResults();return true;},
-  _showResults(){this._stopTimer();const fs=Math.round(state.score);dom.resTotal.textContent=state.questions.length;dom.resCorrect.textContent=state.correctCount;dom.resWrong.textContent=state.wrongCount;dom.resScore.textContent=`${fs}/${CONFIG.LIMITS.maxScore}`;this._summary(fs);ScreenManager.show('result');ProfileService.recordTest(fs,state.correctCount,state.wrongCount);this._chEnd();if(fs>=90&&state.questions.length>0)this._confetti();},
+  _showResults(){
+    this._stopTimer();
+    const fs=Math.round(state.score);
+    dom.resTotal.textContent=state.questions.length;
+    dom.resCorrect.textContent=state.correctCount;
+    dom.resWrong.textContent=state.wrongCount;
+    dom.resScore.textContent=`${fs}/${CONFIG.LIMITS.maxScore}`;
+    this._summary(fs);
+    ScreenManager.show('result');
+    ProfileService.recordTest(fs,state.correctCount,state.wrongCount);
+    this._chEnd();
+    if(fs>=90&&state.questions.length>0)this._confetti();
+
+    // 📢 إعلان تلقائي In-app بعد الانتقال لشاشة النتيجة (بتأخير بسيط)
+    setTimeout(() => MonetagAds.showInApp(), 1000);
+  },
   _confetti(){if(typeof confetti!=='function'||prefersReducedMotion())return;const end=Date.now()+2000,colors=['#a85c3f','#b5893f','#d4a35a','#2e7d32','#f0e6cd'];(function f(){confetti({particleCount:4,angle:60,spread:55,origin:{x:0},colors});confetti({particleCount:4,angle:120,spread:55,origin:{x:1},colors});if(Date.now()<end)requestAnimationFrame(f);})();}
 };
 
@@ -3431,6 +3510,9 @@ const StatsView = {
       this._analysis({ ...s, accuracy, average, best, answered, scores });
       this._renderErrors(ProfileService.getErrors());
       ScreenManager.show('stats');
+
+      // 📢 إعلان تلقائي In-app عند فتح الإحصائيات (بتأخير)
+      setTimeout(() => MonetagAds.showInApp(), 800);
     } catch(e){ console.error('[StatsView]', e); Snackbar.show('تعذر عرض الإحصائيات الآن.'); }
   },
   _heatmap(days, scores){
@@ -3649,7 +3731,7 @@ const actionHandlers = {
   'next-player':      () => QuizMode.nextPlayer(),
   'share-challenge':  () => TelegramBridge.share((QuizMode._ch&&QuizMode._ch.text)||''),
   'open-number':      el => NumberPicker.open(el.dataset.field, el.dataset.type),
-  'watch-ad':         () => showRewardAd() // ربط زر الإعلان
+  'watch-ad':         () => showRewardAd()
 };
 
 function wireEvents(){
