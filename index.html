@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#B3261E">
+<meta name="theme-color" content="#e8dcc0">
 <title>اختبار ومراجعة القرآن الكريم</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" rel="stylesheet">
 
 <style>
@@ -1293,15 +1293,219 @@ body.splash-active{overflow:hidden;height:100%;}
 @media (prefers-reduced-motion:reduce){
   .splash-bar span{animation:none;left:31%;}
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   🎨 Cream & Clay Design System v2.1 — طبقة التحويل
+   تعيد ربط متغيرات --md-* بنظام Cream & Clay دون المساس بالمنطق.
+   ═══════════════════════════════════════════════════════════════ */
+.theme-clay{ --md-seed:#a85c3f; }
+
+:root{
+  --cc-line:#b8a880; --cc-light:#f0e6cd; --cc-ochre:#b5893f;
+  --md-shape-xs:6px; --md-shape-sm:9px; --md-shape-md:12px; --md-shape-lg:14px;
+  --md-shape-xl:20px; --md-shape-xxl:22px;
+  --md-elev-1:0 3px 10px rgba(61,47,36,.12);
+  --md-elev-2:0 3px 10px rgba(61,47,36,.12);
+  --md-elev-3:0 10px 30px rgba(61,47,36,.18);
+  --md-elev-4:0 10px 30px rgba(61,47,36,.18);
+  --md-elev-5:0 20px 50px rgba(61,47,36,.25);
+}
+body{
+  font-family:'Tajawal','Awsat Digital',system-ui,sans-serif;
+  --md-on-primary:#f0e6cd;
+  --md-primary-container:color-mix(in srgb,var(--md-seed) 16%,#f0e6cd);
+  --md-on-primary-container:color-mix(in srgb,var(--md-seed) 72%,#2a1a10);
+  --md-secondary:#b5893f; --md-on-secondary:#fff;
+  --md-secondary-container:color-mix(in srgb,#b5893f 24%,#f0e6cd);
+  --md-on-secondary-container:#5a4420;
+  --md-tertiary:#b5893f; --md-on-tertiary:#fff;
+  --md-tertiary-container:color-mix(in srgb,#b5893f 18%,#f0e6cd);
+  --md-on-tertiary-container:#5a4420;
+  --md-error:#a83232; --md-error-container:#ecd0c4; --md-on-error-container:#4a1010;
+  --md-success:#2e7d32; --md-success-container:#d3dfb8; --md-on-success-container:#13361a;
+  --md-warning:#b57200; --md-warning-container:#ecd69c; --md-on-warning-container:#3f2800;
+  --md-surface:#e8dcc0;
+  --md-on-surface:#3d2f24;
+  --md-surface-variant:#d2c39e;
+  --md-on-surface-variant:#6b5540;
+  --md-surface-container-lowest:#f0e6cd;
+  --md-surface-container-low:#e2d6b8;
+  --md-surface-container:#ddd0b0;
+  --md-surface-container-high:#d2c39e;
+  --md-surface-container-highest:#c9ba95;
+  --md-outline:#a89670; --md-outline-variant:#b8a880;
+  --md-inverse-surface:#3d2f24; --md-inverse-on-surface:#f0e6cd;
+  --md-scrim:rgba(61,47,36,.55); --md-shadow:rgba(61,47,36,.18);
+}
+body.dark{
+  --cc-line:#5a4838;
+  --md-elev-1:0 3px 10px rgba(0,0,0,.3);
+  --md-elev-2:0 3px 10px rgba(0,0,0,.3);
+  --md-elev-3:0 10px 30px rgba(0,0,0,.5);
+  --md-elev-4:0 10px 30px rgba(0,0,0,.5);
+  --md-elev-5:0 20px 50px rgba(0,0,0,.6);
+  --md-primary:color-mix(in srgb,var(--md-seed) 85%,#fff);
+  --md-on-primary:#2a2118;
+  --md-primary-container:color-mix(in srgb,var(--md-seed) 45%,#2a2118);
+  --md-on-primary-container:#f0e6cd;
+  --md-secondary:#d4a35a; --md-on-secondary:#2a2118;
+  --md-secondary-container:#4a3b2c; --md-on-secondary-container:#e8dcc0;
+  --md-tertiary:#d4a35a; --md-on-tertiary:#2a2118;
+  --md-tertiary-container:#4a3b2c; --md-on-tertiary-container:#e8dcc0;
+  --md-error:#ff8c8c; --md-error-container:#5a2424; --md-on-error-container:#ffd9d9;
+  --md-success:#81c784; --md-success-container:#25402a; --md-on-success-container:#c8e6c9;
+  --md-warning:#ffd54f; --md-warning-container:#4f3d10; --md-on-warning-container:#ffe9a6;
+  --md-surface:#2a2118;
+  --md-on-surface:#e8dcc0;
+  --md-surface-variant:#3f3227;
+  --md-on-surface-variant:#d2c39e;
+  --md-surface-container-lowest:#231b13;
+  --md-surface-container-low:#2f251b;
+  --md-surface-container:#352a1f;
+  --md-surface-container-high:#3f3227;
+  --md-surface-container-highest:#4a3b2c;
+  --md-outline:#7a6650; --md-outline-variant:#5a4838;
+  --md-inverse-surface:#e8dcc0; --md-inverse-on-surface:#2a2118;
+  --md-scrim:rgba(0,0,0,.7); --md-shadow:rgba(0,0,0,.5);
+}
+body.dark.oled{
+  --md-surface:#000;--md-surface-container-lowest:#000;--md-surface-container-low:#0d0a07;
+  --md-surface-container:#14100c;--md-surface-container-high:#1c1610;--md-surface-container-highest:#251d15;
+}
+
+/* حماية أفقية */
+html,body{ max-width:100%; overflow-x:clip }
+@supports not (overflow:clip){ html,body{ overflow-x:hidden } }
+img,svg,video,canvas{ max-width:100%; height:auto }
+body{ overflow-wrap:break-word }
+
+/* الأزرار: حدود 2px + حواف 12px */
+.md-btn{ border:2px solid transparent; border-radius:var(--md-shape-md); font-weight:700 }
+.md-btn-filled{ border-color:var(--md-primary) }
+.md-btn-filled:hover{ background:color-mix(in srgb,var(--md-primary) 88%,#000); }
+.md-btn-tonal{ border-color:var(--cc-line) }
+.md-btn-outlined{ border:2px solid var(--cc-line) }
+.md-btn-elevated{ border-color:var(--cc-line) }
+.md-btn-lg{ border-radius:var(--md-shape-md) }
+.md-btn:active{ transform:scale(.97) }
+.md-icon-btn{ border-radius:var(--md-shape-md) }
+.md-fab{ border:2px solid var(--cc-line); border-radius:var(--md-shape-lg); box-shadow:var(--md-elev-3) }
+
+/* البطاقات */
+.md-card,.quran-card,.review-card,.stat-card,.error-bank-card,.welcome-banner,.analysis-item{
+  border:2px solid var(--cc-line);
+}
+.md-card{ border-radius:var(--md-shape-xl); box-shadow:var(--md-elev-3) }
+.md-card-outlined,.md-card-filled{ box-shadow:none; border-width:1.5px }
+.md-card-elevated{ box-shadow:var(--md-elev-3) }
+.quran-card,.review-card{ border-radius:var(--md-shape-xxl); box-shadow:var(--md-elev-3) }
+.stat-card{ border-radius:var(--md-shape-lg); background:var(--md-surface); box-shadow:none }
+.stat-card .v,.stat-card .n{ color:var(--md-primary); font-weight:800 }
+
+/* شريط التطبيق */
+.md-top-app-bar{ border-bottom:2px dashed var(--cc-line) }
+.md-top-app-bar .title{ font-weight:800; color:var(--md-primary) }
+
+/* القوائم والشرائح */
+.md-list-item{ border-radius:var(--md-shape-md) }
+.md-list-item .lead{ border:2px solid var(--cc-line); border-radius:var(--md-shape-md); font-weight:800 }
+.md-list-item.selected{ background:var(--md-surface-container-lowest); color:var(--md-primary); font-weight:700 }
+.md-number-chip,.activity-grid button{ border:1.5px solid var(--cc-line); border-radius:var(--md-shape-md) }
+.md-number-chip.selected{ transform:none }
+.md-segmented{ border:2px solid var(--cc-line); border-radius:var(--md-shape-md); background:var(--md-surface-container-high); padding:0 }
+.md-segmented button{ border-left:1px solid var(--cc-line); font-weight:700 }
+.md-segmented button:first-child{ border-radius:0 var(--md-shape-sm) var(--md-shape-sm) 0 }
+.md-segmented button:last-child{ border-radius:var(--md-shape-sm) 0 0 var(--md-shape-sm) }
+.md-segmented button.active{ background:var(--md-primary); color:var(--md-on-primary) }
+.md-segmented button.active::before{ filter:invert(1) }
+
+/* الحقول */
+.md-textfield input{ border:2px solid var(--cc-line); border-radius:var(--md-shape-md); font-weight:600; background:var(--md-surface) }
+.md-textfield input:focus{ border-color:var(--md-primary); box-shadow:0 0 0 3px color-mix(in srgb,var(--md-primary) 18%,transparent); padding:16px }
+.md-textfield label{ background:var(--md-surface) }
+
+/* النوافذ والأوراق السفلية */
+.md-dialog{ border:2px solid var(--cc-line); border-radius:var(--md-shape-xxl); background:var(--md-surface-container); box-shadow:var(--md-elev-5) }
+.md-bottom-sheet{ border-top:2px solid var(--cc-line); border-radius:22px 22px 0 0; background:var(--md-surface-container); box-shadow:0 -12px 40px rgba(61,47,36,.25) }
+.md-bottom-sheet .handle{ width:44px; height:5px; background:var(--cc-line); opacity:1 }
+.md-bottom-sheet .sheet-head{ border-bottom:2px dashed var(--cc-line) }
+.md-bottom-sheet .sheet-head h3{ font-family:'Amiri',serif; font-weight:700; color:var(--md-primary) }
+.md-dialog h2,.md-dialog h3{ color:var(--md-primary); font-weight:800 }
+.md-snackbar{ border-radius:var(--md-shape-md); font-weight:600 }
+
+/* الآيات: Amiri/Scheherazade كبدائل لخط المصحف (QPC يبقى الأساسي) */
+.quran-text,.review-card .review-text,#question-text,#review-ayah-text{
+  font-family:'QPC Uthmanic Hafs','Scheherazade New','Amiri',serif;
+}
+.review-card{ background:var(--md-surface-container-low); position:relative; overflow:hidden }
+.review-card::before{
+  content:"﴿"; position:absolute; top:-24px; inset-inline-start:14px;
+  font-family:'Amiri',serif; font-size:120px; color:var(--cc-ochre); opacity:.12; line-height:1; pointer-events:none;
+}
+.review-card::after{
+  content:"﴾"; position:absolute; bottom:-34px; inset-inline-end:14px;
+  font-family:'Amiri',serif; font-size:120px; color:var(--cc-ochre); opacity:.12; line-height:1; pointer-events:none;
+}
+.review-card > *{ position:relative; z-index:1 }
+.tafsir-panel{ border:2px dashed var(--cc-line); border-radius:var(--md-shape-lg); background:var(--md-surface-container-low) }
+.review-text .ayah-end{ color:var(--cc-ochre) }
+.highlight-word{ background:color-mix(in srgb,#b5893f 38%,transparent); box-shadow:inset 0 0 0 1px color-mix(in srgb,#b5893f 55%,transparent) }
+body.dark .highlight-word{ background:color-mix(in srgb,#d4a35a 30%,transparent) }
+
+/* الاختبار */
+.option-btn{ border:2px solid var(--cc-line); border-radius:var(--md-shape-md); background:var(--md-surface-container-lowest); font-weight:700 }
+.option-btn.correct{ border-color:var(--md-success); background:color-mix(in srgb,var(--md-success) 14%,var(--md-surface)) }
+.option-btn.wrong{ border-color:var(--md-error); background:color-mix(in srgb,var(--md-error) 12%,var(--md-surface)) }
+
+/* التقدم والمفاتيح */
+.md-linear-progress{ border-radius:99px }
+.md-linear-progress .fill{ background:linear-gradient(90deg,var(--md-primary),var(--cc-ochre)) }
+.theme-swatch{ border:2px solid var(--cc-line) }
+
+/* شاشة البداية */
+.splash-title{ font-weight:800 }
+.splash-bar span{ background:linear-gradient(90deg,var(--md-primary),var(--cc-ochre)) }
+
+
+/* ═══ إصلاحات الزوايا الحادة والتفاصيل ═══ */
+.info-box{ border:1.5px dashed var(--cc-line); border-right:4px solid var(--md-primary); border-radius:var(--md-shape-md) }
+.scope-panel{ border:0 }
+.analysis-item,.error-bank-card,.welcome-banner,.error-item,.prefetch-bar,.result-row,.picker-trigger,.profile-avatar{ border-radius:var(--md-shape-md) }
+.analysis-item,.result-row{ border:1.5px solid var(--cc-line) }
+.error-bank-card,.welcome-banner{ border-radius:var(--md-shape-xl) }
+.picker-trigger{ border:2px solid var(--cc-line); background:var(--md-surface-container-lowest) }
+.heatmap-cell{ border-radius:5px }
+.bar-chart .bar{ border-radius:8px 8px 3px 3px }
+/* حقول النص: قصّ التسمية يطابق خلفية الحاوية (يمنع مستطيلاً حاداً خلف النص) */
+.md-textfield input{ background:transparent }
+.md-textfield label{ background:var(--md-surface); border-radius:6px }
+.md-dialog .md-textfield label,.md-bottom-sheet .md-textfield label{ background:var(--md-surface-container) }
+/* حلقة التركيز تتبع الحواف المدورة بدل مربع المتصفح */
+:focus{ outline:none }
+:focus-visible{ outline:2px solid var(--md-primary); outline-offset:2px }
+.md-textfield input:focus-visible,.search input:focus-visible{ outline:none }
+.md-state::after{ border-radius:inherit }
+button,[role="button"],summary{ -webkit-appearance:none; appearance:none }
+.md-top-app-bar{ border-bottom:2px dashed var(--cc-line) }
+body.telegram-app .md-top-app-bar{ border-bottom-color:var(--cc-line) }
+
+/* ═══ إخفاء الشريط العلوي الرئيسي أثناء الاختبار والمراجعة والنتيجة ═══ */
+body.fullscreen-mode #app-bar{ display:none !important }
+body.telegram-app.fullscreen-mode #quiz-screen,
+body.telegram-app.fullscreen-mode #review-screen{
+  padding-top: max(12px, env(safe-area-inset-top, 0px));
+}
+
+@media print{ .md-fab,.md-top-app-bar,.md-bottom-sheet{ display:none!important } }
 </style>
 </head>
 
-<body class="theme-red splash-active">
+<body class="theme-clay splash-active">
 <script>
 /* استعادة الثيم قبل رسم المحتوى لمنع الفلاش */
 (function(){
   try{
-    var themes=['theme-red','theme-blue','theme-emerald','theme-purple','theme-gold','theme-slate','theme-pink','theme-teal','theme-terracotta','theme-olive','theme-indigo','theme-sepia','theme-custom'];
+    var themes=['theme-clay','theme-red','theme-blue','theme-emerald','theme-purple','theme-gold','theme-slate','theme-pink','theme-teal','theme-terracotta','theme-olive','theme-indigo','theme-sepia','theme-custom'];
     var t=JSON.parse(localStorage.getItem('quran.theme')||'null');
     if(t&&themes.indexOf(t)>=0){
       document.body.classList.remove.apply(document.body.classList,
@@ -1789,10 +1993,10 @@ body.splash-active{overflow:hidden;height:100%;}
   <button class="action hidden" id="snackbar-action"></button>
 </div>
 
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script defer src="https://telegram.org/js/telegram-web-app.js"></script>
 <!-- مكتبة Adsgram -->
-<script src="https://sad.adsgram.ai/js/sad.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+<script defer src="https://sad.adsgram.ai/js/sad.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
 
 <script>
 'use strict';
@@ -2005,7 +2209,13 @@ function afterPress(el, callback, delay = PRESS_DELAY){
 
 const Storage = {
   get(k, fb = null) { try { const v = localStorage.getItem(k); return v == null ? fb : JSON.parse(v); } catch { return fb; } },
-  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch(_) {} }
+  set(k, v) {
+    try { localStorage.setItem(k, JSON.stringify(v)); return true; }
+    catch(_) {
+      if(!this._warned){ this._warned = true; try{ Snackbar.show('مساحة التخزين ممتلئة — خذ نسخة احتياطية ثم امسح الكاش.'); }catch(e){} }
+      return false;
+    }
+  }
 };
 
 const TelegramBridge = {
@@ -2076,9 +2286,9 @@ const CONFIG = Object.freeze({
     colors:['#B3261E','#1565C0','#146C2E','#6750A4','#B26A00','#B3456E','#00838F','#558B2F'],
     emojis:['📖','🕌','⭐','🌙','🕋','🌟','📚','🤲']
   },
-  THEMES: ['theme-red','theme-blue','theme-emerald','theme-purple','theme-gold','theme-slate','theme-pink','theme-teal','theme-terracotta','theme-olive','theme-indigo','theme-sepia'],
+  THEMES: ['theme-clay','theme-red','theme-blue','theme-emerald','theme-purple','theme-gold','theme-slate','theme-pink','theme-teal','theme-terracotta','theme-olive','theme-indigo','theme-sepia'],
   THEME_COLORS: {
-    'theme-red':'#B3261E', 'theme-blue':'#1565C0', 'theme-emerald':'#146C2E',
+    'theme-clay':'#a85c3f', 'theme-red':'#B3261E', 'theme-blue':'#1565C0', 'theme-emerald':'#146C2E',
     'theme-purple':'#6750A4', 'theme-gold':'#B26A00', 'theme-slate':'#4A5560', 'theme-pink':'#B3456E', 'theme-teal':'#00796B', 'theme-terracotta':'#B5532B', 'theme-olive':'#6B7A1F', 'theme-indigo':'#3949AB', 'theme-sepia':'#7A5230'
   }
 });
@@ -2093,31 +2303,45 @@ const bus = new EventBus();
 
 class QuranAPI {
   constructor(){ this._cache = new Map(); this._pending = new Map(); }
+  _remember(url, val){
+    this._cache.set(url, val);
+    if(this._cache.size > 160) this._cache.delete(this._cache.keys().next().value);
+  }
   async _fetch(url, tf, o = {}){
-    if(this._cache.has(url)) return this._cache.get(url);
+    if(this._cache.has(url)){ const v = this._cache.get(url); this._cache.delete(url); this._cache.set(url, v); return v; }
     if(this._pending.has(url)) return this._pending.get(url);
+    const persist = o.persist ?? /\/(surah|page|juz|hizbQuarter)\/\d+\/quran-uthmani$/.test(url);
+    const hasCaches = persist && 'caches' in window;
     const p = (async () => {
+      if(hasCaches){
+        try{
+          const hit = await (await caches.open('quran-data-v1')).match(url);
+          if(hit){ const r = tf(await hit.json()); this._remember(url, r); return r; }
+        }catch(_){}
+      }
+      const tries = o.tries ?? 3;
       let lastError;
-      for(let attempt = 0; attempt < (o.tries ?? 3); attempt++){
+      for(let attempt = 0; attempt < tries; attempt++){
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), o.timeout ?? 20000);
         try{
-          const response = await fetch(url, { signal: controller.signal, cache: 'no-store' });
-          if(!response.ok) throw new Error(`HTTP ${response.status}`);
-          const data = await response.json();
-          const result = tf(data);
-          this._cache.set(url, result);
+          const response = await fetch(url, { signal: controller.signal });
+          if(!response.ok){ const err = new Error(`HTTP ${response.status}`); err.status = response.status; throw err; }
+          const raw = hasCaches ? response.clone() : null;
+          const result = tf(await response.json());
+          this._remember(url, result);
+          if(raw) caches.open('quran-data-v1').then(c => c.put(url, raw)).catch(() => {});
           return result;
         }catch(error){
           lastError = error;
-          if(attempt < (o.tries ?? 3) - 1) await new Promise(resolve => setTimeout(resolve, 350 * (attempt + 1)));
+          if(error.status >= 400 && error.status < 500 && error.status !== 429) break;
+          if(attempt < tries - 1) await new Promise(r => setTimeout(r, 350 * 2 ** attempt + Math.random() * 150));
         }finally{
           clearTimeout(timer);
         }
       }
       throw lastError || new Error('تعذر تحميل البيانات');
-    })()
-      .finally(() => this._pending.delete(url));
+    })().finally(() => this._pending.delete(url));
     this._pending.set(url, p);
     return p;
   }
@@ -2330,14 +2554,14 @@ const Settings = {
 const ThemeService = {
   apply(n){
     const cc = Storage.get('quran.customColor') || '#00796B';
-    if(!CONFIG.THEMES.includes(n) && n !== 'theme-custom') n = 'theme-red';
+    if(!CONFIG.THEMES.includes(n) && n !== 'theme-custom') n = 'theme-clay';
     document.body.className = document.body.className.replace(/theme-\w+/g, '').trim();
     document.body.classList.add(n);
     if(n === 'theme-custom') document.body.style.setProperty('--md-seed', cc); else document.body.style.removeProperty('--md-seed');
     Storage.set(CONFIG.KEYS.theme, n);
     $$('.theme-swatch').forEach(b => b.classList.toggle('active', b.dataset.theme === n));
     const meta = document.querySelector('meta[name="theme-color"]');
-    if(meta) meta.setAttribute('content', n === 'theme-custom' ? cc : CONFIG.THEME_COLORS[n]);
+    if(meta) meta.setAttribute('content', document.body.classList.contains('dark') ? '#2a2118' : '#e8dcc0');
   },
   applyDark(on, manual){
     if(manual){ Settings.set('autoDark', false); const c = $('#setting-auto-dark'); if(c) c.checked = false; }
@@ -2346,6 +2570,8 @@ const ThemeService = {
     const icon = $('#btn-darkmode .material-symbols-rounded');
     if(icon) icon.textContent = on ? 'light_mode' : 'dark_mode';
 
+    const m = document.querySelector('meta[name="theme-color"]');
+    if(m) m.setAttribute('content', on ? (document.body.classList.contains('oled') ? '#000000' : '#2a2118') : '#e8dcc0');
     this.syncTelegramChrome(on);
   },
 
@@ -2353,15 +2579,15 @@ const ThemeService = {
     const tg = window.Telegram && window.Telegram.WebApp;
     if(!tg) return;
     try{
-      const bg     = isDark ? '#141218' : '#fffbfe';
-      const header = isDark ? '#1d1b20' : '#f3edf7';
+      const bg     = isDark ? '#2a2118' : '#e8dcc0';
+      const header = isDark ? '#352a1f' : '#ddd0b0';
       tg.setHeaderColor?.(header);
       tg.setBackgroundColor?.(bg);
       if(tg.setBottomBarColor) tg.setBottomBarColor(bg);
     }catch(e){ }
   },
 
-  current(){ return Storage.get(CONFIG.KEYS.theme) || 'theme-red'; },
+  current(){ return Storage.get(CONFIG.KEYS.theme) || 'theme-clay'; },
   isDark(){ return Settings.get('autoDark') ? matchMedia('(prefers-color-scheme: dark)').matches : !!Storage.get(CONFIG.KEYS.dark, false); },
   render(){
     $('#theme-grid').innerHTML = CONFIG.THEMES.map(t => `
@@ -2458,11 +2684,18 @@ const dom = {
 
 const ScreenManager = {
   current: 'setup',
+  // الشاشات التي يُخفى فيها الشريط العلوي الرئيسي
+  _fullscreenScreens: ['quiz', 'review', 'result'],
   show(n){
     if(!dom.screens[n]) return;
     Object.values(dom.screens).forEach(s => s && s.classList.add('hidden-screen'));
     dom.screens[n].classList.remove('hidden-screen');
     this.current = n;
+
+    // إظهار/إخفاء الشريط العلوي الرئيسي حسب الشاشة
+    const hideBar = this._fullscreenScreens.includes(n);
+    document.body.classList.toggle('fullscreen-mode', hideBar);
+
     window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
     bus.emit('screen:changed', n);
   }
@@ -3110,7 +3343,7 @@ const QuizMode = {
   },
   finishEarly(){if(state.correctCount+state.wrongCount===0)return false;this._showResults();return true;},
   _showResults(){this._stopTimer();const fs=Math.round(state.score);dom.resTotal.textContent=state.questions.length;dom.resCorrect.textContent=state.correctCount;dom.resWrong.textContent=state.wrongCount;dom.resScore.textContent=`${fs}/${CONFIG.LIMITS.maxScore}`;this._summary(fs);ScreenManager.show('result');ProfileService.recordTest(fs,state.correctCount,state.wrongCount);this._chEnd();if(fs>=90&&state.questions.length>0)this._confetti();},
-  _confetti(){if(typeof confetti!=='function'||prefersReducedMotion())return;const end=Date.now()+2000,colors=['#B3261E','#B26A00','#146C2E','#1565C0'];(function f(){confetti({particleCount:4,angle:60,spread:55,origin:{x:0},colors});confetti({particleCount:4,angle:120,spread:55,origin:{x:1},colors});if(Date.now()<end)requestAnimationFrame(f);})();}
+  _confetti(){if(typeof confetti!=='function'||prefersReducedMotion())return;const end=Date.now()+2000,colors=['#a85c3f','#b5893f','#d4a35a','#2e7d32','#f0e6cd'];(function f(){confetti({particleCount:4,angle:60,spread:55,origin:{x:0},colors});confetti({particleCount:4,angle:120,spread:55,origin:{x:1},colors});if(Date.now()<end)requestAnimationFrame(f);})();}
 };
 
 const ReviewMode = {
@@ -3579,7 +3812,7 @@ function initExtras(){
   bind('#setting-oled','oled',oled); bind('#setting-auto-dark','autoDark',dk); oled(); dk();
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{ if(Settings.get('autoDark')) dk(); });
   $('#btn-backup').addEventListener('click',async()=>{
-    const data={}; Object.keys(localStorage).filter(k=>k.startsWith('quran.')&&!/cache/i.test(k)).forEach(k=>data[k]=localStorage.getItem(k));
+    const data={}; Object.keys(localStorage).filter(k=>k.startsWith('quran.')&&!/cache|tafsir/i.test(k)).forEach(k=>data[k]=localStorage.getItem(k));
     const file=new File([JSON.stringify({app:'quran-quiz',v:1,date:new Date().toISOString(),data})],`quran-backup-${todayStr()}.json`,{type:'application/json'});
     try{ if(navigator.canShare&&navigator.canShare({files:[file]})){ await navigator.share({files:[file]}); return; } }catch(e){ if(e&&e.name==='AbortError') return; }
     try{ const a=document.createElement('a'); a.href=URL.createObjectURL(file); a.download=file.name; document.body.appendChild(a); a.click(); a.remove(); Snackbar.show('تم إنشاء النسخة الاحتياطية'); }
@@ -3589,7 +3822,7 @@ function initExtras(){
   $('#restore-file').addEventListener('change',async e=>{
     const f=e.target.files[0]; if(!f) return;
     try{ const o=JSON.parse(await f.text()); if(o.app!=='quran-quiz'||!o.data) throw 0;
-      Object.entries(o.data).forEach(([k,v])=>{ if(k.startsWith('quran.')&&typeof v==='string') localStorage.setItem(k,v); });
+      Object.entries(o.data).forEach(([k,v])=>{ if(k.startsWith('quran.')&&typeof v==='string'){ try{ localStorage.setItem(k,v); }catch(_){} } });
       Snackbar.show('تمت الاستعادة، جارٍ إعادة التحميل…'); setTimeout(()=>location.reload(),900);
     }catch(_){ Snackbar.show('الملف غير صالح.'); }
     e.target.value='';
@@ -3609,16 +3842,16 @@ function waitForFonts(){
     document.fonts.load('400 24px "QPC Uthmanic Hafs"'),
     document.fonts.load('400 16px "Tajawal"'),
     document.fonts.load('700 16px "Tajawal"'),
-    document.fonts.load('400 16px "Roboto"')
+    document.fonts.load('800 16px "Tajawal"')
   ]).then(() => document.fonts.ready).catch(() => {});
-  const timeout = new Promise(r => setTimeout(r, 5000));
+  const timeout = new Promise(r => setTimeout(r, 2500));
   return Promise.race([p, timeout]);
 }
 
 async function bootstrap(){
   const splash = document.getElementById('splash-screen');
   const splashStart = Date.now();
-  const MIN_SPLASH_MS = 3000;
+  const MIN_SPLASH_MS = 1200;
 
   const splashCanvas = document.getElementById('splash-particles');
   SplashParticles.start(splashCanvas);
@@ -3675,6 +3908,9 @@ async function bootstrap(){
   }
 }
 
+window.addEventListener('unhandledrejection', e => { console.warn('[unhandled]', e.reason); });
+window.addEventListener('offline', () => { try{ Snackbar.show('أنت غير متصل — المحتوى المحفوظ متاح.'); }catch(_){} });
+window.addEventListener('online', () => { try{ Snackbar.show('عاد الاتصال.', { duration: 2000 }); }catch(_){} });
 document.addEventListener('DOMContentLoaded', bootstrap);
 </script>
 </body>
