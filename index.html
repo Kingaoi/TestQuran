@@ -6,6 +6,13 @@
 <meta name="theme-color" content="#e8dcc0">
 <title>اختبار ومراجعة القرآن الكريم</title>
 
+
+<!-- ═══════════════════════════════════════════════════════════════
+     Monetag SDK — Rewarded Popup
+     ═══════════════════════════════════════════════════════════════ -->
+<script src='//libtl.com/sdk.js' data-zone='12007850' data-sdk='show_12007850'></script>    
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -1994,8 +2001,6 @@ body.telegram-app.fullscreen-mode #review-screen{
 </div>
 
 <script defer src="https://telegram.org/js/telegram-web-app.js"></script>
-<!-- مكتبة Adsgram -->
-<script defer src="https://sad.adsgram.ai/js/sad.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
 
 <script>
@@ -2019,34 +2024,30 @@ const prefersReducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const escapeHTML = value => String(value ?? '').replace(/[&<>\"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch]));
 
-/* ===== Adsgram Integration ===== */
-let AdController = null;
-function initAdsgram() {
-    try {
-        if (window.Adsgram) {
-            AdController = window.Adsgram.init({ blockId: "52266" });
-        }
-    } catch(e) { console.warn("Adsgram init failed", e); }
-}
+/* ===== Monetag Rewarded Popup Integration ===== */
+const MONETAG_ZONE_ID = '12007850';
+const MONETAG_SHOW_FUNCTION = 'show_' + MONETAG_ZONE_ID;
 
 async function showRewardAd() {
-    if (!AdController) {
-        Snackbar.show("الإعلانات غير متاحة حالياً.");
+    const showFn = window[MONETAG_SHOW_FUNCTION];
+    if (typeof showFn !== 'function') {
+        console.warn('[Monetag] show function not found:', MONETAG_SHOW_FUNCTION);
+        Snackbar.show("الإعلانات غير متاحة حالياً. تأكد من تفعيلها في لوحة التحكم.");
         return;
     }
     try {
-        const result = await AdController.show();
-        if (result && result.done) {
-            Snackbar.show("🎉 شكراً لدعمك! تمت مكافأتك.");
-            // مكافأة: فتح زر إعادة الأسئلة الخاطئة إذا كان مخفياً
-            const retryBtn = $('#retry-btn');
-            if (retryBtn) {
-                retryBtn.style.display = 'inline-flex';
-                retryBtn.dataset.unlocked = 'true';
-            }
+        // استدعاء دالة Monetag لعرض إعلان المكافأة (Rewarded Popup)
+        await showFn('pop');
+        // إذا وصلنا هنا، فقد شاهد المستخدم الإعلان بنجاح
+        Snackbar.show("🎉 شكراً لدعمك! تمت مكافأتك.");
+        // مكافأة: فتح زر إعادة الأسئلة الخاطئة إذا كان مخفياً
+        const retryBtn = $('#retry-btn');
+        if (retryBtn) {
+            retryBtn.style.display = 'inline-flex';
+            retryBtn.dataset.unlocked = 'true';
         }
     } catch (error) {
-        console.warn("Ad error", error);
+        console.warn("[Monetag] Ad error:", error);
         Snackbar.show("لم يتم إكمال الإعلان.");
     }
 }
@@ -3856,7 +3857,6 @@ async function bootstrap(){
   const splashCanvas = document.getElementById('splash-particles');
   SplashParticles.start(splashCanvas);
 
-  initAdsgram(); // تهيئة الإعلانات
   TelegramBridge.init();
   ThemeService.render();
   ThemeService.apply(ThemeService.current());
