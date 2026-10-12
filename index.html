@@ -1501,6 +1501,19 @@ body.telegram-app.fullscreen-mode #review-screen{
   padding-top: max(12px, env(safe-area-inset-top, 0px));
 }
 
+/* ═══ زر الخطر (حذف كل البيانات) ═══ */
+.md-btn-danger{
+  border-color: var(--md-error) !important;
+  color: var(--md-error) !important;
+  background: transparent;
+}
+.md-btn-danger:hover{
+  background: color-mix(in srgb, var(--md-error) 10%, transparent) !important;
+}
+.md-btn-danger .material-symbols-rounded{
+  color: var(--md-error);
+}
+
 @media print{ .md-fab,.md-top-app-bar,.md-bottom-sheet{ display:none!important } }
 </style>
 </head>
@@ -1974,6 +1987,17 @@ body.telegram-app.fullscreen-mode #review-screen{
       <input type="file" id="restore-file" accept="application/json,.json" hidden>
     </div>
 
+    <!-- زر حذف كل البيانات (خطر) -->
+    <div style="border-top:1px solid var(--md-outline-variant);padding-top:12px;margin-top:4px">
+      <button id="btn-wipe-all" class="md-btn md-btn-outlined md-btn-danger md-btn-block md-state">
+        <span class="material-symbols-rounded">delete_forever</span>
+        حذف كل البيانات من الجذور
+      </button>
+      <p class="text-muted md-body-small" style="margin:8px 0 0;text-align:center;line-height:1.6">
+        يحذف جميع الملفات الشخصية، الإحصائيات، الإعدادات، والذاكرة المؤقتة. لا يمكن التراجع.
+      </p>
+    </div>
+
     <div style="border-top:1px solid var(--md-outline-variant);padding-top:16px">
       <label class="md-switch">
         <input type="checkbox" id="setting-tajweed">
@@ -2413,13 +2437,6 @@ class QuranAPI {
 
   /**
    * تنظيف النص القرآني من الرموز التي تسبب مشاكل العرض (الدوائر البيضاء).
-   *
-   * السبب: الرمز U+06DF (ARABIC SMALL HIGH ROUNDED ZERO) يُعرض كدائرة بيضاء
-   * في بعض الخطوط والمنصات. الحل: استبداله بـ U+0652 (ARABIC SUKUN) أو حذفه.
-   *
-   * وضعان:
-   *   - 'replace': يستبدل U+06DF بـ U+0652 + يحذف علامات الوقف
-   *   - 'remove' : يحذف كل الرموز القرآنية (علامات الوقف + U+06DF + U+25CC)
    */
   _strip(a){
     if(typeof a.text !== 'string') return a;
@@ -2428,25 +2445,15 @@ class QuranAPI {
     let text = a.text;
 
     if (QURAN_CLEAN_MODE === 'replace') {
-      // 1. استبدال U+06DF (الصفر العلوي المدور) بـ U+0652 (السكون) للحفاظ على المعنى الصوتي
       text = text.replace(/\u06DF/g, '\u0652');
-
-      // 2. إزالة علامات الوقف (U+06D6 إلى U+06DE) + الرموز الأخرى (U+06E0 إلى U+06ED)
-      //    مع الإبقاء على U+06E9 (علامة السجدة) التي تظهر بشكل صحيح
       text = text.replace(/[\u06D6-\u06DE\u06E0-\u06E8\u06EA-\u06ED]/g, '');
-
-      // 3. إزالة دائرة العلامة المنقطة U+25CC
       text = text.replace(/\u25CC/g, '');
-
     } else {
-      // وضع الإزالة الكاملة: حذف كل الرموز القرآنية بدون استثناء
       text = text.replace(/[\u06D6-\u06ED\u25CC\u06DF\u06E0\u06E1]/g, '');
     }
 
-    // 4. تنظيف المسافات المزدوجة الناتجة
     text = text.replace(/\s{2,}/g, ' ').trim();
 
-    // 5. معالجة البسملة في بداية السور (إزالتها من النص المعروض ما عدا الفاتحة والتوبة)
     const sn = a.surah && a.surah.number;
     if(a.numberInSurah === 1 && sn && sn !== 1 && sn !== 9){
       const plain = text.replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, '');
@@ -3910,6 +3917,104 @@ function initExtras(){
     }catch(_){ Snackbar.show('الملف غير صالح.'); }
     e.target.value='';
   });
+
+  /* ═══════════════════════════════════════════════════════════
+     حذف كل البيانات من الجذور (Wipe All Data)
+     ─────────────────────────────────────────────────────────
+     يمسح:
+       1) جميع مفاتيح localStorage التي تبدأ بـ "quran."
+       2) جميع مفاتيح sessionStorage
+       3) ذاكرة الـ Cache Storage (quran-data-v1)
+       4) Service Workers (إن وُجدت)
+       5) جميع ملفات تعريف الارتباط (Cookies) — إن أمكن
+     ثم يعيد تحميل الصفحة للحالة الافتراضية.
+     ═══════════════════════════════════════════════════════════ */
+  $('#btn-wipe-all').addEventListener('click', async () => {
+    // ─── التأكيد الأول ───
+    const step1 = confirm(
+      '⚠️ تحذير: سيتم حذف جميع بياناتك نهائياً:\n\n' +
+      '• جميع الملفات الشخصية\n' +
+      '• جميع الإحصائيات وسجل الاختبارات\n' +
+      '• بنك الأخطاء\n' +
+      '• الإعدادات والمظهر\n' +
+      '• الذاكرة المؤقتة للقرآن\n\n' +
+      'هل أنت متأكد من المتابعة؟'
+    );
+    if (!step1) return;
+
+    // ─── التأكيد الثاني (صمام أمان) ───
+    const step2 = confirm(
+      '🔴 تأكيد أخير:\n\n' +
+      'هذا الإجراء لا يمكن التراجع عنه.\n' +
+      'اضغط "موافق" لمسح كل شيء نهائياً.'
+    );
+    if (!step2) return;
+
+    // ─── تنفيذ الحذف ───
+    const btn = $('#btn-wipe-all');
+    const originalHTML = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<div class="md-circular-progress sm"></div><span>جارٍ الحذف…</span>';
+
+    try {
+      // 1) localStorage
+      let removedKeys = 0;
+      Object.keys(localStorage).forEach(key => {
+        if (key.startsWith('quran.')) {
+          localStorage.removeItem(key);
+          removedKeys++;
+        }
+      });
+      console.log(`[Wipe] Removed ${removedKeys} localStorage keys`);
+
+      // 2) sessionStorage
+      try { sessionStorage.clear(); } catch (_) {}
+
+      // 3) Cache Storage (بيانات القرآن المخزنة)
+      if ('caches' in window) {
+        try {
+          const cacheNames = await caches.keys();
+          await Promise.all(cacheNames.map(name => caches.delete(name)));
+          console.log(`[Wipe] Cleared ${cacheNames.length} cache(s)`);
+        } catch (e) { console.warn('[Wipe] Cache error:', e); }
+      }
+
+      // 4) Service Workers (إن وُجدت مستقبلاً)
+      if ('serviceWorker' in navigator) {
+        try {
+          const registrations = await navigator.serviceWorker.getRegistrations();
+          await Promise.all(registrations.map(r => r.unregister()));
+        } catch (e) { console.warn('[Wipe] SW error:', e); }
+      }
+
+      // 5) Cookies الخاصة بالنطاق (اختياري)
+      try {
+        document.cookie.split(';').forEach(cookie => {
+          const eqPos = cookie.indexOf('=');
+          const name = eqPos > -1 ? cookie.substr(0, eqPos).trim() : cookie.trim();
+          if (name) {
+            document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
+            document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=${location.hostname}`;
+          }
+        });
+      } catch (_) {}
+
+      // 6) إبلاغ المستخدم ثم إعادة التحميل
+      Snackbar.show('✅ تم حذف جميع البيانات. جارٍ إعادة التشغيل…', { duration: 2000 });
+
+      setTimeout(() => {
+        // استخدم replace لتجنب زر الرجوع
+        location.replace(location.pathname + '?_=' + Date.now());
+      }, 1200);
+
+    } catch (error) {
+      console.error('[Wipe] Failed:', error);
+      btn.disabled = false;
+      btn.innerHTML = originalHTML;
+      Snackbar.show('❌ تعذّر إتمام الحذف. حاول مرة أخرى.');
+    }
+  });
+
   const sw=$('#setting-challenge'), box=$('#challenge-players');
   sw.addEventListener('change',()=>{
     box.classList.toggle('hidden',!sw.checked);
