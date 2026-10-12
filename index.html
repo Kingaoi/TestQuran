@@ -2344,17 +2344,35 @@ const TelegramBridge = {
     if(ScreenManager.current !== 'setup'){ ScreenManager.show('setup'); updateWelcomeBanner(); return; }
     this.tg?.close();
   },
-  share(text){
-    const url = window.location.href;
-    const payload = { title:'اختبار القرآن الكريم', text, url };
-    if(navigator.share){ navigator.share(payload).catch(() => {}); return; }
-    if(this.tg?.switchInlineQuery){ this.tg.switchInlineQuery(text, ['users','groups','channels']); return; }
-    if(navigator.clipboard){ navigator.clipboard.writeText(`${text}\n${url}`).then(() => Snackbar.show('تم نسخ نتيجة التقدم للمشاركة.')); return; }
-    Snackbar.show('انسخ رابط التطبيق لمشاركة تقدمك.');
+  share(text, opts = {}){
+  // نستخدم رابط التطبيق ثابتاً بدل window.location.href
+  const url = opts.url || CONFIG.APP_URL;
+  const finalText = opts.includeUrl === false ? text : `${text}\n\n${url}`;
+  const payload = { title:'اختبار القرآن الكريم', text: finalText, url };
+
+  // 1) Web Share API (يفتح قائمة المشاركة الأصلية)
+  if(navigator.share){
+    navigator.share(payload).catch(() => {});
+    return;
   }
+  // 2) Telegram inline share
+  if(this.tg?.switchInlineQuery){
+    this.tg.switchInlineQuery(finalText, ['users','groups','channels']);
+    return;
+  }
+  // 3) نسخ إلى الحافظة
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(finalText)
+      .then(() => Snackbar.show('✅ تم نسخ رابط التطبيق للمشاركة'))
+      .catch(() => Snackbar.show('انسخ الرابط يدوياً: ' + url));
+    return;
+  }
+  Snackbar.show('انسخ الرابط يدوياً: ' + url);
+}
 };
 
 const CONFIG = Object.freeze({
+  APP_URL: 'https://t.me/tstquranbot/testquran',   // ← رابط التطبيق للمشاركة
   API: {
     quran:'https://api.alquran.cloud/v1',
     tafsirEdition:'ar-tafsir-muyassar',
@@ -3725,11 +3743,16 @@ const actionHandlers = {
   'close-number':     () => NumberPicker.close(),
   'show-stats':       () => StatsView.show(),
   'start-errors':     () => QuizMode.startErrorBank(),
-  'share-progress':   () => {
-    const p = ProfileService.getActive();
-    const score = dom.resScore?.textContent || '';
-    TelegramBridge.share(p ? `أراجع القرآن الكريم مع ${p.name}${score ? ` — آخر نتيجة: ${score}` : ''}` : 'أراجع القرآن الكريم يومياً.');
-  },
+  'share-progress': () => {
+  const text =
+    '📖 جرّب تطبيق "اختبار ومراجعة القرآن الكريم"!\n\n' +
+    '✅ اختبارات متنوعة (ملء الفراغ، المتشابهات، ترتيب الكلمات)\n' +
+    '✅ مراجعة الآيات مع التفسير الميسر\n' +
+    '✅ إحصائيات دقيقة وبنك أخطاء ذكي\n' +
+    '✅ يعمل داخل تيليجرام مباشرة دون تثبيت\n\n' +
+    '🔗 اضغط للبدء:';
+  TelegramBridge.share(text);
+},
   'back-to-setup':    () => { ScreenManager.show('setup'); updateWelcomeBanner(); },
   'end-test':         () => { if(!QuizMode.finishEarly()){ QuizMode.endChallenge(); resetApp(); } },
   'retry-missed':     () => QuizMode.retryMissed(),
